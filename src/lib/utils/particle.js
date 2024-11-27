@@ -1,10 +1,11 @@
-const MAX_SPEED = 5;
+const MIN_SPEED = 5;
+const MAX_SPEED = 10;
 const MAX_FORCE = 2.5;
 const PROXIMITY_LIMIT = 100;
 
 export function update(particle) {
 	particle.velocity.add(particle.acceleration);
-	particle.velocity.limit(MAX_SPEED);
+	particle.velocity.limit(particle.MAX_SPEED);
 	particle.position.add(particle.velocity);
 	particle.acceleration.mult(0);
 }
@@ -23,26 +24,31 @@ export function seek(particle, target) {
 
 	let d = desired.mag();
 
-	if (d < 0.01) {
+	if (d < 1) {
 		// we're there!
+		particle.position.v.x = particle.target.v.x;
+		particle.position.v.y = particle.target.v.y;
+
 		return;
 	} else if (d < PROXIMITY_LIMIT) {
-		let m = map(d, 0, PROXIMITY_LIMIT, 0, MAX_SPEED);
+		let m = map(d, 0, PROXIMITY_LIMIT, 0, particle.MAX_SPEED);
 		desired.setMag(m);
 	} else {
-		desired.setMag(MAX_SPEED);
+		desired.setMag(particle.MAX_SPEED);
 	}
 	let steer = desired.sub(particle.velocity);
 	steer.limit(MAX_FORCE);
 	applyForce(particle, steer);
 }
 
-export function createParticle(x, y, tx, ty, talkative = false) {
+export function createParticle(x, y, tx, ty, talkative = false, type) {
 	return {
 		position: vector(x, y, 'position', talkative),
 		target: vector(tx, ty, 'target', talkative),
 		velocity: vector(0, 0, 'velocity', talkative),
-		acceleration: vector(0, 0, 'acceleration', talkative)
+		acceleration: vector(0, 0, 'acceleration', talkative),
+		MAX_SPEED: MIN_SPEED + Math.random() * (MAX_SPEED - MIN_SPEED),
+		type
 	};
 }
 

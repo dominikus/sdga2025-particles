@@ -44,8 +44,8 @@
 		RADIUS = BOXDIMS.w / nodesPerLine;
 		grid.forEach((country) => {
 			const countryOffset = vector(
-				Math.floor(xScale(country.x)) - BOXDIMS.w / 2 + 0.5,
-				Math.floor(yScale(country.y)) - BOXDIMS.h / 2 + 0.5
+				Math.floor(xScale(country.x)) + 0.5,
+				Math.floor(yScale(country.y)) + 0.5
 			);
 
 			const cnodes = nodes
@@ -75,12 +75,26 @@
 		grid.forEach((d) => {
 			const countryLevel = Math.floor(Math.random() * 5);
 			for (let i = 0; i < INDICATORS; i++) {
-				let p = createParticle(w / 2, h / 2, d.x, d.y);
+				let p = createParticle(w / 2, h / 2, w / 2, h / 2, false, 'indicator');
 				p.id = d.iso3c;
-				p.count = Math.random() * 100;
+				p.count = 0; // Math.random() * 100;
 				p.level = Math.max(0, Math.min(4, countryLevel + Math.floor(Math.random() * 4) - 2));
 				nodes.push(p);
 			}
+		});
+
+		grid.forEach((d) => {
+			let labelparticle = createParticle(
+				w / 2,
+				h / 2,
+				Math.floor(xScale(d.x)) + 0.5,
+				Math.floor(yScale(d.y)) + 0.5,
+				false,
+				'label'
+			);
+			labelparticle.id = d.iso3c;
+			labelparticle.count = 0; // Math.random() * 100;
+			nodes.push(labelparticle);
 		});
 
 		// layout nodes:
@@ -124,26 +138,20 @@
 							update(node);
 						}
 
-						ctx.fillStyle = colorFromLevel(node.level);
-						ctx.fillRect(node.position.v.x, node.position.v.y, RADIUS - 0.5, RADIUS - 0.5);
+						if (node.type === 'indicator') {
+							ctx.fillStyle = colorFromLevel(node.level);
+							ctx.fillRect(node.position.v.x, node.position.v.y, RADIUS - 0.5, RADIUS - 0.5);
+						} else if (node.type === 'label') {
+							ctx.font = 'bold 14px Open Sans, sans-serif';
+							ctx.textAlign = 'center';
+							ctx.fillStyle = '#000';
+
+							ctx.fillText(country.iso3c, node.position.v.x, node.position.v.y);
+						}
 						/*ctx.beginPath();
 						ctx.arc(node.x + RADIUS / 2, node.y + RADIUS / 2, RADIUS / 2 - 0.5, 0, 2 * Math.PI);
 						ctx.fill();*/
 					});
-
-				ctx.save();
-
-				ctx.translate(
-					Math.floor(xScale(country.x)) - BOXDIMS.w / 2 + 0.5,
-					Math.floor(yScale(country.y)) - BOXDIMS.h / 2 + 0.5
-				);
-				ctx.font = 'bold 14px Open Sans, sans-serif';
-				ctx.textAlign = 'center';
-				ctx.fillStyle = '#000';
-
-				ctx.fillText(country.iso3c, BOXDIMS.w / 2, BOXDIMS.h / 2 + 4);
-
-				ctx.restore();
 			});
 
 			frame++;
