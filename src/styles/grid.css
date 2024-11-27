@@ -1,0 +1,82 @@
+/* responsiveness: */
+
+/* grid: */
+:root {
+	--content-width: 1280px;
+
+	--grid-gutter: var(--space-m);
+	--col-1: calc((var(--content-width) - 11 * var(--grid-gutter)) / 12);
+	--col-2: calc(var(--col-1) * 2 + var(--grid-gutter));
+	--col-3: calc(var(--col-1) * 3 + var(--grid-gutter) * 2);
+	--col-4: calc(var(--col-1) * 4 + var(--grid-gutter) * 3);
+	--col-5: calc(var(--col-1) * 5 + var(--grid-gutter) * 4);
+	--col-6: calc(var(--col-1) * 6 + var(--grid-gutter) * 5);
+	--col-7: calc(var(--col-1) * 7 + var(--grid-gutter) * 6);
+	--col-8: calc(var(--col-1) * 8 + var(--grid-gutter) * 7);
+	--col-9: calc(var(--col-1) * 9 + var(--grid-gutter) * 8);
+	--col-10: calc(var(--col-1) * 10 + var(--grid-gutter) * 9);
+	--col-11: calc(var(--col-1) * 11 + var(--grid-gutter) * 10);
+	--col-12: var(--content-width);
+}
+
+@media screen and (max-width: 1300px) {
+	:root {
+		--content-width: calc(100vw - 2 * var(--space-m));
+	}
+}
+
+/* 6-col layout with mobile navigation: */
+@media screen and (max-width: 992px) {
+	:root {
+		--content-width: calc(100vw - 2 * var(--space-s));
+		--col-1: calc(100vw - 5 * var(--grid-gutter)) / 6;
+		--col-6: var(--content-width);
+		--col-7: var(--col-6);
+		--col-8: var(--col-6);
+		--col-9: var(--col-6);
+		--col-10: var(--col-6);
+		--col-11: var(--col-6);
+		--col-12: var(--col-6);
+	}
+}
+
+.gap {
+	gap: var(--grid-gutter);
+}
+
+.col-1 {
+	width: var(--col-1);
+}
+.col-2 {
+	width: var(--col-2);
+}
+.col-3 {
+	width: var(--col-3);
+}
+.col-4 {
+	width: var(--col-4);
+}
+.col-5 {
+	width: var(--col-5);
+}
+.col-6 {
+	width: var(--col-6);
+}
+.col-7 {
+	width: var(--col-7);
+}
+.col-8 {
+	width: var(--col-8);
+}
+.col-9 {
+	width: var(--col-9);
+}
+.col-10 {
+	width: var(--col-10);
+}
+.col-11 {
+	width: var(--col-11);
+}
+.col-12 {
+	width: var(--col-12);
+}

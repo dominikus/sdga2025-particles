@@ -1,0 +1,25 @@
+body {
+	--background: #f9f6f0;
+	--background-light: #fcfbf9;
+	--background-dark: #f4e5df;
+	--highlight: #268862;
+	--highlight-dark: #1d583f;
+	--text: #2c2e35;
+	--text-lighter: #595b61;
+	--text-lightest: #85878b;
+	--boys: #1e467d;
+	--girls: #cc9b31;
+
+	--yellow: #cc9b31;
+	--yellow-darker: #ad8427;
+	--red: #8b3a38;
+	--green: #268862;
+	--green-darker: #1d583f;
+	--blue: #1e467d;
+	--orange: #bf5932;
+	--black: #2c2e35;
+	--grey: #595b61;
+	--grey-lighter: #85878b;
+	--grey-lightest: #c8cace;
+	--white: #fcfbf9;
+}

@@ -1,0 +1,107 @@
+/* Label styles */
+
+.vis text,
+.vis tspan {
+	white-space: nowrap;
+	stroke-width: 4px;
+	letter-spacing: 0.5px;
+	stroke: var(--background-ligt);
+	paint-order: stroke;
+	stroke-linejoin: round;
+	pointer-events: none;
+}
+
+.label,
+.vis text,
+.vis tspan {
+	font-weight: 500;
+	font-size: var(--font-size-s);
+}
+
+.vis text.start,
+.vis tspan.start {
+	text-anchor: start;
+}
+
+.vis text.middle,
+.vis tspan.middle {
+	text-anchor: middle;
+}
+
+.vis text.end,
+.vis tspan.end {
+	text-anchor: end;
+}
+
+.vis text.central,
+.vis tspan.central {
+	dominant-baseline: central;
+}
+.vis text.no-stroke,
+.vis tspan.no-stroke {
+	stroke: none;
+}
+
+.vis text.normal {
+	font-weight: 400;
+	font-size: 12px;
+}
+
+.label.caps,
+.vis text.caps {
+	text-transform: uppercase;
+	letter-spacing: 5%;
+}
+
+.label.lighter,
+.vis text.lighter,
+.vis tspan.lighter {
+	color: var(--text-lighter);
+	fill: var(--text-lighter);
+}
+
+.label.white,
+.vis text.white,
+.vis tspan.white {
+	color: var(--white);
+	fill: var(--white);
+	stroke: none;
+}
+
+.label.centered,
+.vis text.centered,
+.vis tspan.centered {
+	text-align: center;
+}
+
+.label.m,
+.vis text.m,
+.vis tspan.m {
+	font-size: var(--font-size-m);
+}
+
+/* Semantic label classes */
+
+path:focus,
+circle:focus,
+rect:focus {
+	outline: none;
+}
+/* Visual marks */
+
+.vis .annotated-area {
+	fill: url(#diagonalHatch);
+	stroke: var(--grey-lightest);
+}
+.vis .emphasisbg {
+	stroke: white;
+	stroke-width: 4;
+	fill: none;
+	pointer-events: none;
+}
+.vis .emphasis {
+	stroke-width: 1.5;
+	stroke: var(--color-theme-text);
+	fill: none;
+	pointer-events: none;
+}
