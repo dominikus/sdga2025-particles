@@ -15,9 +15,9 @@
 	let RADIUS = 3;
 	const INDICATORS = 249;
 
-	const BOXDIMS = { w: 20, h: 20 };
+	const BOXDIMS = { w: 60, h: 60 };
 
-	let sortmode = 'levels';
+	let sortmode = 'goals';
 	let layout = 'geo';
 
 	let canvas, ctx;
@@ -47,48 +47,35 @@
 
 	function layoutNodes(nodes) {
 		frame = 0;
-
-		let indicatorCount = nodes.filter((d) => d.country === grid[0].iso3c).length;
-		console.log(indicatorCount);
-
 		if (layout === 'geo') {
-			let nodesPerLine = Math.ceil(Math.sqrt(indicatorCount));
-			RADIUS = Math.ceil(BOXDIMS.w / nodesPerLine);
-			console.log(RADIUS);
-
+			let nodesPerLine = Math.ceil(Math.sqrt(INDICATORS));
+			RADIUS = BOXDIMS.w / nodesPerLine;
 			grid.forEach((country) => {
-				const countryOffset = new PIXI.Point(xScale(country.x), yScale(country.y));
+				const countryOffset = new PIXI.Point(
+					Math.floor(xScale(country.x)) + 0.5,
+					Math.floor(yScale(country.y)) + 0.5
+				);
 
 				const cnodes = nodes
 					.filter((d) => d.country === country.iso3c)
 					.sort(sortmode === 'goals' ? sortByNone : sortByLevel);
 				cnodes.forEach((d, i) => {
-					if (d.type === 'indicator') {
-						d.target.x = Math.floor(i % nodesPerLine) * RADIUS + countryOffset.x;
-						d.target.y = Math.floor(i / nodesPerLine) * RADIUS + countryOffset.y;
-					} else {
-						d.target.x = countryOffset.x + nodesPerLine * RADIUS * 0.5;
-						d.target.y = countryOffset.y;
-					}
+					d.target.x = (i % nodesPerLine) * RADIUS + countryOffset.x;
+					d.target.y = Math.floor(i / nodesPerLine) * RADIUS + countryOffset.y;
 				});
 			});
 		} else if (layout === 'goals') {
-			const iw = w - 10;
-			const ih = h - 10;
+			const iw = w - 100;
+			const ih = h - 100;
 
 			grid.forEach((country, i) => {
-				const countryOffset = new PIXI.Point(0, 10 + (i * ih) / grid.length);
+				const countryOffset = new PIXI.Point(0, 50 + (i * ih) / grid.length);
 
 				const cnodes = nodes.filter((d) => d.country === country.iso3c).sort(sortByNone);
 
 				cnodes.forEach((d, i) => {
-					if (d.type === 'indicator') {
-						d.target.x = d.sdgGoal * (iw / 17) + d.sdgTargetCount * RADIUS + countryOffset.x;
-						d.target.y = countryOffset.y + d.sdgIndicator * RADIUS;
-					} else {
-						d.target.x = countryOffset.x;
-						d.target.y = countryOffset.y;
-					}
+					d.target.x = d.sdgGoal * (iw / 17) + d.sdgTargetCount * RADIUS + countryOffset.x;
+					d.target.y = countryOffset.y + d.sdgIndicator * RADIUS;
 				});
 			});
 		}
@@ -96,8 +83,8 @@
 	}
 
 	async function setup() {
-		w = 1280; //window.innerWidth;
-		h = 800; // window.innerHeight;
+		w = window.innerWidth;
+		h = window.innerHeight;
 
 		// init pixi.js:
 		/*const app = new Application();
@@ -111,30 +98,31 @@
 		const renderer = await PIXI.autoDetectRenderer({
 			canvas,
 			width: w,
-			height: h,
+			height: h - 30,
 			backgroundColor: '#f6f5f3',
-			antialias: true,
+			antialias: false,
 			clearBeforeRender: true
 		});
 
 		const stats = new Stats(renderer);
 
-		const baseContainer = new PIXI.Container();
-
-		const particleContainer = new PIXI.ParticleContainer({
+		const container = new PIXI.ParticleContainer({
 			// this is the default, but we show it here for clarity
 			dynamicProperties: {
 				position: true, // Allow dynamic position changes (default)
-				scale: true, // Static scale for extra performance
+				scale: false, // Static scale for extra performance
 				rotation: false, // Static rotation
 				color: false
-			}
+			},
+			roundPixels: true
 		});
 
-		const spriteContainer = new PIXI.Container();
-
-		baseContainer.addChild(particleContainer);
-		baseContainer.addChild(spriteContainer);
+		const con2 = new PIXI.Container();
+		/*const test = new Sprite({
+			texture: createColoredTexture(0xff0000, 100, 100),
+			position: new Point(300, 300)
+		});
+		con2.addChild(test);*/
 
 		function createColoredTexture(color, width = 10, height = 10) {
 			const graphics = new PIXI.Graphics();
@@ -154,19 +142,15 @@
 
 		const tex = PIXI.Texture.WHITE; //createColoredTexture(0xffffff, RADIUS, RADIUS);
 
-		let indicatorNum = {};
-		for (let goal = 1; goal <= 17; goal++) {
-			indicatorNum[goal] = 2 + Math.floor(Math.random() * 2);
-		}
-
 		grid.forEach((d) => {
+			let indicount = 0;
+
 			const countryLevel = Math.floor(Math.random() * 5);
 			for (let goal = 1; goal <= 17; goal++) {
-				let indicount = 0;
-				const targets = goalTargets.filter((d) => +d.goal === goal);
+				if (indicount < INDICATORS) {
+					const targets = goalTargets.filter((d) => +d.goal === goal);
 
-				targets.forEach((target, targetCount) => {
-					if (indicount < indicatorNum[goal]) {
+					targets.forEach((target, targetCount) => {
 						for (let i = 0; i < target.indicators; i++) {
 							let p = createParticle(w / 2, h / 2, w / 2, h / 2, false, 'indicator');
 
@@ -187,40 +171,42 @@
 								scaleY: RADIUS,
 								tint: colorFromLevel(p.level)
 							});
-							particleContainer.addParticle(p.view);
+							container.addParticle(p.view);
 
+							/*
+				const g = new Graphics();
+				g.rect(0, 0, RADIUS, RADIUS);
+				g.fill(colorFromLevel(p.level));
+*/
+
+							/*const g = new PIXI.Sprite({ texture: createColoredTexture(colorFromLevel(p.level)) });
+						g.width = RADIUS * 1.3 - 1;
+						g.height = RADIUS * 1.3 - 1;
+						//g.tint = colorFromLevel(p.level);
+
+						con2.addChild(g);
+
+						p.view = g;
+*/
 							nodes.push(p);
 						}
-						indicount++;
-					}
-				});
+					});
+					indicount++;
+				}
 			}
-		});
-
-		const textStyle = new PIXI.TextStyle({
-			fontFamily: 'Arial',
-			fontSize: 12,
-			fontWeight: 'regular'
 		});
 
 		grid.forEach((d) => {
 			let labelparticle = createParticle(
 				w / 2,
 				h / 2,
-				Math.floor(xScale(d.x)),
-				Math.floor(yScale(d.y)),
+				Math.floor(xScale(d.x)) + 0.5,
+				Math.floor(yScale(d.y)) + 0.5,
 				false,
 				'label'
 			);
-			labelparticle.country = d.iso3c;
+			labelparticle.id = d.iso3c;
 			labelparticle.count = 0; // Math.random() * 100;
-
-			labelparticle.view = new PIXI.Text({
-				text: d.iso3c,
-				style: textStyle
-			});
-			labelparticle.view.anchor = new PIXI.Point(0.5, 0.5);
-			spriteContainer.addChild(labelparticle.view);
 			nodes.push(labelparticle);
 		});
 
@@ -252,29 +238,27 @@
 		function render() {
 			grid.forEach((country) => {
 				countryNodes[country.iso3c].forEach((node) => {
-					//if (node.type === 'indicator') {
-					seek(node, node.target);
-
-					update(node);
-					//node.position.v.x += Math.random() * 5 - 2.5;
-					//node.position.v.y += Math.random() * 5 - 2.5;
-
-					// transfer position to pixi.js:
-
 					if (node.type === 'indicator') {
+						seek(node, node.target);
+
+						update(node);
+						//node.position.v.x += Math.random() * 5 - 2.5;
+						//node.position.v.y += Math.random() * 5 - 2.5;
+
+						// transfer position to pixi.js:
+
 						// particle mode:
 						node.view.x = node.position.x;
 						node.view.y = node.position.y;
-					} else {
+
 						// sprite mode:
-						node.view.position.x = node.position.x;
-						node.view.position.y = node.position.y;
+						/*node.view.position.x = node.position.x;
+						node.view.position.y = node.position.y;*/
 					}
-					//}
 				});
 			});
 
-			renderer.render(baseContainer);
+			renderer.render(container);
 
 			requestAnimationFrame(render);
 		}
