@@ -15,7 +15,7 @@
 	let RADIUS = 3;
 	const INDICATORS = 249;
 
-	const BOXDIMS = { w: 20, h: 20 };
+	const BOXDIMS = { w: 28, h: 28 };
 
 	let sortmode = 'levels';
 	let layout = 'geo';
@@ -31,6 +31,9 @@
 	let yScale = scaleLinear().domain([0, 22]);
 
 	let isSetup = false;
+
+	let particleContainer;
+	let countryLevels;
 
 	function colorFromLevel(level) {
 		const col = new PIXI.Color([0xf75781, 0xfda696, 0xfbe9aa, 0x60d1c3, 0x009ee9][level]);
@@ -66,32 +69,76 @@
 					if (d.type === 'indicator') {
 						d.target.x = Math.floor(i % nodesPerLine) * RADIUS + countryOffset.x;
 						d.target.y = Math.floor(i / nodesPerLine) * RADIUS + countryOffset.y;
+
+						d.scaleTarget = RADIUS;
 					} else {
 						d.target.x = countryOffset.x + nodesPerLine * RADIUS * 0.5;
 						d.target.y = countryOffset.y;
 					}
 				});
 			});
+
+			nodes
+				.filter((d) => d.type === 'goallabel')
+				.forEach((d) => {
+					//d.target.x = 5 * RADIUS * d.sdgGoal + 50;
+					d.target.y = -20;
+				});
 		} else if (layout === 'goals') {
 			const iw = w - 10;
 			const ih = h - 10;
 
+			countryLevels.sort((a, b) => b.value - a.value);
+
 			grid.forEach((country, i) => {
-				const countryOffset = new PIXI.Point(0, 10 + (i * ih) / grid.length);
+				RADIUS = 10;
+				// const countryOffset = new PIXI.Point(0, 10 + (i * ih) / grid.length);
+
+				let yVal =
+					sortmode === 'goals' ? i : countryLevels.findIndex((d) => d.country === country.iso3c);
+
+				const countryOffset = new PIXI.Point(50, 40 + yVal * 12);
 
 				const cnodes = nodes.filter((d) => d.country === country.iso3c).sort(sortByNone);
 
-				cnodes.forEach((d, i) => {
-					if (d.type === 'indicator') {
-						d.target.x = d.sdgGoal * (iw / 17) + d.sdgTargetCount * RADIUS + countryOffset.x;
-						d.target.y = countryOffset.y + d.sdgIndicator * RADIUS;
-					} else {
+				for (let goal = 1; goal <= 17; goal++) {
+					cnodes
+						.filter((d) => d.sdgGoal === goal)
+						.sort((a, b) => {
+							if (sortmode === 'goals') {
+								return 0;
+							} else {
+								return b.level - a.level;
+							}
+						})
+						.forEach((d, i) => {
+							if (d.type === 'indicator') {
+								d.target.x = d.sdgGoal * (4 * RADIUS) + i * RADIUS + countryOffset.x;
+								d.target.y = countryOffset.y; // + d.sdgIndicator * RADIUS;
+
+								d.scaleTarget = RADIUS;
+							}
+						});
+				}
+
+				cnodes
+					.filter((d) => d.type === 'label')
+					.forEach((d) => {
 						d.target.x = countryOffset.x;
 						d.target.y = countryOffset.y;
-					}
-				});
+					});
 			});
+
+			nodes
+				.filter((d) => d.type === 'goallabel')
+				.forEach((d) => {
+					d.target.x = 4 * RADIUS * d.sdgGoal + 50;
+					d.target.y = 20;
+				});
 		}
+
+		particleContainer.update();
+
 		console.log(nodes);
 	}
 
@@ -111,7 +158,7 @@
 		const renderer = await PIXI.autoDetectRenderer({
 			canvas,
 			width: w,
-			height: h,
+			height: 2500,
 			backgroundColor: '#f6f5f3',
 			antialias: true,
 			clearBeforeRender: true
@@ -121,7 +168,7 @@
 
 		const baseContainer = new PIXI.Container();
 
-		const particleContainer = new PIXI.ParticleContainer({
+		particleContainer = new PIXI.ParticleContainer({
 			// this is the default, but we show it here for clarity
 			dynamicProperties: {
 				position: true, // Allow dynamic position changes (default)
@@ -158,43 +205,45 @@
 		for (let goal = 1; goal <= 17; goal++) {
 			indicatorNum[goal] = 2 + Math.floor(Math.random() * 2);
 		}
+		console.log(indicatorNum);
 
 		grid.forEach((d) => {
 			const countryLevel = Math.floor(Math.random() * 5);
 			for (let goal = 1; goal <= 17; goal++) {
 				let indicount = 0;
-				const targets = goalTargets.filter((d) => +d.goal === goal);
+				/*const targets = goalTargets.filter((d) => +d.goal === goal);
 
 				targets.forEach((target, targetCount) => {
-					if (indicount < indicatorNum[goal]) {
-						for (let i = 0; i < target.indicators; i++) {
-							let p = createParticle(w / 2, h / 2, w / 2, h / 2, false, 'indicator');
+					for (let i = 0; i < target.indicators; i++) {*/
+				while (indicount < indicatorNum[goal]) {
+					let p = createParticle(w / 2, h / 2, w / 2, h / 2, false, 'indicator');
 
-							p.sdgGoal = goal;
-							p.sdgTarget = target.target;
-							p.sdgTargetCount = targetCount;
-							p.sdgIndicator = i;
+					p.sdgGoal = goal;
+					p.sdgTarget = 1; // target.target;
+					p.sdgTargetCount = indicount; //targetCount;
+					p.sdgIndicator = 1; //i;
 
-							p.country = d.iso3c;
-							p.count = 0; // Math.random() * 100;
-							p.level = Math.max(0, Math.min(4, countryLevel + Math.floor(Math.random() * 4) - 2));
+					p.country = d.iso3c;
+					p.count = 0; // Math.random() * 100;
+					p.level = Math.max(0, Math.min(4, countryLevel + Math.floor(Math.random() * 4) - 2));
 
-							p.view = new PIXI.Particle({
-								texture: tex,
-								x: Math.random() * w,
-								y: Math.random() * h,
-								scaleX: RADIUS,
-								scaleY: RADIUS,
-								tint: colorFromLevel(p.level)
-							});
-							particleContainer.addParticle(p.view);
+					p.view = new PIXI.Particle({
+						texture: tex,
+						x: Math.random() * w,
+						y: Math.random() * h,
+						scaleX: RADIUS,
+						scaleY: RADIUS,
+						tint: colorFromLevel(p.level)
+					});
+					p.scaleTarget = RADIUS;
+					particleContainer.addParticle(p.view);
 
-							nodes.push(p);
-						}
-						indicount++;
-					}
-				});
+					nodes.push(p);
+					indicount++;
+				}
 			}
+			//});
+			//}
 		});
 
 		const textStyle = new PIXI.TextStyle({
@@ -224,10 +273,33 @@
 			nodes.push(labelparticle);
 		});
 
+		for (let goal = 1; goal <= 17; goal++) {
+			let goalparticle = createParticle(w / 2, -20, -50, -50, false, 'goallabel');
+			goalparticle.count = 0;
+			goalparticle.sdgGoal = goal;
+
+			goalparticle.view = new PIXI.Text({
+				text: `SDG ${goal}`,
+				style: textStyle
+			});
+			//goalparticle.view.anchor = new PIXI.Point(0.5, 0.5);
+			spriteContainer.addChild(goalparticle.view);
+			nodes.push(goalparticle);
+		}
+
 		const countryNodes = {};
 		grid.forEach((d) => {
 			countryNodes[d.iso3c] = nodes.filter((dd) => dd.country === d.iso3c);
 		});
+
+		countryLevels = [];
+		grid.forEach((country) => {
+			countryLevels.push({
+				country: country.iso3c,
+				value: countryNodes[country.iso3c].reduce((acc, val) => (val.level ?? 0) + acc, 0)
+			});
+		});
+		console.log(countryLevels);
 
 		// layout nodes:
 		layoutNodes(nodes);
@@ -250,29 +322,47 @@
     */
 
 		function render() {
-			grid.forEach((country) => {
-				countryNodes[country.iso3c].forEach((node) => {
-					//if (node.type === 'indicator') {
-					seek(node, node.target);
+			let isDirty = false;
 
-					update(node);
-					//node.position.v.x += Math.random() * 5 - 2.5;
-					//node.position.v.y += Math.random() * 5 - 2.5;
+			nodes.forEach((node) => {
+				//if (node.type === 'indicator') {
+				seek(node, node.target);
 
-					// transfer position to pixi.js:
+				update(node);
 
-					if (node.type === 'indicator') {
-						// particle mode:
-						node.view.x = node.position.x;
-						node.view.y = node.position.y;
-					} else {
-						// sprite mode:
-						node.view.position.x = node.position.x;
-						node.view.position.y = node.position.y;
+				//node.position.v.x += Math.random() * 5 - 2.5;
+				//node.position.v.y += Math.random() * 5 - 2.5;
+
+				// transfer position to pixi.js:
+
+				if (node.type === 'indicator') {
+					if (node.scaleTarget !== node.view.scaleX) {
+						let diff = node.scaleTarget - node.view.scaleX;
+						diff *= 0.01;
+						if (Math.abs(diff) < 0.001) {
+							diff = node.scaleTarget - node.view.scaleX;
+						}
+
+						node.view.scaleX += diff;
+						node.view.scaleY += diff;
+
+						isDirty = true;
 					}
-					//}
-				});
+
+					// particle mode:
+					node.view.x = node.position.x;
+					node.view.y = node.position.y;
+				} else {
+					// sprite mode:
+					node.view.position.x = node.position.x;
+					node.view.position.y = node.position.y;
+				}
+				//}
 			});
+
+			if (isDirty) {
+				particleContainer.update();
+			}
 
 			renderer.render(baseContainer);
 
@@ -352,8 +442,10 @@
 
 <canvas bind:this={canvas} />
 
-<button on:click={sort}>toggle sort mode</button>
-<button on:click={changeLayout}>toggle {layout}</button>
+<div class="button-panel">
+	<button on:click={sort}>toggle sort mode</button>
+	<button on:click={changeLayout}>toggle {layout}</button>
+</div>
 
 <style>
 	:global(div#stats) {
@@ -365,5 +457,11 @@
 		height: max(100px, 6vh, 6vw);
 		opacity: 0.8;
 		user-select: none;
+	}
+
+	.button-panel {
+		position: absolute;
+		right: 0;
+		top: 130px;
 	}
 </style>
