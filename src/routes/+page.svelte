@@ -16,6 +16,22 @@
 	$: console.log(goalTargets);
 </script>
 
+<img src="img/legend.png" />
 <!--<Particles />-->
 <!--<ParticleBoxes />-->
 <PixiParticleBoxes {goalTargets} />
+
+<style>
+	img {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 1000px;
+	}
+
+	:global(canvas) {
+		position: absolute;
+		top: 0px;
+		left: 0;
+	}
+</style>

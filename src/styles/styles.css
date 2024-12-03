@@ -1,6 +1,6 @@
 body {
 	font-family: 'Work Sans', sans-serif;
-	background-color: var(--background-light);
+	background-color: var(--background);
 	font-weight: 300;
 	color: var(--text);
 }

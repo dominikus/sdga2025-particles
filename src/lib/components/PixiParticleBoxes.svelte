@@ -11,14 +11,14 @@
 
 	$: console.log(grid);
 
-	const MARGIN = 20;
+	const MARGIN = { x: 20, y: 120 };
 	let RADIUS = 3;
 	const INDICATORS = 249;
 
 	const BOXDIMS = { w: 28, h: 28 };
 
-	let sortmode = 'levels';
-	let layout = 'geo';
+	let sortmode = 'goals';
+	let layout = 'intro';
 
 	let canvas, ctx;
 
@@ -30,10 +30,16 @@
 	let xScale = scaleLinear().domain([0, 29]);
 	let yScale = scaleLinear().domain([0, 22]);
 
+	let scatterXScale = scaleLinear().domain([0, 1]);
+	let scatterYScale = scaleLinear().domain([1, 0]);
+
+	let barXScale = scaleLinear().domain([0, 1]);
+
 	let isSetup = false;
 
 	let particleContainer;
 	let countryLevels;
+	let introlabel;
 
 	function colorFromLevel(level) {
 		const col = new PIXI.Color([0xf75781, 0xfda696, 0xfbe9aa, 0x60d1c3, 0x009ee9][level]);
@@ -54,7 +60,20 @@
 		let indicatorCount = nodes.filter((d) => d.country === grid[0].iso3c).length;
 		console.log(indicatorCount);
 
-		if (layout === 'geo') {
+		if (layout === 'intro') {
+			nodes.forEach((d) => {
+				if (d.type === 'indicator') {
+					d.target.x = w * 0.4 - 35;
+					d.target.y = h * 0.4 - 25;
+
+					d.scaleTarget.x = 50;
+					d.scaleTarget.y = 50;
+				} else {
+					d.target.x = d.homepoint.x;
+					d.target.y = d.homepoint.y;
+				}
+			});
+		} else if (layout === 'geo' && sortmode !== 'barchart') {
 			let nodesPerLine = Math.ceil(Math.sqrt(indicatorCount));
 			RADIUS = Math.ceil(BOXDIMS.w / nodesPerLine);
 			console.log(RADIUS);
@@ -62,89 +81,213 @@
 			grid.forEach((country) => {
 				const countryOffset = new PIXI.Point(xScale(country.x), yScale(country.y));
 
-				const cnodes = nodes
-					.filter((d) => d.country === country.iso3c)
-					.sort(sortmode === 'goals' ? sortByNone : sortByLevel);
-				cnodes.forEach((d, i) => {
-					if (d.type === 'indicator') {
-						d.target.x = Math.floor(i % nodesPerLine) * RADIUS + countryOffset.x;
-						d.target.y = Math.floor(i / nodesPerLine) * RADIUS + countryOffset.y;
+				if (sortmode === 'goals' || sortmode === 'levels') {
+					const cnodes = nodes
+						.filter((d) => d.country === country.iso3c)
+						.sort(sortmode === 'goals' ? sortByNone : sortByLevel);
+					cnodes.forEach((d, i) => {
+						if (d.type === 'indicator') {
+							d.target.x = Math.floor(i % nodesPerLine) * RADIUS + countryOffset.x;
+							d.target.y = Math.floor(i / nodesPerLine) * RADIUS + countryOffset.y;
 
-						d.scaleTarget = RADIUS;
-					} else {
-						d.target.x = countryOffset.x + nodesPerLine * RADIUS * 0.5;
-						d.target.y = countryOffset.y;
-					}
-				});
+							d.scaleTarget.x = d.scaleTarget.y = RADIUS;
+						} else {
+							d.target.x = countryOffset.x + nodesPerLine * RADIUS * 0.5;
+							d.target.y = countryOffset.y;
+						}
+					});
+				} else if (sortmode === 'focus') {
+					// focus mode
+					const cnodes = nodes.filter((d) => d.country === country.iso3c);
+
+					cnodes.forEach((node) => {
+						if (node.type === 'indicator') {
+							node.target.x = node.homepoint.x;
+							node.target.y = node.homepoint.y;
+						}
+					});
+
+					// keep the focus nodes:
+					cnodes
+						.filter((d) => d.sdgTargetCount === 0 && d.sdgGoal === 1)
+						.forEach((d, i) => {
+							d.target.x = countryOffset.x;
+							d.target.y = countryOffset.y;
+
+							d.scaleTarget.x = d.scaleTarget.y = BOXDIMS.w;
+						});
+
+					// labels
+					cnodes
+						.filter((d) => d.type === 'label')
+						.forEach((d, i) => {
+							d.target.x = countryOffset.x + nodesPerLine * RADIUS * 0.5;
+							d.target.y = countryOffset.y;
+						});
+				} else if (sortmode === 'absoluteprogress') {
+					// focus mode
+					const cnodes = nodes.filter((d) => d.country === country.iso3c);
+
+					cnodes.forEach((node) => {
+						if (node.type === 'indicator') {
+							node.target.x = node.homepoint.x;
+							node.target.y = node.homepoint.y;
+						}
+					});
+
+					// keep the focus nodes:
+					cnodes
+						.filter((d) => d.sdgTargetCount === 0 && d.sdgGoal === 1)
+						.forEach((d, i) => {
+							d.target.x = countryOffset.x + BOXDIMS.w / 2 - (BOXDIMS.w * d.valuePP) / 2;
+							d.target.y = countryOffset.y + BOXDIMS.h / 2 - (BOXDIMS.w * d.valuePP) / 2;
+
+							d.scaleTarget.x = d.scaleTarget.y = BOXDIMS.w * (d.valuePP * 0.8 + 0.2);
+						});
+
+					// labels
+					cnodes
+						.filter((d) => d.type === 'label')
+						.forEach((d, i) => {
+							d.target.x = countryOffset.x + nodesPerLine * RADIUS * 0.5;
+							d.target.y = countryOffset.y;
+						});
+				} else if (sortmode === 'scatterplot') {
+					const cnodes = nodes.filter((d) => d.country === country.iso3c);
+
+					cnodes.forEach((node) => {
+						if (node.type === 'indicator') {
+							node.target.x = node.homepoint.x;
+							node.target.y = node.homepoint.y;
+						}
+					});
+
+					RADIUS = BOXDIMS.w / 3;
+
+					// keep the focus nodes:
+					let cnode = cnodes.find((d) => d.sdgTargetCount === 0 && d.sdgGoal === 1);
+
+					cnode.target.x = scatterXScale(cnode.valueAbs);
+					cnode.target.y = scatterYScale(cnode.valuePP);
+
+					cnode.scaleTarget.x = cnode.scaleTarget.y = RADIUS;
+
+					// labels
+					cnodes
+						.filter((d) => d.type === 'label')
+						.forEach((d, i) => {
+							d.target.x = cnode.target.x + 5;
+							d.target.y = cnode.target.y - 5;
+						});
+				}
 			});
 
 			nodes
 				.filter((d) => d.type === 'goallabel')
 				.forEach((d) => {
 					//d.target.x = 5 * RADIUS * d.sdgGoal + 50;
-					d.target.y = -20;
+					d.target.y = d.homepoint.y;
 				});
-		} else if (layout === 'goals') {
-			const iw = w - 10;
-			const ih = h - 10;
-
+		} else if (layout === 'goals' || sortmode === 'barchart') {
 			countryLevels.sort((a, b) => b.value - a.value);
 
-			grid.forEach((country, i) => {
-				RADIUS = 10;
-				// const countryOffset = new PIXI.Point(0, 10 + (i * ih) / grid.length);
+			grid
+				.sort((a, b) =>
+					sortmode !== 'barchart'
+						? a.iso3c.localeCompare(b.iso3c)
+						: nodes.find((d) => d.country === b.iso3c && d.sdgTargetCount === 0 && d.sdgGoal === 1)
+								.valueAbsIndex -
+							nodes.find((d) => d.country === a.iso3c && d.sdgTargetCount === 0 && d.sdgGoal === 1)
+								.valueAbsIndex
+				)
+				.forEach((country, i) => {
+					RADIUS = 10;
+					// const countryOffset = new PIXI.Point(0, 10 + (i * ih) / grid.length);
 
-				let yVal =
-					sortmode === 'goals' ? i : countryLevels.findIndex((d) => d.country === country.iso3c);
+					let yVal =
+						sortmode === 'goals' || sortmode === 'barchart'
+							? i
+							: countryLevels.findIndex((d) => d.country === country.iso3c);
 
-				const countryOffset = new PIXI.Point(50, 40 + yVal * 12);
+					const countryOffset = new PIXI.Point(50, MARGIN.y + yVal * 12);
 
-				const cnodes = nodes.filter((d) => d.country === country.iso3c).sort(sortByNone);
+					const cnodes = nodes.filter((d) => d.country === country.iso3c).sort(sortByNone);
 
-				for (let goal = 1; goal <= 17; goal++) {
+					for (let goal = 1; goal <= 17; goal++) {
+						if (sortmode !== 'barchart') {
+							cnodes
+								.filter((d) => d.sdgGoal === goal)
+								.sort((a, b) => {
+									if (sortmode === 'goals') {
+										return 0;
+									} else {
+										return b.level - a.level;
+									}
+								})
+								.forEach((d, i) => {
+									if (d.type === 'indicator') {
+										d.target.x = d.sdgGoal * (4 * RADIUS) + i * RADIUS + countryOffset.x;
+										d.target.y = countryOffset.y; // + d.sdgIndicator * RADIUS;
+
+										d.scaleTarget.x = d.scaleTarget.y = RADIUS;
+									}
+								});
+						} else {
+							if (sortmode === 'barchart') {
+								const cnodes = nodes.filter((d) => d.country === country.iso3c);
+
+								cnodes.forEach((node) => {
+									if (node.type === 'indicator') {
+										node.target.x = node.homepoint.x;
+										node.target.y = node.homepoint.y;
+									}
+								});
+
+								RADIUS = BOXDIMS.w / 6;
+
+								// keep the focus nodes:
+								cnodes
+									.filter((d) => d.sdgTargetCount === 0 && d.sdgGoal === 1)
+									.forEach((d, i) => {
+										d.target.x = countryOffset.x;
+										d.target.y = countryOffset.y;
+
+										d.scaleTarget.x = barXScale(d.valueAbs);
+									});
+							}
+						}
+					}
+
 					cnodes
-						.filter((d) => d.sdgGoal === goal)
-						.sort((a, b) => {
-							if (sortmode === 'goals') {
-								return 0;
-							} else {
-								return b.level - a.level;
-							}
-						})
-						.forEach((d, i) => {
-							if (d.type === 'indicator') {
-								d.target.x = d.sdgGoal * (4 * RADIUS) + i * RADIUS + countryOffset.x;
-								d.target.y = countryOffset.y; // + d.sdgIndicator * RADIUS;
-
-								d.scaleTarget = RADIUS;
-							}
+						.filter((d) => d.type === 'label')
+						.forEach((d) => {
+							d.target.x = countryOffset.x;
+							d.target.y = countryOffset.y + 6;
 						});
-				}
-
-				cnodes
-					.filter((d) => d.type === 'label')
-					.forEach((d) => {
-						d.target.x = countryOffset.x;
-						d.target.y = countryOffset.y;
-					});
-			});
+				});
 
 			nodes
 				.filter((d) => d.type === 'goallabel')
 				.forEach((d) => {
-					d.target.x = 4 * RADIUS * d.sdgGoal + 50;
-					d.target.y = 20;
+					d.homepoint.x = d.target.x = 4 * RADIUS * d.sdgGoal + 50;
+					d.target.y = sortmode === 'barchart' ? -20 : MARGIN.y - 20;
 				});
 		}
 
 		particleContainer.update();
+
+		if (layout === 'intro') {
+			introlabel.alpha = 1;
+		} else {
+			introlabel.alpha = 0;
+		}
 
 		console.log(nodes);
 	}
 
 	async function setup() {
 		w = 1280; //window.innerWidth;
-		h = 800; // window.innerHeight;
+		h = 1200; // window.innerHeight;
 
 		// init pixi.js:
 		/*const app = new Application();
@@ -159,7 +302,8 @@
 			canvas,
 			width: w,
 			height: 2500,
-			backgroundColor: '#f6f5f3',
+			backgroundAlpha: 0,
+			//backgroundColor: '#384075',
 			antialias: true,
 			clearBeforeRender: true
 		});
@@ -187,25 +331,38 @@
 			const graphics = new PIXI.Graphics();
 
 			// Draw a filled rectangle with the desired color
-			graphics.rect(0, 0, width, height);
+			//graphics.rect(0, 0, width, height);
+			//graphics.fill(color);
+			// Draw a filled circle with the desired color
+			graphics.ellipse(width / 2, height / 2, width, height);
 			graphics.fill(color);
 
 			// Generate a texture from the graphics
 			return renderer.generateTexture(graphics);
 		}
 
-		xScale.range([MARGIN, w - MARGIN * 2]);
-		yScale.range([MARGIN, h - MARGIN * 2]);
+		xScale.range([MARGIN.x, w - MARGIN.x * 2]);
+		yScale.range([MARGIN.y, h - MARGIN.y * 2]);
+
+		scatterXScale.range([MARGIN.x, w - MARGIN.x * 2]);
+		scatterYScale.range([MARGIN.y, h - MARGIN.y * 2]);
+
+		barXScale.range([MARGIN.x, w * 0.6 - MARGIN.x * 2]);
 
 		nodes = [];
 
-		const tex = PIXI.Texture.WHITE; //createColoredTexture(0xffffff, RADIUS, RADIUS);
+		const tex = PIXI.Texture.WHITE; //createColoredTexture(0xffffff, 1, 1);
 
 		let indicatorNum = {};
+		let totalIndicatorNum = 0;
 		for (let goal = 1; goal <= 17; goal++) {
 			indicatorNum[goal] = 2 + Math.floor(Math.random() * 2);
+			totalIndicatorNum += indicatorNum[goal];
 		}
-		console.log(indicatorNum);
+		totalIndicatorNum *= grid.length;
+		console.log(indicatorNum, totalIndicatorNum);
+
+		let overallCount = 0;
 
 		grid.forEach((d) => {
 			const countryLevel = Math.floor(Math.random() * 5);
@@ -216,7 +373,14 @@
 				targets.forEach((target, targetCount) => {
 					for (let i = 0; i < target.indicators; i++) {*/
 				while (indicount < indicatorNum[goal]) {
-					let p = createParticle(w / 2, h / 2, w / 2, h / 2, false, 'indicator');
+					let p = createParticle(
+						w * 0.4 - 35,
+						h * 0.4 - 25,
+						w * 0.4 - 35,
+						h * 0.4 - 25,
+						false,
+						'indicator'
+					);
 
 					p.sdgGoal = goal;
 					p.sdgTarget = 1; // target.target;
@@ -225,37 +389,54 @@
 
 					p.country = d.iso3c;
 					p.count = 0; // Math.random() * 100;
+					p.valuePP = Math.random() * 0.8 + 0.2;
+					let scaledPP = (1 / 0.8) * (p.valuePP - 0.2);
+
+					p.valueAbs =
+						(Math.random() * (Math.cos(Math.PI + Math.PI * scaledPP) + 1)) / 2 +
+						Math.random() * Math.sin(scaledPP * Math.PI) * 0.5;
 					p.level = Math.max(0, Math.min(4, countryLevel + Math.floor(Math.random() * 4) - 2));
+					p.valuePP = Math.random() * 0.2 + p.level / 5;
+
+					p.homepoint = new PIXI.Point((w * overallCount) / totalIndicatorNum, -50);
 
 					p.view = new PIXI.Particle({
 						texture: tex,
-						x: Math.random() * w,
-						y: Math.random() * h,
 						scaleX: RADIUS,
 						scaleY: RADIUS,
 						tint: colorFromLevel(p.level)
 					});
-					p.scaleTarget = RADIUS;
+					p.scaleTarget = new PIXI.Point(RADIUS, RADIUS);
 					particleContainer.addParticle(p.view);
 
 					nodes.push(p);
 					indicount++;
+					overallCount++;
 				}
 			}
 			//});
 			//}
 		});
 
+		nodes
+			.filter((d) => d.sdgTargetCount === 0 && d.sdgGoal === 1)
+			.sort((a, b) => a.valueAbs - b.valueAbs)
+			.forEach((d, i) => {
+				d.valueAbsIndex = i;
+			});
+
 		const textStyle = new PIXI.TextStyle({
-			fontFamily: 'Arial',
+			fontFamily: 'Open Sans',
 			fontSize: 12,
-			fontWeight: 'regular'
+			fontWeight: 'bold',
+			fill: 0xffffff,
+			stroke: { color: 0x384075, width: 3 }
 		});
 
-		grid.forEach((d) => {
+		grid.forEach((d, i) => {
 			let labelparticle = createParticle(
-				w / 2,
-				h / 2,
+				(w * i) / grid.length,
+				-50,
 				Math.floor(xScale(d.x)),
 				Math.floor(yScale(d.y)),
 				false,
@@ -263,6 +444,7 @@
 			);
 			labelparticle.country = d.iso3c;
 			labelparticle.count = 0; // Math.random() * 100;
+			labelparticle.homepoint = new PIXI.Point((w * i) / grid.length, -50);
 
 			labelparticle.view = new PIXI.Text({
 				text: d.iso3c,
@@ -274,12 +456,13 @@
 		});
 
 		for (let goal = 1; goal <= 17; goal++) {
-			let goalparticle = createParticle(w / 2, -20, -50, -50, false, 'goallabel');
+			let goalparticle = createParticle(-50, -50, -50, -50, false, 'goallabel');
+			goalparticle.homepoint = new PIXI.Point(-50, -50);
 			goalparticle.count = 0;
 			goalparticle.sdgGoal = goal;
 
 			goalparticle.view = new PIXI.Text({
-				text: `SDG ${goal}`,
+				text: `${goal}`,
 				style: textStyle
 			});
 			//goalparticle.view.anchor = new PIXI.Point(0.5, 0.5);
@@ -301,25 +484,22 @@
 		});
 		console.log(countryLevels);
 
+		introlabel = new PIXI.Text({
+			text: '1 indicator X 1 country',
+			style: {
+				fontFamily: 'Open Sans',
+				fontSize: 28,
+				fontWeight: '600',
+				fill: 0xffffff,
+				stroke: { color: 0x384075, width: 3 }
+			}
+		});
+		introlabel.position.x = w * 0.4 + 50;
+		introlabel.position.y = h * 0.4 - 15;
+		spriteContainer.addChild(introlabel);
+
 		// layout nodes:
 		layoutNodes(nodes);
-
-		/*
-		const testVec = createParticle(0, 0, 100, 100, true);
-		console.log(testVec);
-		seek(testVec, testVec.target);
-		console.log(testVec);
-		update(testVec);
-		console.log(testVec);
-		update(testVec);
-		console.log(testVec);
-    
-
-		const vec = vector(0, 0, 'lol', true);
-		console.log(vec);
-		vec.add(vector(100, 100));
-		console.log(vec);
-    */
 
 		function render() {
 			let isDirty = false;
@@ -336,15 +516,22 @@
 				// transfer position to pixi.js:
 
 				if (node.type === 'indicator') {
-					if (node.scaleTarget !== node.view.scaleX) {
-						let diff = node.scaleTarget - node.view.scaleX;
-						diff *= 0.01;
-						if (Math.abs(diff) < 0.001) {
-							diff = node.scaleTarget - node.view.scaleX;
+					if (node.scaleTarget.x !== node.view.scaleX || node.scaleTarget.y !== node.view.scaleY) {
+						let diffX = node.scaleTarget.x - node.view.scaleX;
+						diffX *= 0.05;
+						if (Math.abs(diffX) < 0.001) {
+							diffX = node.scaleTarget.x - node.view.scaleX;
 						}
 
-						node.view.scaleX += diff;
-						node.view.scaleY += diff;
+						node.view.scaleX += diffX;
+
+						let diffY = node.scaleTarget.y - node.view.scaleY;
+						diffY *= 0.05;
+						if (Math.abs(diffY) < 0.001) {
+							diffY = node.scaleTarget.y - node.view.scaleY;
+						}
+
+						node.view.scaleY += diffY;
 
 						isDirty = true;
 					}
@@ -424,9 +611,18 @@
 	function sort() {
 		if (sortmode === 'goals') {
 			sortmode = 'levels';
-		} else {
+		} else if (sortmode === 'levels') {
+			sortmode = 'focus';
+		} else if (sortmode === 'focus') {
+			sortmode = 'absoluteprogress';
+		} else if (sortmode === 'absoluteprogress') {
+			sortmode = 'scatterplot';
+		} else if (sortmode === 'scatterplot') {
+			sortmode = 'barchart';
+		} else if (sortmode === 'barchart') {
 			sortmode = 'goals';
 		}
+		console.log(sortmode);
 		layoutNodes(nodes);
 	}
 
@@ -438,13 +634,48 @@
 		}
 		layoutNodes(nodes);
 	}
+
+	let modeIndex = 0;
+	let modes = [
+		{ layout: 'intro', sortmode: 'goals' },
+		{ layout: 'geo', sortmode: 'goals' },
+		{ layout: 'geo', sortmode: 'levels' },
+		{ layout: 'goals', sortmode: 'goals' },
+		{ layout: 'goals', sortmode: 'levels' },
+		{ layout: 'geo', sortmode: 'levels' },
+		{ layout: 'geo', sortmode: 'focus' },
+		{ layout: 'geo', sortmode: 'absoluteprogress' },
+		{ layout: 'geo', sortmode: 'scatterplot' },
+		{ layout: 'geo', sortmode: 'barchart' }
+	];
+
+	function back() {
+		step(-1);
+	}
+	function forward() {
+		step(1);
+	}
+
+	function step(dir) {
+		modeIndex += dir;
+		if (modeIndex >= modes.length) {
+			modeIndex = 0;
+		}
+		if (modeIndex < 0) {
+			modeIndex = modes.length - 1;
+		}
+
+		layout = modes[modeIndex].layout;
+		sortmode = modes[modeIndex].sortmode;
+		layoutNodes(nodes);
+	}
 </script>
 
 <canvas bind:this={canvas} />
 
 <div class="button-panel">
-	<button on:click={sort}>toggle sort mode</button>
-	<button on:click={changeLayout}>toggle {layout}</button>
+	<button on:click={back}>&lt;</button>
+	<button on:click={forward}>&gt;</button>
 </div>
 
 <style>
@@ -462,6 +693,6 @@
 	.button-panel {
 		position: absolute;
 		right: 0;
-		top: 130px;
+		top: 140px;
 	}
 </style>
