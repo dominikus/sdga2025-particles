@@ -693,6 +693,7 @@
 	.button-panel {
 		position: absolute;
 		right: 0;
-		top: 140px;
+		top: 160px;
+		z-index: 501;
 	}
 </style>
