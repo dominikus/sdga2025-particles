@@ -302,6 +302,8 @@
 			canvas,
 			width: w,
 			height: 2500,
+			autoDensity: true,
+			resolution: window.devicePixelRatio,
 			backgroundAlpha: 0,
 			//backgroundColor: '#384075',
 			antialias: true,
