@@ -1,16 +1,29 @@
 <script>
 	import { _ } from 'svelte-i18n';
-	import { tsv } from 'd3';
+	import { tsv, csv } from 'd3';
 
 	import Particles from '$lib/components/Particles.svelte';
 	import ParticleBoxes from '$lib/components/ParticleBoxes.svelte';
 	import PixiParticleBoxes from '$lib/components/PixiParticleBoxes.svelte';
+	import ToyDataParticles from '$lib/components/ToyDataParticles.svelte';
 	import { onMount } from 'svelte';
 
 	let goalTargets = [];
 	onMount(() => {
-		tsv('/data/targets-indicators.tsv', (d) => {
-			goalTargets = [...goalTargets, { ...d, indicators: +d.indicators }];
+		csv('/data/toy_data_plus_values.csv', (d) => {
+			goalTargets = [
+				...goalTargets,
+				{
+					iso3c: d.code,
+					level: ['0-20', '20-40', '40-60', '60-80', '80-100'].indexOf(d.pctl),
+					speed: +d.speed,
+					value: +d.value,
+					origValue: +d.orig_value,
+					diff: +d.diff,
+					goal: +d.goal
+				}
+			];
+			//goalTargets = [...goalTargets, { ...d, indicators: +d.indicators }];
 		});
 	});
 	$: console.log(goalTargets);
@@ -19,7 +32,8 @@
 <img src="img/legend.png" />
 <!--<Particles />-->
 <!--<ParticleBoxes />-->
-<PixiParticleBoxes {goalTargets} />
+<!--<PixiParticleBoxes {goalTargets} />-->
+<ToyDataParticles {goalTargets} />
 
 <style>
 	img {

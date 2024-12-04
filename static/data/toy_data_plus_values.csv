@@ -1,0 +1,912 @@
+﻿code,pctl,evaluationperiod_pctl,speed,evaluationperiod_speed,goal,indicatorcode,indicatorname,value,orig_value,diff
+AGO,20-40,2015-2022,0.514412286,2015-2022,7,EG.ELC.ACCS.ZS,Access to electricity (% of population),48.5,42,6.5
+BDI,20-40,2015-2022,0.419130044,2015-2022,7,EG.ELC.ACCS.ZS,Access to electricity (% of population),10.3,7.9,2.4
+BFA,0-20,2015-2022,0.392510512,2015-2022,7,EG.ELC.ACCS.ZS,Access to electricity (% of population),19.5,16.2,3.3
+CAF,20-40,2015-2022,0.407230536,2015-2022,7,EG.ELC.ACCS.ZS,Access to electricity (% of population),15.7,12.7,3
+CIV,20-40,2015-2022,0.675265644,2015-2022,7,EG.ELC.ACCS.ZS,Access to electricity (% of population),70.4,62.6,7.8
+COD,20-40,2015-2022,0.562382446,2015-2022,7,EG.ELC.ACCS.ZS,Access to electricity (% of population),21.5,16.6,4.9
+COG,20-40,2015-2022,0.495943809,2015-2022,7,EG.ELC.ACCS.ZS,Access to electricity (% of population),50.6,44.3,6.3
+DJI,20-40,2015-2022,0.487394788,2015-2022,7,EG.ELC.ACCS.ZS,Access to electricity (% of population),65,59.1,5.9
+DOM,0-20,2015-2022,-0.537032016,2015-2022,7,EG.ELC.ACCS.ZS,Access to electricity (% of population),98.1,98.6,-0.5
+ECU,0-20,2015-2020,0.213333333,2015-2020,7,EG.ELC.ACCS.ZS,Access to electricity (% of population),98.9,98.8,0.1
+FJI,0-20,2015-2022,-0.308459302,2015-2022,7,EG.ELC.ACCS.ZS,Access to electricity (% of population),92,93.2,-1.2
+GNQ,0-20,2015-2022,0.077744936,2015-2022,7,EG.ELC.ACCS.ZS,Access to electricity (% of population),67,66.1,0.9
+GRD,0-20,2015-2022,0.74499175,2015-2022,7,EG.ELC.ACCS.ZS,Access to electricity (% of population),94.2,91.4,2.8
+HTI,20-40,2015-2022,0.673714329,2015-2022,7,EG.ELC.ACCS.ZS,Access to electricity (% of population),49.3,40.8,8.5
+IDN,0-20,2015-2020,-0.45503482,2015-2020,7,EG.ELC.ACCS.ZS,Access to electricity (% of population),97,97.5,-0.5
+LBY,0-20,2015-2022,-0.355668891,2015-2022,7,EG.ELC.ACCS.ZS,Access to electricity (% of population),70,73.8,-3.8
+MOZ,20-40,2015-2022,0.853349824,2015-2022,7,EG.ELC.ACCS.ZS,Access to electricity (% of population),33.2,24,9.2
+MWI,20-40,2015-2022,0.470014081,2015-2022,7,EG.ELC.ACCS.ZS,Access to electricity (% of population),14,10.8,3.2
+NAM,0-20,2015-2022,0.363116319,2015-2022,7,EG.ELC.ACCS.ZS,Access to electricity (% of population),56.2,51.6,4.6
+NER,0-20,2015-2022,0.342624928,2015-2022,7,EG.ELC.ACCS.ZS,Access to electricity (% of population),19.5,16.6,2.9
+NGA,20-40,2015-2022,0.638354452,2015-2022,7,EG.ELC.ACCS.ZS,Access to electricity (% of population),60.5,52.5,8
+NIC,0-20,2015-2022,0.46340875,2015-2022,7,EG.ELC.ACCS.ZS,Access to electricity (% of population),86.5,83.2,3.3
+PER,20-40,2015-2022,0.868972169,2015-2022,7,EG.ELC.ACCS.ZS,Access to electricity (% of population),96.2,93.9,2.3
+PNG,0-20,2015-2022,0.069397111,2015-2022,7,EG.ELC.ACCS.ZS,Access to electricity (% of population),19,18.4,0.6
+SEN,20-40,2015-2022,0.624163588,2015-2022,7,EG.ELC.ACCS.ZS,Access to electricity (% of population),67.9,60.5,7.4
+SOM,0-20,2015-2022,-0.180533752,2015-2022,7,EG.ELC.ACCS.ZS,Access to electricity (% of population),48.9,51.2,-2.3
+SYR,0-20,2015-2022,-0.188820577,2015-2022,7,EG.ELC.ACCS.ZS,Access to electricity (% of population),89,90,-1
+TCD,20-40,2015-2022,0.676696016,2015-2022,7,EG.ELC.ACCS.ZS,Access to electricity (% of population),11.7,7.7,4
+WSM,0-20,2015-2022,0.101360544,2015-2022,7,EG.ELC.ACCS.ZS,Access to electricity (% of population),98.3,98.2,0.1
+YEM,20-40,2015-2022,0.805368964,2015-2022,7,EG.ELC.ACCS.ZS,Access to electricity (% of population),76,67.4,8.6
+ZAF,0-20,2015-2022,0.177745965,2015-2022,7,EG.ELC.ACCS.ZS,Access to electricity (% of population),86.5,85.3,1.2
+CMR,40-60,2015-2022,1.056728468,2015-2022,7,EG.ELC.ACCS.ZS,Access to electricity (% of population),71,58.6,12.4
+ERI,40-60,2015-2022,0.755408014,2015-2022,7,EG.ELC.ACCS.ZS,Access to electricity (% of population),55.4,45.8,9.6
+GIN,40-60,2015-2022,1.035107254,2015-2022,7,EG.ELC.ACCS.ZS,Access to electricity (% of population),47.7,34.9,12.8
+GMB,40-60,2015-2022,0.872690638,2015-2022,7,EG.ELC.ACCS.ZS,Access to electricity (% of population),65.4,54.7,10.7
+KIR,40-60,2015-2022,0.982797474,2015-2022,7,EG.ELC.ACCS.ZS,Access to electricity (% of population),94.4,90.6,3.8
+MDG,40-60,2015-2022,1.120230635,2015-2022,7,EG.ELC.ACCS.ZS,Access to electricity (% of population),36.1,23.8,12.3
+MRT,40-60,2015-2022,0.755470396,2015-2022,7,EG.ELC.ACCS.ZS,Access to electricity (% of population),49,39.5,9.5
+PAN,40-60,2015-2022,0.974145335,2015-2022,7,EG.ELC.ACCS.ZS,Access to electricity (% of population),95,91.6,3.4
+SLE,40-60,2015-2022,0.973107698,2015-2022,7,EG.ELC.ACCS.ZS,Access to electricity (% of population),29.4,19.7,9.7
+SSD,40-60,2015-2022,0.74702595,2015-2022,7,EG.ELC.ACCS.ZS,Access to electricity (% of population),8.4,4.8,3.6
+STP,40-60,2015-2022,1.023230259,2015-2022,7,EG.ELC.ACCS.ZS,Access to electricity (% of population),78,67.3,10.7
+TGO,40-60,2015-2022,0.985548984,2015-2022,7,EG.ELC.ACCS.ZS,Access to electricity (% of population),57.2,44.7,12.5
+AFG,60-80,2015-2022,1.541529626,2015-2022,7,EG.ELC.ACCS.ZS,Access to electricity (% of population),85.3,71.5,13.8
+BWA,60-80,2015-2022,1.244308063,2015-2022,7,EG.ELC.ACCS.ZS,Access to electricity (% of population),75.9,62.1,13.8
+FSM,60-80,2015-2022,1.400369258,2015-2022,7,EG.ELC.ACCS.ZS,Access to electricity (% of population),85.3,73,12.3
+GAB,60-80,2015-2022,1.305120875,2015-2022,7,EG.ELC.ACCS.ZS,Access to electricity (% of population),93.5,87.3,6.2
+GHA,60-80,2015-2022,1.275470208,2015-2022,7,EG.ELC.ACCS.ZS,Access to electricity (% of population),85.1,74,11.1
+GNB,60-80,2015-2022,1.620266004,2015-2022,7,EG.ELC.ACCS.ZS,Access to electricity (% of population),37.4,20.1,17.3
+GUY,60-80,2015-2022,1.050431392,2015-2022,7,EG.ELC.ACCS.ZS,Access to electricity (% of population),93,88,5
+HND,60-80,2015-2022,1.104065875,2015-2022,7,EG.ELC.ACCS.ZS,Access to electricity (% of population),94.4,90,4.4
+LBR,60-80,2015-2022,1.730872033,2015-2022,7,EG.ELC.ACCS.ZS,Access to electricity (% of population),31.8,15.2,16.6
+LSO,60-80,2015-2022,1.483280183,2015-2022,7,EG.ELC.ACCS.ZS,Access to electricity (% of population),50,31.8,18.2
+MLI,60-80,2015-2022,1.225359968,2015-2022,7,EG.ELC.ACCS.ZS,Access to electricity (% of population),53,37.6,15.4
+MMR,60-80,2015-2022,1.157470932,2015-2022,7,EG.ELC.ACCS.ZS,Access to electricity (% of population),73.7,60.5,13.2
+PAK,60-80,2015-2022,1.107458011,2015-2022,7,EG.ELC.ACCS.ZS,Access to electricity (% of population),95,91,4
+PRK,60-80,2015-2022,1.163124009,2015-2022,7,EG.ELC.ACCS.ZS,Access to electricity (% of population),54.7,40,14.7
+SDN,60-80,2015-2022,1.214024364,2015-2022,7,EG.ELC.ACCS.ZS,Access to electricity (% of population),63.2,48,15.2
+TZA,60-80,2015-2022,1.667589238,2015-2022,7,EG.ELC.ACCS.ZS,Access to electricity (% of population),45.8,26.2,19.6
+VUT,60-80,2015-2022,1.465546988,2015-2022,7,EG.ELC.ACCS.ZS,Access to electricity (% of population),70,52.3,17.7
+ZMB,60-80,2015-2022,1.372504868,2015-2022,7,EG.ELC.ACCS.ZS,Access to electricity (% of population),47.8,31.1,16.7
+ZWE,60-80,2015-2022,1.325939323,2015-2022,7,EG.ELC.ACCS.ZS,Access to electricity (% of population),50.1,33.7,16.4
+BEN,80-100,2015-2022,2.192524913,2015-2022,7,EG.ELC.ACCS.ZS,Access to electricity (% of population),56.5,29.6,26.9
+BGD,80-100,2015-2021,7.603552003,2015-2021,7,EG.ELC.ACCS.ZS,Access to electricity (% of population),99,74,25
+BLZ,80-100,2015-2022,3.201568742,2015-2022,7,EG.ELC.ACCS.ZS,Access to electricity (% of population),98.6,91.8,6.8
+BOL,80-100,2015-2021,3.815775818,2015-2021,7,EG.ELC.ACCS.ZS,Access to electricity (% of population),98.6,91.5,7.1
+COM,80-100,2015-2022,2.057091615,2015-2022,7,EG.ELC.ACCS.ZS,Access to electricity (% of population),89.9,74.1,15.8
+CPV,80-100,2015-2022,2.919816042,2015-2022,7,EG.ELC.ACCS.ZS,Access to electricity (% of population),97.1,86.4,10.7
+ETH,80-100,2015-2022,2.128180857,2015-2022,7,EG.ELC.ACCS.ZS,Access to electricity (% of population),55,29,26
+GTM,80-100,2015-2021,3.235740262,2015-2021,7,EG.ELC.ACCS.ZS,Access to electricity (% of population),97.9,90.5,7.4
+IND,80-100,2015-2020,3.256451542,2015-2020,7,EG.ELC.ACCS.ZS,Access to electricity (% of population),96.5,88,8.5
+KEN,80-100,2015-2022,2.884579271,2015-2022,7,EG.ELC.ACCS.ZS,Access to electricity (% of population),76,41.6,34.4
+KHM,80-100,2015-2022,3.597981176,2015-2022,7,EG.ELC.ACCS.ZS,Access to electricity (% of population),92.3,62.7,29.6
+MHL,80-100,2015-2020,3.905631191,2015-2020,7,EG.ELC.ACCS.ZS,Access to electricity (% of population),98.3,92.1,6.2
+NPL,80-100,2015-2022,1.49099213,2015-2022,7,EG.ELC.ACCS.ZS,Access to electricity (% of population),91.3,82,9.3
+PHL,80-100,2015-2022,1.411678321,2015-2022,7,EG.ELC.ACCS.ZS,Access to electricity (% of population),94.8,89.1,5.7
+RWA,80-100,2015-2022,2.384272399,2015-2022,7,EG.ELC.ACCS.ZS,Access to electricity (% of population),50.6,22.8,27.8
+SLB,80-100,2015-2022,1.818921425,2015-2022,7,EG.ELC.ACCS.ZS,Access to electricity (% of population),76,55.1,20.9
+SLV,80-100,2015-2021,1.642477277,2015-2021,7,EG.ELC.ACCS.ZS,Access to electricity (% of population),97.9,95.4,2.5
+SUR,80-100,2015-2022,3.117591629,2015-2022,7,EG.ELC.ACCS.ZS,Access to electricity (% of population),99,95,4
+SWZ,80-100,2015-2022,1.792847181,2015-2022,7,EG.ELC.ACCS.ZS,Access to electricity (% of population),82.3,64.1,18.2
+TLS,80-100,2015-2020,6.190851185,2015-2020,7,EG.ELC.ACCS.ZS,Access to electricity (% of population),96,67.3,28.7
+UGA,80-100,2015-2022,2.580787707,2015-2022,7,EG.ELC.ACCS.ZS,Access to electricity (% of population),47.1,18.5,28.6
+ALB,0-20,2015-2022,0.103930461,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",9.4,9.6,-0.2
+DZA,20-40,2015-2022,0.672325288,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",21.8,25.3,-3.5
+ATG,20-40,2015-2022,0.670938562,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",9.5,10.9,-1.4
+BHS,0-20,2015-2022,0.386129813,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",12.9,14,-1.1
+BEN,20-40,2015-2022,0.820832824,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",80.8,97.4,-16.6
+BIH,20-40,2015-2022,0.348214286,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",6,6.4,-0.4
+BRA,20-40,2015-2022,0.593820652,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",14,15.9,-1.9
+VGB,20-40,2015-2022,0.758471096,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",13.1,15.4,-2.3
+BRN,0-20,2015-2022,0.100281492,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",9.7,9.9,-0.2
+CAN,20-40,2015-2021,0.870681633,2015-2021,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",5,5.4,-0.4
+CAF,20-40,2015-2022,0.750398266,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",96.8,114.8,-18
+CRI,20-40,2015-2022,0.787174089,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",7.7,9,-1.3
+CUB,0-20,2015-2022,-1.42330437,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",8,6.1,1.9
+DMA,0-20,2015-2022,-0.770350946,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",32.2,27.1,5.1
+DOM,0-20,2015-2022,0.355850017,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",32.4,35.1,-2.7
+FJI,0-20,2015-2022,-1.26449983,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",28.2,21.3,6.9
+GEO,20-40,2015-2022,0.595451064,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",9.3,10.5,-1.2
+GRD,0-20,2015-2022,-0.300260811,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",16,15,1
+GIN,0-20,2015-2022,0.693825321,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",96,112.4,-16.4
+HTI,20-40,2015-2022,0.922426496,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",56.5,69.7,-13.2
+JAM,0-20,2015-2022,-0.024421808,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",18.8,18.7,0.1
+KEN,0-20,2015-2022,0.638803557,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",41.1,47.5,-6.4
+KIR,0-20,2015-2022,0.198126099,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",56.4,59,-2.6
+KWT,0-20,2015-2022,0.281556777,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",8.6,9.1,-0.5
+LBN,0-20,2015-2022,-1.470693979,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",17.4,12.7,4.7
+LSO,0-20,2015-2022,0.564192427,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",72.2,82.1,-9.9
+LBR,20-40,2015-2022,0.813572632,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",73.2,88.1,-14.9
+MDG,0-20,2015-2022,0,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",65.8,65.8,0
+MYS,0-20,2015-2022,0.192264257,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",7.8,8.1,-0.3
+MLI,20-40,2015-2022,0.907914742,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",93.8,115.3,-21.5
+MUS,0-20,2015-2022,-0.126086957,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",15,14.6,0.4
+MDA,0-20,2015-2022,0.438940095,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",14.2,15.6,-1.4
+NAM,20-40,2015-2022,0.856028207,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",37.9,46,-8.1
+NER,0-20,2015-2022,0.332974475,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",117.3,126.5,-9.2
+NGA,0-20,2015-2022,0.718995536,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",107.2,126.2,-19
+OMN,0-20,2015-2022,0.312395266,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",10.5,11.2,-0.7
+PLW,0-20,2015-2022,-0.229462324,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",22.3,21.2,1.1
+PER,0-20,2015-2022,0.549644774,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",15.1,17,-1.9
+PHL,0-20,2015-2022,0.064661462,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",27.5,27.9,-0.4
+WSM,20-40,2015-2022,0.640369434,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",16.1,18.5,-2.4
+SYC,0-20,2015-2022,0.032251082,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",14.5,14.6,-0.1
+SVK,20-40,2015-2022,0.269642857,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",5.9,6.2,-0.3
+ZAF,0-20,2015-2022,0.405247872,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",34.5,37.8,-3.3
+SSD,0-20,2015-2022,0,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",98.8,98.8,0
+KNA,20-40,2015-2022,0.771875769,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",15.4,18.2,-2.8
+LCA,0-20,2015-2022,0.131120731,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",17.3,17.8,-0.5
+TON,20-40,2015-2022,0.618456172,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",10.9,12.4,-1.5
+TKM,0-20,2015-2022,0.223977655,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",40.4,42.5,-2.1
+UKR,20-40,2015-2022,0.501845747,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",8.5,9.4,-0.9
+USA,20-40,2015-2022,0.407096172,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",6.3,6.8,-0.5
+VUT,20-40,2015-2022,0.653391194,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",18.2,21,-2.8
+VEN,0-20,2015-2022,-1.074284747,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",24.2,19.1,5.1
+VNM,0-20,2015-2022,0.344719698,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",20.3,21.9,-1.6
+YEM,20-40,2015-2022,0.78121422,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",41.3,49.3,-8
+ZMB,20-40,2015-2022,0.884611602,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",55.6,68,-12.4
+AFG,40-60,2015-2022,1.015062372,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",57.7,72.7,-15
+ARG,40-60,2015-2022,1.105662022,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",9.4,11.8,-2.4
+BHR,40-60,2015-2022,0.817200564,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",6.5,7.6,-1.1
+BRB,40-60,2015-2022,0.950587697,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",10.9,13.3,-2.4
+BTN,40-60,2015-2022,1.160700068,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",23.7,30.7,-7
+BWA,40-60,2015-2022,1.005905274,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",38.7,48.6,-9.9
+BFA,40-60,2015-2022,1.064248751,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",78.8,100.4,-21.6
+CMR,40-60,2015-2022,1.081832587,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",69.8,89.3,-19.5
+TCD,40-60,2015-2022,0.982253154,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",102.9,128.6,-25.7
+COL,40-60,2015-2022,1.07914112,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",12.4,15.6,-3.2
+COM,40-60,2015-2022,1.064875881,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",48.2,61.4,-13.2
+COD,40-60,2015-2022,1.026309688,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",75.6,95.5,-19.9
+COG,40-60,2015-2022,1.059530645,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",41.6,52.9,-11.3
+CIV,40-60,2015-2022,0.956967832,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",69.4,86.3,-16.9
+DJI,40-60,2015-2022,1.002930076,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",51.9,65.2,-13.3
+ECU,40-60,2015-2022,1.065998989,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",12.2,15.3,-3.1
+EGY,40-60,2015-2022,1.130255025,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",18.1,23.2,-5.1
+GNQ,40-60,2015-2022,1.06295036,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",73.4,93.5,-20.1
+ERI,40-60,2015-2022,1.048920032,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",36.6,46.4,-9.8
+SWZ,40-60,2015-2022,1.051114941,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",50,63.5,-13.5
+GTM,40-60,2015-2022,1.128834612,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",22.1,28.4,-6.3
+GNB,40-60,2015-2022,1.087317729,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",71.9,92.1,-20.2
+GUY,40-60,2015-2022,0.976568356,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",26.6,33.1,-6.5
+HND,40-60,2015-2022,1.138147685,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",16,20.5,-4.5
+IDN,40-60,2015-2022,1.151951798,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",21.3,27.5,-6.2
+IRQ,40-60,2015-2022,1.020918073,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",23.5,29.5,-6
+JOR,40-60,2015-2022,1.00376537,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",14.1,17.5,-3.4
+KAZ,40-60,2015-2022,0.991300722,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",9.7,11.9,-2.2
+PRK,40-60,2015-2022,0.988915156,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",17,21.1,-4.1
+KGZ,40-60,2015-2022,1.138789934,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",17.3,22.2,-4.9
+MLT,40-60,2015-2022,0.891373216,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",5.6,6.6,-1
+MHL,40-60,2015-2022,0.962779706,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",28.6,35.5,-6.9
+MRT,40-60,2015-2022,0.98515065,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",39.2,49,-9.8
+MEX,40-60,2015-2022,1.103227732,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",12.8,16.2,-3.4
+FSM,40-60,2015-2022,1.007976239,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",24.2,30.3,-6.1
+MOZ,40-60,2015-2022,0.982446848,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",66.2,82.8,-16.6
+MMR,40-60,2015-2022,1.086732722,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",40.1,51.3,-11.2
+NRU,40-60,2015-2022,0.99345511,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",26.5,33.1,-6.6
+NIC,40-60,2015-2022,1.101377345,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",15.2,19.3,-4.1
+PAK,40-60,2015-2022,0.971313934,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",61,76.1,-15.1
+PNG,40-60,2015-2022,0.962796024,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",41.4,51.5,-10.1
+PRY,40-60,2015-2022,1.091926745,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",17.4,22.1,-4.7
+RWA,40-60,2015-2022,1.00434758,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",38,47.7,-9.7
+SRB,40-60,2015-2022,1.174963342,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",5.1,6.3,-1.2
+SLB,40-60,2015-2022,1.001247534,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",18.3,22.8,-4.5
+SOM,40-60,2015-2022,0.98278085,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",106.1,132.6,-26.5
+SDN,40-60,2015-2022,0.994640812,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",51.6,64.7,-13.1
+SUR,40-60,2015-2022,0.967713798,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",16.6,20.5,-3.9
+TJK,40-60,2015-2022,0.959682149,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",30.3,37.6,-7.3
+TLS,40-60,2015-2022,1.042735559,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",48.6,61.6,-13
+TGO,40-60,2015-2022,0.997402888,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",60.4,75.8,-15.4
+TTO,40-60,2015-2022,1.040587071,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",15.4,19.3,-3.9
+TCA,40-60,2015-2022,0.838371664,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",5.9,6.9,-1
+TUV,40-60,2015-2022,1.079368701,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",20.4,25.9,-5.5
+ZWE,40-60,2015-2022,1.024093883,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",47.7,60.2,-12.5
+AGO,60-80,2015-2022,1.198754532,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",66.9,87.9,-21
+BGD,60-80,2015-2022,1.291268778,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",28.8,38.5,-9.7
+BOL,60-80,2015-2022,1.293637842,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",23.9,31.9,-8
+BGR,60-80,2015-2022,1.547810298,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",6.1,8.2,-2.1
+BDI,60-80,2015-2022,1.26255525,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",50.5,67.3,-16.8
+KHM,60-80,2015-2022,1.289496563,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",23.7,31.6,-7.9
+CHL,60-80,2015-2022,1.248409412,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",6.3,8,-1.7
+SLV,60-80,2015-2022,1.184832108,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",11.9,15.3,-3.4
+ETH,60-80,2015-2022,1.37167185,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",46.2,63.1,-16.9
+GAB,60-80,2015-2022,1.17209103,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",38.8,50.6,-11.8
+GMB,60-80,2015-2022,1.171220995,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",45.6,59.5,-13.9
+GHA,60-80,2015-2022,1.18101228,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",42.3,55.3,-13
+IRN,60-80,2015-2022,1.205749872,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",12,15.5,-3.5
+LAO,60-80,2015-2022,1.20554736,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",40.4,53.1,-12.7
+LBY,60-80,2015-2022,1.225443687,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",10.3,13.3,-3
+MWI,60-80,2015-2022,1.503715355,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",40.1,56.4,-16.3
+MAR,60-80,2015-2022,1.3962055,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",17.3,23.5,-6.2
+NPL,60-80,2015-2022,1.472886133,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",27.3,38,-10.7
+PAN,60-80,2015-2022,1.198947709,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",13.3,17.2,-3.9
+ROU,60-80,2015-2022,1.543263029,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",6.8,9.2,-2.4
+SEN,60-80,2015-2022,1.408550766,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",37,50.9,-13.9
+SLE,60-80,2015-2022,1.463993583,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",100.8,140.5,-39.7
+LKA,60-80,2015-2022,1.560313952,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",6.5,8.8,-2.3
+TZA,60-80,2015-2022,1.325245838,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",40.5,54.7,-14.2
+THA,60-80,2015-2022,1.194368391,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",8.1,10.3,-2.2
+UGA,60-80,2015-2022,1.412811441,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",40.5,55.8,-15.3
+URY,60-80,2015-2022,1.537158023,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",6.6,8.9,-2.3
+PSE,60-80,2015-2022,1.167978032,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",14.3,18.4,-4.1
+ARM,80-100,2015-2022,1.631444327,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",10.3,14.5,-4.2
+AZE,80-100,2015-2022,1.745870779,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",18.1,26.6,-8.5
+BLZ,80-100,2015-2022,1.727359198,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",10.9,15.7,-4.8
+CPV,80-100,2015-2022,1.854722513,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",12.3,18.3,-6
+CHN,80-100,2015-2022,2.442376194,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",6.6,10.7,-4.1
+IND,80-100,2015-2022,1.794945084,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",29.1,43.6,-14.5
+XKX,80-100,2015-2022,1.962591833,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",9.5,14.3,-4.8
+MDV,80-100,2015-2022,2.905157787,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",5.6,9.8,-4.2
+MNG,80-100,2015-2022,1.739123093,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",13.4,19.5,-6.1
+MKD,80-100,2015-2021,4.635487573,2015-2021,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",5.2,11.2,-6
+QAT,80-100,2015-2022,2.115454481,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",5.2,7.7,-2.5
+RUS,80-100,2015-2021,3.044988898,2015-2021,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",5.1,8.3,-3.2
+STP,80-100,2015-2022,2.138316776,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",14.5,23.1,-8.6
+SAU,80-100,2015-2022,1.811380533,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",6.4,9.1,-2.7
+VCT,80-100,2015-2022,1.957609869,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",10.9,16.5,-5.6
+SYR,80-100,2015-2022,3.208927405,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",21.4,43.9,-22.5
+TUN,80-100,2015-2022,1.997178607,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",11.5,17.6,-6.1
+TUR,80-100,2015-2022,1.57050585,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",9.6,13.3,-3.7
+ARE,80-100,2015-2022,1.937537161,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",5.3,7.6,-2.3
+UZB,80-100,2015-2022,1.867395655,2015-2022,3,SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",13.3,19.9,-6.6
+AUT,20-40,2015-2022,NA,NA,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",#VALUE!,#VALUE!,#VALUE!
+AZE,20-40,2015-2023,0.282330637,2015-2023,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",87.56549072,86.07421875,1.491271973
+BDI,0-20,2015-2020,-1.154087428,2015-2020,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",28.90119934,35.6598587,-6.758659363
+BEL,20-40,2015-2022,-1.062867879,2015-2022,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",93.37577057,95.1040802,-1.728309631
+BEN,0-20,2015-2022,-1.845671473,2015-2022,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",29.07029915,44.05136871,-14.98106956
+BFA,20-40,2015-2023,0.117308788,2015-2023,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",27.64790916,26.53524971,1.112659454
+BGR,20-40,2015-2022,NA,NA,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",#VALUE!,#VALUE!,#VALUE!
+BIH,0-20,2015-2023,-1.020550578,2015-2023,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",87.8190918,91.89813995,-4.079048157
+BLR,20-40,2015-2023,-0.543704139,2015-2023,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",92.8449173,94.09374237,-1.248825073
+BLZ,20-40,2015-2023,0.077380952,2015-2023,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",68.3026886,67.64705658,0.655632019
+BOL,20-40,2015-2023,-0.340366983,2015-2023,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",88.42192078,89.91461945,-1.492698669
+CHE,20-40,2015-2022,-0.686937272,2015-2022,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",94.94431305,95.70168304,-0.757369995
+CMR,0-20,2015-2023,-1.275092791,2015-2023,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",34.67374039,46.37726974,-11.70352936
+CUB,20-40,2015-2023,0.245334061,2015-2023,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",88.53298187,87.32518768,1.207794189
+CYP,0-20,2015-2020,NA,NA,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",#VALUE!,#VALUE!,#VALUE!
+CZE,20-40,2015-2022,-2.051979585,2015-2022,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",93.23465729,95.99780273,-2.763145447
+DMA,0-20,2015-2023,-1.715017694,2015-2023,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",75.76335907,87.22538757,-11.4620285
+DOM,0-20,2015-2023,-0.661654957,2015-2023,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",72.98293304,78.19709778,-5.214164734
+ECU,0-20,2015-2023,NA,NA,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",#VALUE!,#VALUE!,#VALUE!
+ETH,0-20,2015-2023,-0.798458494,2015-2023,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",22.15675735,29.74414063,-7.58738327
+FSM,0-20,2015-2022,-1.324765967,2015-2022,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",76.311409,84.4892807,-8.177871704
+GTM,0-20,2015-2023,-1.513847199,2015-2023,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",49.6596489,62.94564056,-13.28599167
+IND,20-40,2015-2023,-0.112665577,2015-2023,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",85.47740936,86.12119293,-0.643783569
+ISL,20-40,2015-2021,NA,NA,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",#VALUE!,#VALUE!,#VALUE!
+ISR,20-40,2015-2022,NA,NA,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",#VALUE!,#VALUE!,#VALUE!
+ITA,20-40,2015-2022,NA,NA,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",#VALUE!,#VALUE!,#VALUE!
+LAO,0-20,2015-2023,-0.640030079,2015-2023,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",54.61421585,60.2122612,-5.598045349
+LIE,20-40,2015-2021,-0.779401145,2015-2021,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",94.45844269,95.34313965,-0.88469696
+MAC,0-20,2015-2023,NA,NA,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",#VALUE!,#VALUE!,#VALUE!
+MDG,0-20,2015-2023,-0.584696434,2015-2023,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",31.89204979,37.34305954,-5.45100975
+MEX,20-40,2015-2022,0.004761905,2015-2022,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",93.28701019,93.27706146,0.00994873
+MLI,0-20,2015-2023,-0.064618644,2015-2023,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",28.76305962,29.37406921,-0.611009598
+MOZ,20-40,2015-2023,0.847577536,2015-2023,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",31.74790192,23.73035049,8.017551422
+MYS,20-40,2015-2023,0.456848031,2015-2023,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",87.54475403,85.02718353,2.517570496
+NER,0-20,2015-2023,-0.091942149,2015-2023,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",14.98805046,15.87551975,-0.887469292
+OMN,20-40,2015-2023,NA,NA,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",#VALUE!,#VALUE!,#VALUE!
+PRI,0-20,2015-2023,-1.417601147,2015-2023,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",82.68981934,90.18373108,-7.493911743
+PRY,0-20,2015-2023,-0.371409694,2015-2023,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",72.07498169,75.08164215,-3.006660461
+ROU,0-20,2015-2022,-1.235495974,2015-2022,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",78.77174377,85.92440033,-7.152656555
+RWA,0-20,2015-2023,-0.446093059,2015-2023,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",32.32574081,36.48768997,-4.161949158
+SEN,20-40,2015-2023,-0.047826087,2015-2023,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",39.32659912,39.76626968,-0.439670563
+SLV,0-20,2015-2023,-0.958727803,2015-2023,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",69.0485611,76.84033203,-7.791770935
+SUR,0-20,2015-2021,-0.569823076,2015-2021,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",41.30945969,45.20949936,-3.900039673
+SVK,0-20,2015-2022,-0.619310058,2015-2022,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",81.87278748,85.30774689,-3.434959412
+SVN,20-40,2015-2022,-0.411769212,2015-2022,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",94.39380646,94.98178101,-0.587974548
+TCD,20-40,2015-2021,0.54694674,2015-2021,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",19.17548943,15.2224102,3.953079224
+TUR,0-20,2015-2022,-7.074059357,2015-2022,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",92.38252258,97.29676056,-4.914237976
+TUV,20-40,2015-2023,0.233691658,2015-2023,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",80.18868256,78.46890259,1.719779968
+UKR,0-20,2015-2021,-3.001112832,2015-2021,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",84.84815979,93.7052002,-8.857040405
+VGB,0-20,2015-2021,-4.704544024,2015-2021,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",78.23129272,94.32624054,-16.09494781
+BGD,20-40,2016-2023,0.626673807,2016-2023,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",78.20283508,73.90000916,4.302825928
+BTN,0-20,2016-2022,-3.267221683,2016-2022,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",61.63751984,81.42262268,-19.78510284
+GIN,20-40,2016-2021,0.658723843,2016-2021,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",35.11123276,31.26159286,3.849639893
+HND,0-20,2016-2023,-0.984865274,2016-2023,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",36.51987076,44.43960953,-7.91973877
+LCA,0-20,2016-2023,-1.31634403,2016-2023,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",85.02848053,90.58532715,-5.556846619
+LSO,0-20,2016-2023,-0.532526005,2016-2023,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",41.8945961,46.13204193,-4.237445831
+TZA,20-40,2016-2023,0.624047587,2016-2023,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",35.40339279,30.28937912,5.114013672
+PAN,20-40,2017-2023,-0.146817726,2017-2023,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",76.68131256,77.52903748,-0.847724915
+SLB,0-20,2017-2023,-1.397564777,2017-2023,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",61.43782806,70.34263611,-8.904808044
+AND,40-60,2015-2021,1.064891941,2015-2021,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",90.27094269,86.55660248,3.71434021
+BHR,40-60,2015-2023,-1.418907828,2015-2023,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",95.92622375,96.79524994,-0.869026184
+COL,40-60,2015-2022,0.963578598,2015-2022,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",83.01992798,76.96299744,6.056930542
+DZA,40-60,2015-2023,1.069677164,2015-2023,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",83.95504761,76.33573914,7.619308472
+ERI,40-60,2015-2022,0.429779213,2015-2022,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",49.28409958,45.88829041,3.395809174
+ESP,40-60,2015-2022,0.554024299,2015-2022,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",90.92826843,88.97920227,1.949066162
+FJI,40-60,2015-2023,0.638094488,2015-2023,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",93.32444,91.51126099,1.813179016
+GRC,40-60,2015-2022,0.264583026,2015-2022,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",95.23387909,94.8970108,0.336868286
+HUN,40-60,2015-2022,1.772779064,2015-2022,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",95.93743896,93.64125824,2.296180725
+LTU,40-60,2015-2021,-3.066269841,2015-2021,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",96.53881073,97.21418762,-0.675376892
+LVA,40-60,2015-2022,-0.229676871,2015-2022,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",95.3423996,95.57563019,-0.233230591
+MAR,40-60,2015-2023,0.661971293,2015-2023,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",74.21057892,68.75450134,5.456077576
+MLT,40-60,2015-2022,NA,NA,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",#VALUE!,#VALUE!,#VALUE!
+PAK,40-60,2015-2022,1.034926678,2015-2022,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",47.99855804,39.75494385,8.243614197
+PER,40-60,2015-2023,1.460208275,2015-2023,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",93.59757996,88.7621994,4.835380554
+SRB,40-60,2015-2022,NA,NA,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",#VALUE!,#VALUE!,#VALUE!
+LBR,40-60,2016-2022,0.550152555,2016-2022,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",44.71511841,40.95294952,3.762168884
+ZAF,40-60,2016-2022,1.057328239,2016-2022,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",89.34503174,85.32595062,4.019081116
+SMR,40-60,2018-2023,0.618685289,2018-2023,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",93.65994263,92.71137238,0.948570251
+CRI,60-80,2015-2022,1.522250274,2015-2022,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",66.80750275,55.30244827,11.50505447
+FIN,60-80,2015-2022,NA,NA,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",#VALUE!,#VALUE!,#VALUE!
+FRA,60-80,2015-2021,NA,NA,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",#VALUE!,#VALUE!,#VALUE!
+GRD,60-80,2015-2021,2.760476457,2015-2021,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",93.35873413,85.01036835,8.348365784
+IDN,60-80,2015-2023,NA,NA,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",#VALUE!,#VALUE!,#VALUE!
+KGZ,60-80,2015-2023,2.050027833,2015-2023,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",95.08744812,89.78820038,5.299247742
+KHM,60-80,2015-2023,1.331225231,2015-2023,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",61.81179047,50.10628891,11.70550156
+KIR,60-80,2015-2023,NA,NA,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",#VALUE!,#VALUE!,#VALUE!
+LKA,60-80,2015-2022,2.598805923,2015-2022,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",96.20930481,92.65862274,3.550682068
+LUX,60-80,2015-2022,NA,NA,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",#VALUE!,#VALUE!,#VALUE!
+MKD,60-80,2015-2022,1.713868185,2015-2022,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",93.03923035,87.43920135,5.600028992
+MNE,60-80,2015-2023,4.422583308,2015-2023,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",97.02175903,91.59529877,5.426460266
+NOR,60-80,2015-2022,NA,NA,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",#VALUE!,#VALUE!,#VALUE!
+PSE,60-80,2015-2023,1.914333799,2015-2023,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",90.48209381,79.76921082,10.712883
+QAT,60-80,2015-2022,2.744474065,2015-2022,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",95.00621033,87.96431732,7.041893005
+SLE,60-80,2015-2021,1.396919258,2015-2021,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",54.96551132,45.60214615,9.363365173
+TGO,60-80,2015-2023,2.057672362,2015-2023,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",58.29994965,39.83705139,18.46289825
+THA,60-80,2015-2020,2.028571659,2015-2020,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",89.4076004,82.44119263,6.966407776
+TUN,60-80,2015-2021,1.707492066,2015-2021,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",80.45852661,70.41221619,10.04631042
+UZB,60-80,2015-2023,1.900935206,2015-2023,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",95.57138062,91.7226944,3.848686218
+ZWE,60-80,2015-2021,1.704437651,2015-2021,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",72.32788849,61.52973175,10.79815674
+EGY,60-80,2016-2021,2.271837362,2016-2021,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",86.11057281,76.43836975,9.672203064
+HRV,60-80,2016-2021,NA,NA,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",#VALUE!,#VALUE!,#VALUE!
+KWT,60-80,2016-2021,2.202642815,2016-2021,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",90.23512268,83.05947876,7.175643921
+GBR,60-80,2017-2022,NA,NA,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",#VALUE!,#VALUE!,#VALUE!
+JOR,60-80,2017-2023,2.860363449,2017-2023,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",93.37651062,84.61070251,8.765808105
+ARG,80-100,2015-2022,NA,NA,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",#VALUE!,#VALUE!,#VALUE!
+CHL,80-100,2015-2020,NA,NA,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",#VALUE!,#VALUE!,#VALUE!
+CIV,80-100,2015-2023,5.478312663,2015-2023,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",80.44657898,33.13035965,47.31621933
+CPV,80-100,2015-2021,4.023712981,2015-2021,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",90.42877197,70.98213959,19.44663239
+MDV,80-100,2015-2023,NA,NA,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",#VALUE!,#VALUE!,#VALUE!
+MUS,80-100,2015-2020,6.499781605,2015-2020,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",95.722435,81.51020813,14.21222687
+NPL,80-100,2015-2021,4.250762112,2015-2021,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",95.83792877,87.4921875,8.345741272
+TCA,80-100,2015-2022,NA,NA,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",#VALUE!,#VALUE!,#VALUE!
+PHL,80-100,2017-2023,4.174970026,2017-2023,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",93.21458435,77.26255035,15.952034
+ALB,NA,NA,1.175233905,2017-2023,4,SE.SEC.CMPT.LO.ZS,"Lower secondary completion rate, total (% of relevant age group)",91.72238922,88.22045898,3.501930237
+AFG,20-40,2015-2021,-0.273255814,2015-2021,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),27.01612903,27.71084337,-0.694714341
+AGO,0-20,2015-2023,-1.120160654,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),33.63636364,36.81818182,-3.181818182
+ATG,0-20,2015-2023,-1.502974355,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),5.555555556,11.11111111,-5.555555556
+AZE,20-40,2015-2023,0.457562442,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),18.6440678,16.93548387,1.708583926
+BGD,20-40,2015-2023,0.233695652,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),20.85714286,20,0.857142857
+BIH,0-20,2015-2023,-0.64794686,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),19.04761905,21.42857143,-2.380952381
+BWA,20-40,2015-2023,0.423566142,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),11.11111111,9.523809524,1.587301587
+CYP,20-40,2015-2023,0.47606383,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),14.28571429,12.5,1.785714286
+DEU,20-40,2015-2023,-0.452036648,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),35.19021739,36.45007924,-1.259861848
+DZA,0-20,2015-2023,-6.629522293,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),7.862407862,31.6017316,-23.73932374
+FJI,0-20,2015-2023,-1.353723404,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),10.90909091,16,-5.090909091
+GMB,0-20,2015-2023,-0.220108696,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),8.620689655,9.433962264,-0.813272609
+GNB,0-20,2015-2023,-1.045212766,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),9.803921569,13.7254902,-3.921568627
+GRD,20-40,2015-2023,-0.676642229,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),31.25,33.33333333,-2.083333333
+HND,20-40,2015-2023,0.455287929,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),27.34375,25.78125,1.5625
+ISR,0-20,2015-2023,-0.718221459,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),24.16666667,26.66666667,-2.5
+ITA,20-40,2015-2023,0.416126856,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),32.25,30.95238095,1.297619048
+JOR,20-40,2015-2023,0.082446809,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),12.30769231,12,0.307692308
+JPN,20-40,2015-2023,0.232365865,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),10.34482759,9.473684211,0.871143376
+KAZ,0-20,2015-2023,-2.17050108,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),18.36734694,26.1682243,-7.80087736
+KGZ,20-40,2015-2023,0.225543478,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),20,19.16666667,0.833333333
+KHM,0-20,2015-2023,-1.805099445,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),13.6,20.32520325,-6.725203252
+KIR,0-20,2015-2023,-0.551630435,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),6.666666667,8.695652174,-2.028985507
+KWT,20-40,2015-2023,0.4397463,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),3.076923077,1.538461538,1.538461538
+LAO,0-20,2015-2023,-0.85625,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),21.95121951,25,-3.048780488
+LBR,20-40,2015-2023,0,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),10.95890411,10.95890411,0
+LBY,20-40,2015-2023,0.135638298,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),16.47058824,15.95744681,0.513141427
+LCA,0-20,2015-2023,-1.478723404,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),11.11111111,16.66666667,-5.555555556
+LKA,20-40,2015-2023,0.122222222,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),5.333333333,4.888888889,0.444444444
+LSO,20-40,2015-2023,0.418472516,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),26.44628099,25,1.446280992
+MDG,0-20,2015-2023,-0.54076087,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),18.54304636,20.52980132,-1.986754967
+MDV,0-20,2015-2023,-0.355555556,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),4.597701149,5.882352941,-1.284651792
+MRT,0-20,2015-2023,-0.529545455,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),23.29545455,25.17006803,-1.874613482
+NGA,0-20,2015-2023,-0.458333333,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),3.910614525,5.555555556,-1.64494103
+OMN,0-20,2015-2023,-0.344753599,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),0,1.176470588,-1.176470588
+PAK,20-40,2015-2023,-0.032608696,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),20.46783626,20.58823529,-0.120399037
+PHL,20-40,2015-2023,0.026785714,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),27.33118971,27.24137931,0.0898104
+PNG,20-40,2015-2023,0,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),2.702702703,2.702702703,0
+PRK,20-40,2015-2023,0.348404255,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),17.61280932,16.30276565,1.310043668
+SAU,20-40,2015-2023,0,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),19.86754967,19.86754967,0
+SLV,0-20,2015-2023,-1.468899647,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),27.38095238,32.14285714,-4.761904762
+SRB,20-40,2015-2023,0.275056306,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),34.8,34,0.8
+STP,0-20,2015-2023,-0.96820074,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),14.54545455,18.18181818,-3.636363636
+SYC,0-20,2015-2023,-7.341041903,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),22.85714286,43.75,-20.89285714
+SYR,0-20,2015-2023,-0.425531915,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),10.8,12.4,-1.6
+TKM,20-40,2015-2023,-0.061046512,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),25.6,25.80645161,-0.206451613
+TLS,20-40,2015-2023,-0.587706105,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),36.92307692,38.46153846,-1.538461538
+TTO,0-20,2015-2023,-0.733993902,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),28.57142857,30.95238095,-2.380952381
+TUN,0-20,2015-2023,-4.309833733,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),16.23376623,31.33640553,-15.1026393
+TUV,0-20,2015-2023,-0.114130435,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),6.25,6.666666667,-0.416666667
+UGA,20-40,2015-2023,-0.398273273,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),33.81294964,34.97409326,-1.161143624
+YEM,0-20,2015-2023,0,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),0,0,0
+ZWE,20-40,2015-2023,-0.253285256,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),30.68181818,31.48148148,-0.7996633
+BDI,40-60,2015-2023,0.695932208,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),38.21138211,36.36363636,1.84774575
+BEL,40-60,2015-2023,1.461471206,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),42.66666667,39.33333333,3.333333333
+BGR,40-60,2015-2023,1.040563241,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),24.16666667,20.41666667,3.75
+BHS,40-60,2015-2023,1.275381591,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),17.94871795,13.15789474,4.790823212
+CAN,40-60,2015-2023,1.386312225,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),30.6547619,26.03550296,4.619258946
+CHN,40-60,2015-2023,0.836680761,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),26.536782,23.62284556,2.913936439
+CIV,40-60,2015-2023,1.21820074,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),13.7254902,9.163346614,4.562143583
+CMR,40-60,2015-2023,0.910703213,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),33.88888889,31.11111111,2.777777778
+COD,40-60,2015-2023,1.030642923,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),12.8,8.943089431,3.856910569
+ECU,40-60,2015-2023,0.681204212,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),43.06569343,41.60583942,1.459854015
+ESP,40-60,2015-2023,1.504663462,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),44.28571429,41.14285714,3.142857143
+EST,40-60,2015-2023,1.440310446,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),28.71287129,23.76237624,4.95049505
+ETH,40-60,2015-2023,1.068358816,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),41.31355932,38.75685558,2.556703746
+GHA,40-60,2015-2023,0.968085106,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),14.54545455,10.90909091,3.636363636
+GRC,40-60,2015-2023,0.91557971,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),23,19.66666667,3.333333333
+HUN,40-60,2015-2023,1.055851064,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),14.07035176,10.1010101,3.969341658
+IDN,40-60,2015-2023,1.207938894,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),21.56521739,17.11711712,4.448100274
+IND,40-60,2015-2023,0.869680851,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),15.24163569,11.97053407,3.271101618
+IRN,40-60,2015-2023,0.695833333,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),5.594405594,3.103448276,2.490957319
+IRQ,40-60,2015-2023,0.752874902,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),29.05198777,26.52439024,2.527597524
+KEN,40-60,2015-2023,0.982487923,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),23.27586207,19.71428571,3.561576355
+KOR,40-60,2015-2023,0.73392692,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),19.06354515,16.33333333,2.730211817
+LBN,40-60,2015-2023,0.872639438,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),6.25,3.125,3.125
+LTU,40-60,2015-2023,1.439012844,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),28.36879433,23.40425532,4.964539007
+LUX,40-60,2015-2023,1.577547371,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),33.33333333,28.33333333,5
+MHL,40-60,2015-2023,0.80903099,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),12.12121212,9.090909091,3.03030303
+MMR,40-60,2015-2021,0.921985816,2015-2021,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),15.29411765,12.69349845,2.600619195
+MNE,40-60,2015-2023,1.005723867,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),20.98765432,17.28395062,3.703703704
+MNG,40-60,2015-2023,0.70212766,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),17.10526316,14.47368421,2.631578947
+MOZ,40-60,2015-2023,1.607004705,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),43.2,39.6,3.6
+MWI,40-60,2015-2023,1.097305735,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),20.7253886,16.66666667,4.058721934
+MYS,40-60,2015-2023,0.837765957,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),13.51351351,10.36036036,3.153153153
+NAM,40-60,2015-2023,1.379663462,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),44.23076923,41.34615385,2.884615385
+NLD,40-60,2015-2023,1.057026668,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),40,37.33333333,2.666666667
+NPL,40-60,2015-2023,1.12765606,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),33.08823529,29.54924875,3.538986546
+NRU,40-60,2015-2023,1.432052369,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),10.52631579,5.263157895,5.263157895
+PAN,40-60,2015-2023,1.15736715,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),22.53521127,18.30985915,4.225352113
+POL,40-60,2015-2023,0.589285714,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),29.34782609,27.39130435,1.956521739
+PRT,40-60,2015-2023,0.463095238,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),36.08695652,34.7826087,1.304347826
+QAT,40-60,2015-2023,1.271221769,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),4.444444444,0,4.444444444
+ROU,40-60,2015-2023,1.43622803,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),19.09090909,13.71571072,5.375198368
+RUS,40-60,2015-2023,0.765957447,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),16.44444444,13.55555556,2.888888889
+SEN,40-60,2015-2023,1.78422991,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),46.06060606,42.66666667,3.393939394
+SGP,40-60,2015-2023,1.52574559,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),29.12621359,23.91304348,5.213170114
+SUR,40-60,2015-2023,1.162049604,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),29.41176471,25.49019608,3.921568627
+SVK,40-60,2015-2023,0.909541063,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),22,18.66666667,3.333333333
+SVN,40-60,2015-2023,0.415886809,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),37.77777778,36.66666667,1.111111111
+SWE,40-60,2015-2023,1.569861778,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),46.41833811,43.5530086,2.865329513
+TGO,40-60,2015-2023,0.597132285,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),19.78021978,17.58241758,2.197802198
+TUR,40-60,2015-2023,1.320825624,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),19.83333333,14.90909091,4.924242424
+TZA,40-60,2015-2023,0.516275146,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),37.40458015,36,1.404580153
+VCT,40-60,2015-2023,1.369796485,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),18.18181818,13.04347826,5.138339921
+VUT,40-60,2015-2023,0.559605608,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),1.923076923,0,1.923076923
+ZMB,40-60,2015-2023,0.614361702,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),14.97005988,12.65822785,2.311832032
+BFA,60-80,2015-2023,1.982481499,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),16.90140845,9.448818898,7.452589553
+BRA,60-80,2015-2023,2.021276596,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),17.54385965,9.941520468,7.602339181
+BRB,60-80,2015-2023,2.771851305,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),26.66666667,16.66666667,10
+BTN,60-80,2015-2023,2.36823543,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),17.39130435,8.510638298,8.88066605
+CHE,60-80,2015-2023,2.301243809,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),38.5,32,6.5
+COG,60-80,2015-2023,1.933452821,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),14.56953642,7.352941176,7.216595247
+COL,60-80,2015-2023,2.562964813,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),28.87700535,19.87951807,8.997487275
+CZE,60-80,2015-2023,1.678147693,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),26,20,6
+DNK,60-80,2015-2023,2.648332072,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),43.57541899,37.4301676,6.145251397
+DOM,60-80,2015-2023,2.023933479,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),27.89473684,20.76502732,7.12970952
+FIN,60-80,2015-2023,2.286519287,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),46,41.5,4.5
+GAB,60-80,2015-2023,2.809432554,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),24.48979592,14.16666667,10.32312925
+GBR,60-80,2015-2023,1.697784878,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),34.61538462,29.38461538,5.230769231
+GEO,60-80,2015-2023,1.895235893,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),18.43971631,11.33333333,7.106382979
+GIN,60-80,2015-2023,2.230331079,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),29.62962963,21.92982456,7.699805068
+GNQ,60-80,2015-2023,2.079064603,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),31,24,7
+GTM,60-80,2015-2023,1.630319149,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),20,13.92405063,6.075949367
+GUY,60-80,2015-2023,2.085695509,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),36.61971831,30.43478261,6.184935701
+IRL,60-80,2015-2023,1.864558279,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),23.125,16.26506024,6.859939759
+ISL,60-80,2015-2023,3.401086956,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),47.61904762,41.26984127,6.349206349
+LIE,60-80,2015-2023,2.265910705,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),28,20,8
+MAR,60-80,2015-2023,2.013434005,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),24.30379747,16.96202532,7.341772152
+MUS,60-80,2015-2023,2.25,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),20,11.5942029,8.405797101
+NOR,60-80,2015-2023,3.173331684,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),46.15384615,39.64497041,6.50887574
+PLW,60-80,2015-2023,1.773154136,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),6.25,0,6.25
+PRY,60-80,2015-2023,2.030102015,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),22.5,15,7.5
+SLB,60-80,2015-2023,1.666364734,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),8,2,6
+SOM,60-80,2015-2023,1.578110546,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),19.7080292,13.81818182,5.889847379
+SSD,60-80,2015-2023,1.795745384,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),32.36363636,26.5060241,5.857612267
+SWZ,60-80,2015-2023,2.943050416,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),17.14285714,6.153846154,10.98901099
+TCD,60-80,2015-2023,3.018511374,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),25.88832487,14.89361702,10.99470785
+TJK,60-80,2015-2023,2.221183588,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),26.98412698,19.04761905,7.936507937
+TON,60-80,2015-2023,2.015001962,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),7.142857143,0,7.142857143
+UKR,60-80,2015-2023,2.233869103,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),20.43269231,12.08530806,8.347384251
+URY,60-80,2015-2023,2.788303556,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),26.26262626,16.16161616,10.1010101
+USA,60-80,2015-2023,2.734425576,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),28.96551724,19.35483871,9.610678532
+VEN,60-80,2015-2021,1.8822952,2015-2021,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),22.15568862,16.96969697,5.185991653
+VNM,60-80,2015-2023,1.762587331,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),30.26052104,24.29718876,5.963332287
+WSM,60-80,2015-2023,1.839500463,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),12.96296296,6.12244898,6.840513983
+ZAF,60-80,2015-2023,1.978678979,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),45.86466165,42,3.864661654
+ARG,60-80,2016-2023,3.489994949,2016-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),43.19066148,35.79766537,7.392996109
+BRN,60-80,2016-2023,1.63506013,2016-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),11.76470588,6.451612903,5.313092979
+CAF,60-80,2016-2023,1.739592969,2016-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),12.85714286,7.194244604,5.662898253
+ALB,80-100,2015-2023,4.570581745,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),35.71428571,20.71428571,15
+AND,80-100,2015-2023,6.317080432,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),50,39.28571429,10.71428571
+ARE,80-100,2015-2023,11.75186825,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),50,22.5,27.5
+ARM,80-100,2015-2023,7.181449658,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),35.51401869,10.6870229,24.82699579
+AUS,80-100,2015-2023,3.898587172,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),38.41059603,26.66666667,11.74392936
+AUT,80-100,2015-2023,3.770796851,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),40.98360656,30.6010929,10.38251366
+BEN,80-100,2015-2023,5.2789816,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),26.60550459,7.228915663,19.37658892
+BHR,80-100,2015-2023,3.35013876,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),20,7.5,12.5
+BLR,80-100,2015-2023,4.365225818,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),40,27.27272727,12.72727273
+BLZ,80-100,2015-2023,3.384260622,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),15.625,3.125,12.5
+CHL,80-100,2015-2023,5.803714096,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),35.48387097,15.83333333,19.65053763
+COM,80-100,2015-2023,3.689084123,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),16.66666667,3.03030303,13.63636364
+CPV,80-100,2015-2023,6.911750681,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),41.66666667,20.83333333,20.83333333
+CRI,80-100,2015-2023,6.25366364,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),47.36842105,33.33333333,14.03508772
+DJI,80-100,2015-2023,3.668560855,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),26.15384615,12.72727273,13.42657343
+DMA,80-100,2015-2023,4.906447204,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),37.5,21.875,15.625
+FRA,80-100,2015-2023,3.799736199,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),37.78162912,26.16984402,11.6117851
+FSM,80-100,2015-2023,3.931051916,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),14.28571429,0,14.28571429
+HRV,80-100,2015-2023,4.720021949,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),31.78807947,15.23178808,16.55629139
+JAM,80-100,2015-2023,4.390631156,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),28.57142857,12.6984127,15.87301587
+KNA,80-100,2015-2023,5.052264175,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),31.25,13.33333333,17.91666667
+LVA,80-100,2015-2023,4.048893009,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),32,18,14
+MCO,80-100,2015-2023,9.023351136,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),45.83333333,20.83333333,25
+MDA,80-100,2015-2023,5.362610398,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),38.61386139,21.78217822,16.83168317
+MEX,80-100,2015-2023,4.980327772,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),50,42.36947791,7.630522088
+MKD,80-100,2015-2023,3.57707021,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),42.5,33.33333333,9.166666667
+MLI,80-100,2015-2023,5.421852248,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),28.57142857,8.843537415,19.72789116
+MLT,80-100,2015-2023,4.13350189,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),27.84810127,12.85714286,14.99095841
+NER,80-100,2015-2022,3.94545076,2015-2022,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),25.90361446,13.27433628,12.62927817
+NIC,80-100,2015-2020,5.030836874,2015-2020,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),47.25274725,41.30434783,5.948399427
+NZL,80-100,2015-2023,5.076618422,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),44.26229508,31.40495868,12.8573364
+PER,80-100,2015-2023,5.273981926,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),38.75968992,22.30769231,16.45199761
+SLE,80-100,2015-2023,4.357032792,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),28.18791946,12.39669421,15.79122525
+SMR,80-100,2015-2023,4.840608532,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),33.33333333,16.66666667,16.66666667
+THA,80-100,2015-2023,3.418194316,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),18.83767535,6.091370558,12.74630479
+UZB,80-100,2015-2023,5.099881102,2015-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),33.57142857,16,17.57142857
+EGY,80-100,2016-2023,3.985979292,2016-2023,5,SG.GEN.PARL.ZS,Proportion of seats held by women in national parliaments (%),27.53378378,14.93288591,12.60089788
+AFG,0-20,2015-2022,-1.769664768,2015-2022,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",1955.212904,2974.573322,-1019.360417
+AGO,0-20,2015-2023,-1.648521552,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",7247.476442,9991.6025,-2744.126058
+ARG,0-20,2015-2023,-0.614030892,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",26466.54656,28905.76135,-2439.214788
+AZE,20-40,2015-2023,0.180350466,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",21349.35047,20694.77876,654.5717154
+BDI,0-20,2015-2023,0,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",857.091186,945.9955315,-88.90434553
+BEN,20-40,2015-2023,0.848287046,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",3829.284946,3067.540545,761.7444013
+BFA,20-40,2015-2023,0.653517518,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",2457.974377,2102.628673,355.3457043
+BHS,20-40,2015-2023,0.07180432,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",32047.90427,31686.2415,361.6627699
+BLR,20-40,2015-2023,0.574996423,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",27718.36702,25513.1853,2205.181724
+BLZ,0-20,2015-2023,0.261378644,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",12795.1798,12220.5355,574.6443033
+BOL,0-20,2015-2023,0.32691347,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",9668.957102,9079.790151,589.1669509
+BRA,20-40,2015-2023,0.19764787,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",18554.10534,18042.80938,511.2959648
+BRB,0-20,2015-2023,0.207220316,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",17447.90359,16807.02438,640.879209
+BRN,20-40,2015-2023,-1.514298779,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",77919.2203,82060.81673,-4141.59643
+BWA,20-40,2015-2023,0.783563089,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",17471.34196,15287.95306,2183.388892
+CAN,20-40,2015-2023,0.221525015,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",55817.89743,54819.18904,998.7083925
+CHL,20-40,2015-2023,0.351105166,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",29506.53518,28097.54052,1408.994666
+CMR,20-40,2015-2023,0.190026446,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",4849.494853,4645.877658,203.6171951
+COG,0-20,2015-2023,-1.824012309,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",6249.118075,9036.55205,-2787.433976
+COL,20-40,2015-2023,0.567790642,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",18777.4054,17073.65901,1703.746386
+COM,20-40,2015-2023,0.244613192,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",3474.577378,3344.340853,130.2365254
+CPV,20-40,2015-2023,0.776345437,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",8190.026296,7015.58694,1174.439356
+CUW,0-20,2015-2022,-0.88370316,2015-2022,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",27581.50422,30706.05594,-3124.551721
+DMA,0-20,2015-2023,-0.036297114,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",15862.82736,16018.48855,-155.661192
+DZA,0-20,2015-2023,-0.037325689,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",15347.53242,15425.94052,-78.40809784
+ECU,0-20,2015-2023,0.159008341,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",14304.92185,13924.68765,380.2341987
+FJI,20-40,2015-2023,0.640209898,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",13562.38076,12149.31743,1413.063338
+FSM,20-40,2015-2023,0,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",3800.618394,3764.520184,36.09820964
+GAB,0-20,2015-2023,-0.397598756,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",19782.28178,21077.46091,-1295.179134
+GBR,20-40,2015-2023,0.503627104,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",54126.13589,51776.24899,2349.886909
+GMB,20-40,2015-2023,0.581949812,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",2850.577604,2464.270709,386.3068949
+GNQ,0-20,2015-2023,-3.746270014,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",16876.86777,30004.94624,-13128.07847
+GRD,20-40,2015-2023,0.487776748,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",15912.8118,14598.07941,1314.732396
+HND,20-40,2015-2023,0.536703345,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",6499.473576,5776.763537,722.7100384
+HTI,0-20,2015-2023,-0.648737583,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",2934.432582,3408.972773,-474.5401915
+IRN,20-40,2015-2023,0.83220693,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",16153.98735,14046.04828,2107.93907
+IRQ,0-20,2015-2023,-0.338224643,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",12590.80445,13445.40831,-854.6038548
+JAM,0-20,2015-2023,0.258305088,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",10343.18547,9806.422982,536.7624869
+JOR,0-20,2015-2023,-0.10803059,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",9421.003606,9632.637337,-211.6337306
+KGZ,20-40,2015-2023,0.543843941,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",6402.196251,5678.372339,723.8239117
+KIR,20-40,2015-2023,0.828920569,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",3174.383255,2616.70882,557.6744354
+KNA,20-40,2015-2023,0.448417732,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",30108.18814,28322.36892,1785.819215
+KWT,0-20,2015-2023,-0.919859168,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",50824.71535,55043.20761,-4218.492257
+LBN,0-20,2015-2022,-1.498936257,2015-2022,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",12007.23359,15152.15308,-3144.919488
+LBR,0-20,2015-2023,-0.204448806,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",1639.628586,1731.595115,-91.96652867
+LCA,20-40,2015-2023,0.619418329,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",22650.16745,20604.29624,2045.871209
+LKA,0-20,2015-2023,-0.042144302,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",13029.52426,13100.69101,-71.16674376
+LSO,0-20,2015-2023,-0.71808573,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",2518.293823,2950.403023,-432.1092001
+MAR,0-20,2015-2023,0.3543337,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",8782.291992,8178.865723,603.4262695
+MDG,0-20,2015-2023,0,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",1690.1646,1671.1073,19.05730056
+MEX,20-40,2015-2023,0.145311922,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",22366.65789,21871.15272,495.505168
+MLI,20-40,2015-2023,0.316686734,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",2457.085224,2330.978455,126.1067688
+MMR,20-40,2015-2023,0,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",5322.788174,5273.127505,49.66066901
+MNG,20-40,2015-2023,0.749081627,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",16321.94733,14267.38106,2054.566263
+MOZ,0-20,2015-2023,0,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",1493.663144,1495.938705,-2.275560687
+MRT,20-40,2015-2023,0.229866682,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",6250.325652,5999.402056,250.9235962
+MWI,0-20,2015-2023,0,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",1683.458589,1670.257764,13.20082485
+NAM,0-20,2015-2023,-0.536278371,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",11498.31896,12654.76263,-1156.443665
+NGA,0-20,2015-2023,-0.393552296,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",5694.976916,6202.257189,-507.280273
+NIC,20-40,2015-2023,0.414326795,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",7250.354968,6719.136144,531.2188244
+NRU,0-20,2015-2023,0.189732482,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",11420.81246,11041.83361,378.9788529
+OMN,20-40,2015-2023,0.022156835,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",40039.77862,39945.01054,94.76808175
+PAK,20-40,2015-2023,0.702188921,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",5599.322429,4784.479893,814.8425362
+PER,0-20,2015-2023,0.269100597,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",15068.48868,14424.96018,643.5285006
+PLW,0-20,2015-2023,-1.532768111,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",15765.57778,20389.58775,-4624.009973
+PNG,0-20,2015-2023,0,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",4152.939219,4185.312653,-32.37343474
+PRI,20-40,2015-2023,0.109289457,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",42994.78564,42481.87579,512.9098487
+PRY,20-40,2015-2023,0.492540164,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",15743.14153,14383.58612,1359.555412
+PSE,0-20,2015-2023,-0.65227369,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",5307.601223,6072.650318,-765.0490946
+SAU,20-40,2015-2023,0.303427413,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",49567.69567,48237.33762,1330.358048
+SDN,0-20,2015-2023,-1.892393769,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",2827.732666,4361.127441,-1533.394775
+SEN,20-40,2015-2023,0.748934581,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",4356.333506,3653.160729,703.1727777
+SLB,0-20,2015-2023,-0.143397958,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",2735.516329,2782.140483,-46.62415366
+STP,20-40,2015-2023,0.257098877,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",5465.566406,5188.624505,276.9419016
+SUR,0-20,2015-2023,-1.317870996,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",18971.22475,23375.7099,-4404.485151
+SWZ,20-40,2015-2023,0.788386719,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",10582.77728,9081.967369,1500.80991
+SXM,0-20,2015-2023,-0.693348024,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",46444.80425,49583.90803,-3139.103784
+SYR,0-20,2015-2021,-0.864983444,2015-2021,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",2914.530559,3356.102919,-441.5723592
+TCA,0-20,2015-2023,-1.587717598,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",22371.51767,28265.74518,-5894.227511
+TCD,0-20,2015-2023,-0.8863241,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",1775.063825,2293.08176,-518.0179354
+TGO,20-40,2015-2023,0.598262048,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",2844.099666,2376.458797,467.6408694
+THA,20-40,2015-2023,0.683070045,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",21112.63861,18877.26648,2235.372135
+TLS,20-40,2015-2023,0.097473487,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",4604.815452,4477.612477,127.2029746
+TON,20-40,2015-2022,0.339249329,2015-2022,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",6554.838268,6195.498559,359.3397091
+TTO,0-20,2015-2023,-1.904788777,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",28458.0334,36536.80541,-8078.772006
+TUN,0-20,2015-2023,-0.087654018,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",12332.14556,12518.42494,-186.2793857
+TZA,20-40,2015-2023,0.619072424,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",3580.775391,3080.54126,500.2341309
+UGA,20-40,2015-2023,0.442285008,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",2792.533406,2523.657176,268.8762296
+UKR,0-20,2015-2023,0.21829877,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",16231.34375,15625.72852,605.6152344
+URY,20-40,2015-2023,0.494213857,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",30701.90586,28738.70643,1963.199426
+VUT,0-20,2015-2023,-0.132780965,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",2988.096067,3138.451043,-150.3549755
+WSM,0-20,2015-2023,-0.304533668,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",6021.679135,6378.217621,-356.5384859
+ZAF,0-20,2015-2023,-0.194158961,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",14284.33992,14756.35121,-472.0112901
+ZMB,20-40,2015-2023,0.115805077,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",3718.700564,3610.135921,108.564643
+ZWE,0-20,2015-2023,-0.118315192,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",3515.238425,3584.098151,-68.85972621
+AND,40-60,2015-2023,0.478959533,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",64526.5561,62476.06576,2050.490342
+ATG,40-60,2015-2023,0.801715461,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",28665.59663,25596.32162,3069.275008
+AUS,40-60,2015-2023,1.010791667,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",59456.38842,55015.29648,4441.09194
+AUT,40-60,2015-2023,0.550472798,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",64643.97218,62309.39427,2334.577914
+BEL,40-60,2015-2023,1.095961118,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",63572.49193,58871.06529,4701.426648
+BHR,40-60,2015-2023,0.975927752,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",57550.29321,53167.47419,4382.81902
+BTN,40-60,2015-2022,0.865470661,2015-2022,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",14033.61829,12194.86639,1838.751896
+CAF,40-60,2015-2023,0,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",1018.526499,1002.762765,15.76373391
+CIV,40-60,2015-2023,1.138299905,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",7022.415976,5468.152584,1554.263392
+COD,40-60,2015-2023,0.45377455,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",1506.045667,1306.247629,199.7980382
+CRI,40-60,2015-2023,1.292361341,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",25754.78636,21171.7219,4583.064462
+CZE,40-60,2015-2023,1.020732278,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",47730.52425,42980.24481,4750.279443
+DEU,40-60,2015-2023,0.601619716,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",61909.02731,59345.45562,2563.571684
+DJI,40-60,2015-2023,1.217953866,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",6493.487744,5009.635365,1483.852379
+EGY,40-60,2015-2023,1.235271507,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",16960.56732,13683.31112,3277.2562
+ESP,40-60,2015-2023,0.826526683,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",46356.60808,42567.36626,3789.241819
+FIN,40-60,2015-2023,0.865691071,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",57505.5087,53578.22055,3927.288152
+FRA,40-60,2015-2023,0.724602716,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",55213.7156,51923.38905,3290.32655
+GHA,40-60,2015-2023,0.844354761,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",6729.932803,5573.402592,1156.53021
+GNB,40-60,2015-2023,0.674393902,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",2370.857515,2030.74439,340.1131248
+GRC,40-60,2015-2023,1.121256316,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",36267.69186,31491.03566,4776.656192
+GTM,40-60,2015-2023,0.772630031,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",12679.08215,11019.3001,1659.782046
+HKG,40-60,2015-2023,0.383652039,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",64431.08909,62779.79408,1651.295007
+IDN,40-60,2015-2023,1.351294876,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",14072.85371,11007.49113,3065.362585
+ITA,40-60,2015-2023,1.194813812,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",52699.94566,47189.29216,5510.6535
+JPN,40-60,2015-2023,0.586546236,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",46268.41723,43624.92745,2643.48978
+KAZ,40-60,2015-2023,0.866409514,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",35452.96985,31847.12683,3605.843026
+KEN,40-60,2015-2023,0.878421555,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",5699.821191,4703.297665,996.5235254
+KHM,40-60,2015-2023,1.295780297,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",5069.409007,3822.060511,1247.348496
+LAO,40-60,2015-2023,1.107450406,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",8406.389091,6717.79186,1688.597231
+MDV,40-60,2015-2023,1.227857786,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",22361.73747,18378.88581,3982.851662
+MKD,40-60,2015-2023,1.190344044,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",23423.9489,19412.31177,4011.637138
+MUS,40-60,2015-2023,1.179718582,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",26588.93239,22335.28362,4253.648775
+NER,40-60,2015-2023,0.212838413,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",1638.087504,1457.870024,180.2174808
+NOR,40-60,2015-2023,2.736020429,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",90500.84815,85766.6127,4734.23545
+NPL,40-60,2015-2023,0.928011809,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",4670.738364,3774.195902,896.542462
+NZL,40-60,2015-2023,0.78016862,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",48777.59069,45170.42133,3607.169362
+PHL,40-60,2015-2023,1.036236993,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",9694.646086,7862.096988,1832.549098
+RUS,40-60,2015-2023,0.991661793,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",39753.45703,35393.57031,4359.886719
+SLE,40-60,2015-2023,0.417287219,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",1664.538919,1524.38761,140.1513091
+SLV,40-60,2015-2023,0.852832603,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",11305.21686,9572.791073,1732.42579
+SOM,40-60,2015-2023,0.221906622,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",1452.357532,1447.801229,4.556302789
+SWE,40-60,2015-2023,1.080617755,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",64190.61778,59593.85903,4596.758749
+SYC,40-60,2015-2023,0.633234866,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",29468.95128,27032.20839,2436.742888
+TUV,40-60,2015-2023,0.849582019,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",5194.985039,4276.212465,918.7725739
+UZB,40-60,2015-2023,1.341424068,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",8765.549212,6697.922619,2067.626593
+VCT,40-60,2015-2023,1.262691456,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",17915.27989,14430.18741,3485.092479
+VIR,40-60,2015-2021,1.044238456,2015-2021,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",46238.05965,42584.15314,3653.906515
+ABW,60-80,2015-2022,1.345865073,2015-2022,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",42260.45184,36963.07855,5297.373287
+ALB,60-80,2015-2023,1.814321324,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",18059.93791,13234.14406,4825.793847
+ARE,60-80,2015-2023,2.379617497,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",75627.05491,66992.24015,8634.814764
+BGD,60-80,2015-2023,1.999070576,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",8171.517091,5405.386482,2766.130609
+BIH,60-80,2015-2023,1.907564038,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",19860.3408,14396.82459,5463.516219
+BMU,60-80,2015-2022,28.7916812,2015-2022,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",99836.80544,90578.94181,9257.863631
+CHE,60-80,2015-2023,2.032878083,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",82914.28873,77257.68233,5656.606399
+CYM,60-80,2015-2022,1.987546233,2015-2022,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",79565.44822,74160.49966,5404.948564
+DNK,60-80,2015-2023,2.327902501,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",72034.31379,62855.36676,9178.947037
+DOM,60-80,2015-2023,1.627128073,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",23084.4568,17826.54876,5257.908038
+EST,60-80,2015-2023,1.316389481,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",41997.77437,36099.75335,5898.021016
+ETH,60-80,2015-2023,1.27265595,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",2802.597609,1984.066266,818.5313436
+FRO,60-80,2015-2022,2.420072276,2015-2022,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",71530.01298,63175.73066,8354.282311
+GIN,60-80,2015-2023,1.337247887,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",3992.461796,2904.377499,1088.084297
+GRL,60-80,2015-2021,1.837348054,2015-2021,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",68086.46012,62503.39715,5583.062972
+IND,60-80,2015-2023,1.711795695,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",9172.096108,6513.44398,2658.652128
+ISL,60-80,2015-2023,1.485341316,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",66451.36295,60258.9459,6192.417051
+ISR,60-80,2015-2023,1.589233519,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",48277.62509,40960.59914,7317.025951
+KOR,60-80,2015-2023,1.736969314,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",50572.24999,42593.00887,7979.241113
+LBY,60-80,2015-2023,1.31385197,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",17703.86868,14124.8163,3579.052381
+LVA,60-80,2015-2023,1.629805433,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",37812.57703,30763.95241,7048.624615
+MDA,60-80,2015-2023,1.633499071,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",15669.69452,11691.07975,3978.614767
+MHL,60-80,2015-2023,1.807649396,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",6752.484326,4612.131029,2140.353297
+MNE,60-80,2015-2023,1.694162517,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",27776.40103,21614.25153,6162.149499
+MYS,60-80,2015-2023,1.388232614,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",33573.82904,27854.13264,5719.696397
+NLD,60-80,2015-2023,1.690518276,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",69335.60861,62544.91314,6790.695472
+PAN,60-80,2015-2023,1.371823671,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",35779.8161,30016.77577,5763.04033
+PRT,60-80,2015-2023,1.296241744,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",41709.5821,35880.14472,5829.437377
+RWA,60-80,2015-2023,1.200510995,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",3029.588092,2236.063856,793.5242361
+SMR,60-80,2015-2021,1.374927202,2015-2021,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",65717.89155,61380.68853,4337.203018
+SVK,60-80,2015-2023,1.321336977,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",39259.88379,33485.36493,5774.518861
+TJK,60-80,2015-2023,1.680484045,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",4580.899283,3084.18206,1496.717223
+USA,60-80,2015-2023,2.375602164,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",73637.30279,64599.57374,9037.729053
+VNM,60-80,2015-2023,2.063347694,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",13695.67119,9311.407525,4384.263668
+XKX,60-80,2015-2023,1.712667305,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",13546.95142,9825.41962,3721.531797
+ARM,80-100,2015-2023,2.462707313,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",20780.644,13686.74613,7093.897877
+BGR,80-100,2015-2023,2.324268853,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",33289.11408,24095.42703,9193.687057
+CHN,80-100,2015-2023,2.49138884,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",22135.43246,14575.93479,7559.497666
+CYP,80-100,2015-2023,2.620443577,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",50578.35547,38608.59766,11969.75781
+GEO,80-100,2015-2023,2.405134912,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",22246.85185,14936.84341,7310.008434
+GUY,80-100,2015-2023,10.07912128,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",49811.78721,12105.17193,37706.61527
+HRV,80-100,2015-2023,2.825925499,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",41343.52426,29110.70825,12232.816
+HUN,80-100,2015-2023,2.036080538,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",40553.77674,31665.22778,8888.548966
+LTU,80-100,2015-2023,2.208145264,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",46210.40107,36189.16889,10021.23218
+MLT,80-100,2015-2023,2.515409073,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",57230.14617,45729.08362,11501.06255
+POL,80-100,2015-2023,2.730802611,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",44050.94987,32037.19642,12013.75345
+ROU,80-100,2015-2023,2.574948296,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",40517.54532,29364.65447,11152.89085
+SRB,80-100,2015-2023,2.050355923,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",24510.78743,17707.09328,6803.694148
+SVN,80-100,2015-2023,1.944422072,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",48109.07828,39191.7032,8917.375079
+TUR,80-100,2015-2023,2.067778658,2015-2023,1,NY.GDP.PCAP.PP.KD,"GDP per capita, PPP (constant 2021 international $)",34414.23065,25992.30311,8421.927535
+AFG,20-40,2015-2020,0.564236159,2015-2020,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),18.4,8.26,10.14
+AGO,0-20,2015-2022,0.529656665,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),39.2935,22,17.2935
+ARM,20-40,2015-2022,0.939796143,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),77.0277,59.1008,17.9269
+BRB,0-20,2015-2022,0.259310355,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),76.2053,72,4.2053
+BEN,20-40,2015-2022,0.746971744,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),33.7602,11.255,22.5052
+BFA,20-40,2015-2022,0.543155783,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),19.9237,6.55,13.3737
+BDI,20-40,2015-2022,0.543445516,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),11.275,2,9.275
+CMR,20-40,2015-2022,0.794444273,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),43.8629,18.3,25.5629
+CAN,20-40,2015-2022,0.704931376,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),94,90,4
+CAF,20-40,2015-2021,0.509479264,2015-2021,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),10.58263964,2.9,7.68263964
+TCD,20-40,2015-2022,0.457543078,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),12.1839,3.5,8.6839
+COL,20-40,2015-2022,0.798740945,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),72.7964,55.905,16.8914
+CIV,0-20,2015-2022,-0.000917712,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),38.4133,38.44,-0.0267
+HRV,20-40,2015-2023,0.800382697,2015-2023,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),83.2412,69.845,13.3962
+CZE,20-40,2015-2023,0.729852778,2015-2023,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),85.9941,75.6688,10.3253
+ECU,20-40,2015-2023,0.911449833,2015-2023,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),72.6943,48.9404,23.7539
+EST,20-40,2015-2023,0.647898932,2015-2023,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),93.1834,88.4097,4.7737
+ETH,0-20,2015-2022,0.195828459,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),19.3781,13.8552,5.5229
+FRA,20-40,2015-2023,0.671256536,2015-2023,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),86.8364,78.006,8.8304
+DEU,20-40,2015-2023,0.616539718,2015-2023,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),92.4764,87.5898,4.8866
+GTM,20-40,2015-2022,0.820049023,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),54.4043,28.8059,25.5984
+JPN,0-20,2015-2022,-0.74825121,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),84.9234,91.058,-6.1346
+KEN,20-40,2015-2022,0.757955664,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),40.8137,16.5879,24.2258
+LSO,20-40,2015-2022,0.680657786,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),47.0368,25,22.0368
+LBR,20-40,2015-2022,0.691893251,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),30.1275,10,20.1275
+MDG,20-40,2015-2022,0.711204994,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),20.5777,4.17397,16.40373
+MWI,0-20,2015-2023,0.445998406,2015-2023,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),18,6,12
+MLI,20-40,2015-2022,0.765530693,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),33.0528,10.33,22.7228
+MRT,20-40,2015-2022,0.834402256,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),44.3616,17.6,26.7616
+FSM,0-20,2015-2022,0.275050369,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),40.5434,31.5011,9.0423
+MDA,0-20,2015-2022,-0.268673614,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),63.5349,69,-5.4651
+MOZ,20-40,2015-2022,0.58816199,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),21.207,6.5,14.707
+NLD,0-20,2015-2022,0.140374569,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),92.5197,91.7241,0.7956
+NER,20-40,2015-2022,0.716895495,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),16.937,2.47622,14.46078
+NGA,0-20,2015-2022,0.396875073,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),35.4563,22.5,12.9563
+PAK,20-40,2015-2022,0.733520788,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),32.9486,11,21.9486
+PNG,20-40,2015-2022,0.695701476,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),26.991,7.9,19.091
+RWA,20-40,2015-2022,0.716620611,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),34.4405,12.5,21.9405
+SVK,20-40,2015-2023,0.730583825,2015-2023,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),87.2131,77.6347,9.5784
+SSD,20-40,2015-2022,0.494207024,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),12.1407,3,9.1407
+KNA,0-20,2015-2022,0.583900792,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),76.4575,66.2,10.2575
+LCA,20-40,2015-2022,0.828354702,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),74.1859,57.3,16.8859
+SYR,0-20,2015-2020,0.245532643,2015-2020,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),35.78,29.9798,5.8002
+TJK,0-20,2015-2022,0.531018224,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),36.0872,18.98,17.1072
+TZA,20-40,2015-2022,0.745120424,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),31.8913,10,21.8913
+TLS,20-40,2015-2022,0.686606315,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),40.7521,18.6,22.1521
+TON,20-40,2015-2021,0.749286417,2015-2021,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),57.5486,38.6513,18.8973
+TTO,20-40,2015-2022,0.88731374,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),79.9843,65.1,14.8843
+UGA,0-20,2015-2021,0.249115729,2015-2021,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),10,5.8,4.2
+GBR,20-40,2015-2020,0.917769913,2015-2020,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),94.8182,92.0003,2.8179
+YEM,0-20,2015-2022,-0.20919835,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),17.6948,24.0854,-6.3906
+ZMB,20-40,2015-2022,0.780540934,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),31.2342,8.8,22.4342
+ZWE,0-20,2015-2022,0.301566485,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),32.5615,22.7428,9.8187
+SDN,20-40,2016-2022,0.56079064,2016-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),28.7045,14.1,14.6045
+AND,40-60,2015-2022,1.092158913,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),94.4855,87.9,6.5855
+AZE,40-60,2015-2022,0.969940557,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),88,77,11
+BGD,40-60,2015-2023,0.885110313,2015-2023,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),44.5027,12.9,31.6027
+BGR,40-60,2015-2023,1.120501125,2015-2023,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),80.3896,56.6563,23.7333
+CHN,40-60,2015-2023,1.137508339,2015-2023,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),77.4827,50.3,27.1827
+COM,40-60,2015-2021,0.850407124,2015-2021,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),27.33694319,7.45916,19.87778319
+COD,40-60,2015-2022,0.946947376,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),27.24,3.8,23.44
+COG,40-60,2015-2022,0.990666362,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),36.2469,7.61597,28.63093
+SWZ,40-60,2015-2022,1.065636502,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),58.2502,25.643,32.6072
+FIN,40-60,2015-2023,0.906884717,2015-2023,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),93.5139,86.4221,7.0918
+GRC,40-60,2015-2023,1.081585365,2015-2023,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),85.0102,66.835,18.1752
+GIN,40-60,2015-2022,0.842930734,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),33.923,9.2,24.723
+GNB,40-60,2015-2022,0.931539674,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),31.567,6.1,25.467
+HTI,40-60,2015-2021,0.919073111,2015-2021,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),38.94501834,14.2,24.74501834
+HND,40-60,2015-2022,1.079072301,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),59.7135,27.1395,32.574
+MEX,40-60,2015-2023,1.148725728,2015-2023,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),81.1832,57.431,23.7522
+NPL,40-60,2015-2022,1.006560865,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),49.5609,17.5816,31.9793
+MKD,40-60,2015-2022,0.975598314,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),84.2304,70.3802,13.8502
+PAN,40-60,2015-2022,1.018464263,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),73.6085,51.2054,22.4031
+POL,40-60,2015-2023,1.155123786,2015-2023,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),86.4147,67.997,18.4177
+PRT,40-60,2015-2023,1.069669793,2015-2023,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),85.7901,68.6329,17.1572
+STP,40-60,2015-2022,1.01016536,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),56.9899,25.82,31.1699
+SLE,40-60,2015-2022,0.880989322,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),30.3518,6.34442,24.00738
+ZAF,40-60,2015-2022,1.060596719,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),74.703,51.9191,22.7839
+SWE,40-60,2015-2021,0.926163318,2015-2021,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),94.6703,90.6102,4.0601
+TGO,40-60,2015-2022,1.05846214,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),37.6212,7.12,30.5012
+ALB,60-80,2015-2023,1.311382241,2015-2023,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),83.1356,56.9,26.2356
+DZA,60-80,2015-2022,1.300678896,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),71.2432,38.2,33.0432
+ARG,60-80,2015-2023,1.445571289,2015-2023,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),89.229,68.0431,21.1859
+AUS,60-80,2015-2022,1.648925423,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),94.8762,84.5605,10.3157
+AUT,60-80,2015-2022,1.303584143,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),93.6141,83.9401,9.674
+BEL,60-80,2015-2023,1.263987436,2015-2023,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),94.6263,85.0529,9.5734
+BLZ,60-80,2015-2022,1.14652407,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),70.354,41.59,28.764
+BRA,60-80,2015-2023,1.342084145,2015-2023,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),84.1506,58.328,25.8226
+CPV,60-80,2015-2022,1.210948444,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),72.1021,42.683,29.4191
+CRI,60-80,2015-2023,1.373196998,2015-2023,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),85.127,59.763,25.364
+DMA,60-80,2015-2022,1.172433413,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),83.3767,65,18.3767
+EGY,60-80,2015-2022,1.367160119,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),72.1981,37.8194,34.3787
+SLV,60-80,2015-2022,1.226758145,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),62.8885,26.8026,36.0859
+ERI,60-80,2015-2022,1.162668634,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),26.5942,1.08373,25.51047
+GAB,60-80,2015-2022,1.206672501,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),73.6951,45.7845,27.9106
+GMB,60-80,2015-2022,1.170009479,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),54.1899,17.6,36.5899
+GRD,60-80,2015-2022,1.397826728,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),79.8955,52.5,27.3955
+HKG,60-80,2015-2021,1.28467827,2015-2021,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),93.0872,84.9484,8.1388
+IND,60-80,2015-2020,1.260726989,2015-2020,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),43.4054,14.9,28.5054
+ISR,60-80,2015-2022,1.49129934,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),91.8508,77.3521,14.4987
+KIR,60-80,2015-2022,1.274875457,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),54.4214,14.9,39.5214
+LVA,60-80,2015-2023,1.241238849,2015-2023,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),92.1879,79.2006,12.9873
+LBN,60-80,2015-2022,1.429643866,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),90.0522,74,16.0522
+LTU,60-80,2015-2023,1.206145316,2015-2023,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),88.5029,71.3781,17.1248
+MAC,60-80,2015-2022,1.158790272,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),89.7864,77.6001,12.1863
+MLT,60-80,2015-2023,1.396831074,2015-2023,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),91.9155,75.96,15.9555
+MUS,60-80,2015-2022,1.173581671,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),75.5,50.1393,25.3607
+MMR,60-80,2015-2021,1.25802246,2015-2021,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),44.02167324,10.9,33.12167324
+NAM,60-80,2015-2022,1.231141258,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),62.215,25.6879,36.5271
+NIC,60-80,2015-2022,1.371305867,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),61.0524,19.7043,41.3481
+PRY,60-80,2015-2023,1.192214773,2015-2023,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),78.0948,49.7163,28.3785
+SEN,60-80,2015-2022,1.260660624,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),59.9832,21.7,38.2832
+SRB,60-80,2015-2023,1.1764029,2015-2023,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),85.3575,65.317,20.0405
+SVN,60-80,2015-2023,1.340061326,2015-2023,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),90.3779,73.0987,17.2792
+SLB,60-80,2015-2022,1.147750296,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),44.9575,10.0005,34.957
+SOM,60-80,2015-2022,1.125213594,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),27.6,1.76,25.84
+LKA,60-80,2015-2022,1.10783528,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),50.1067,15.26,34.8467
+VCT,60-80,2015-2022,1.348897969,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),77.7418,49.4,28.3418
+CHE,60-80,2015-2020,1.548784986,2015-2020,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),94.3499,87.4791,6.8708
+TUN,60-80,2015-2022,1.191713365,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),73.8379,46.5,27.3379
+VNM,60-80,2015-2023,1.328445882,2015-2023,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),78.08,45,33.08
+ATG,80-100,2015-2022,1.866263383,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),91.4123,70,21.4123
+BHS,80-100,2015-2022,1.96047626,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),94.4117,78,16.4117
+BLR,80-100,2015-2023,1.980290306,2015-2023,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),91.5125,62.2304,29.2821
+BTN,80-100,2015-2022,2.443959774,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),86.8403,39.8,47.0403
+BOL,80-100,2015-2022,1.440885113,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),73.2831,37.4868,35.7963
+BIH,80-100,2015-2023,1.470612191,2015-2023,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),83.3772,52.6,30.7772
+BWA,80-100,2015-2022,1.705828366,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),77.3272,37.3121,40.0151
+KHM,80-100,2015-2022,1.737658929,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),56.7328,6.43319,50.29961
+CHL,80-100,2015-2023,1.738115088,2015-2023,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),94.1192,76.6296,17.4896
+CUB,80-100,2015-2022,1.44277902,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),73.2178,37.3051,35.9127
+CYP,80-100,2015-2023,1.522431983,2015-2023,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),91.2212,71.7157,19.5055
+DJI,80-100,2015-2022,1.447081221,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),65.0322,22.9,42.1322
+DOM,80-100,2015-2022,1.713714997,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),84.3832,54.2158,30.1674
+GNQ,80-100,2015-2022,1.584732354,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),66.8193,21.32,45.4993
+FJI,80-100,2015-2022,2.190736744,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),85.2199,42.5,42.7199
+GEO,80-100,2015-2023,1.50909668,2015-2023,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),81.8842,47.5698,34.3144
+GHA,80-100,2015-2022,1.687711167,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),69.8405,23,46.8405
+GUY,80-100,2015-2022,2.461386654,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),85.3163,34,51.3163
+HUN,80-100,2015-2023,1.498328176,2015-2023,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),91.4501,72.8347,18.6154
+IDN,80-100,2015-2023,1.473391042,2015-2023,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),69.2084,22.0627,47.1457
+IRN,80-100,2015-2022,1.784444612,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),81.717,45.335,36.382
+IRQ,80-100,2015-2022,2.504225714,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),78.7156,15.2,63.5156
+IRL,80-100,2015-2021,1.794098667,2015-2021,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),94.456,83.4948,10.9612
+ITA,80-100,2015-2023,1.605304413,2015-2023,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),87.0278,58.1417,28.8861
+JAM,80-100,2015-2022,2.189636068,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),85.1185,42.2212,42.8973
+JOR,80-100,2015-2022,2.428748268,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),90.5,54.22,36.28
+KAZ,80-100,2015-2023,1.81980658,2015-2023,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),92.8785,70.8299,22.0486
+KGZ,80-100,2015-2022,2.09513264,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),79.7703,30.247,49.5233
+LAO,80-100,2015-2022,1.655211265,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),66.1548,18.2,47.9548
+MYS,80-100,2015-2020,2.147596984,2015-2020,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),89.555,71.0641,18.4909
+MDV,80-100,2015-2022,1.660978516,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),83.9119,54.462,29.4499
+MHL,80-100,2015-2022,2.000835864,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),73.2238,19.2824,53.9414
+MNG,80-100,2015-2022,2.678935219,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),83.9145,22.5,61.4145
+MNE,80-100,2015-2022,1.520133093,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),88.2219,68.1198,20.1021
+MAR,80-100,2015-2022,2.233845746,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),89.9,57.08,32.82
+PER,80-100,2015-2022,1.423359991,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),74.675,40.8526,33.8224
+PHL,80-100,2015-2022,1.578118463,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),75.2111,36.9,38.3111
+PRI,80-100,2015-2022,1.63637253,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),87.2918,63.4663,23.8255
+ROU,80-100,2015-2023,1.916158753,2015-2023,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),89.2034,55.7632,33.4402
+RUS,80-100,2015-2023,1.751428724,2015-2023,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),92.245,70.0992,22.1458
+WSM,80-100,2015-2022,1.932412767,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),75.2869,25.407,49.8799
+SYC,80-100,2015-2022,1.944177433,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),86.6654,54.2596,32.4058
+SGP,80-100,2015-2023,1.626974281,2015-2023,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),94.2863,79.013,15.2733
+ESP,80-100,2015-2022,1.931885998,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),94.4855,78.6896,15.7959
+SUR,80-100,2015-2022,1.432520613,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),75.7614,42.7638,32.9976
+THA,80-100,2015-2023,2.439063243,2015-2023,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),89.5352,39.3161,50.2191
+TUR,80-100,2015-2023,1.651851155,2015-2023,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),85.9607,53.745,32.2157
+TUV,80-100,2015-2022,2.295548063,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),81.1913,27.3,53.8913
+UKR,80-100,2015-2021,1.718141169,2015-2021,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),79.2183,48.8846,30.3337
+URY,80-100,2015-2022,1.909313969,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),89.873,64.5708,25.3022
+UZB,80-100,2015-2023,2.282957232,2015-2023,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),89.0136,42.8,46.2136
+VUT,80-100,2015-2022,1.711102743,2015-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),69.8888,22.3514,47.5374
+PSE,80-100,2015-2023,1.617438916,2015-2023,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),86.6377,56.7,29.9377
+NRU,80-100,2017-2022,1.721542964,2017-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),82.6668,62.3851,20.2817
+SMR,80-100,2017-2022,2.162893265,2017-2022,9,IT.NET.USER.ZS,Individuals using the Internet (% of population),85.0607,60.1823,24.8784
