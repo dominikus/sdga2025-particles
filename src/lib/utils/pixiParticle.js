@@ -1,8 +1,8 @@
 import * as PIXI from 'pixi.js';
 
-const MIN_SPEED = 15;
-const MAX_SPEED = 30;
-const MAX_FORCE = 7.5;
+const MIN_SPEED = 25;
+const MAX_SPEED = 40;
+const MAX_FORCE = 20;
 const PROXIMITY_LIMIT = 100;
 
 // Helper function to limit vector magnitude
