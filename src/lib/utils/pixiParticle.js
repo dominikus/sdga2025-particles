@@ -1,8 +1,8 @@
 import * as PIXI from 'pixi.js';
 
-const MIN_SPEED = 5;
-const MAX_SPEED = 10;
-const MAX_FORCE = 2.5;
+const MIN_SPEED = 15;
+const MAX_SPEED = 30;
+const MAX_FORCE = 7.5;
 const PROXIMITY_LIMIT = 100;
 
 // Helper function to limit vector magnitude
@@ -28,12 +28,12 @@ function map(x, a, b, ta, tb) {
 }
 
 // Particle Update Function
-export function update(particle) {
+export function update(particle, speed) {
 	particle.velocity.set(
 		particle.velocity.x + particle.acceleration.x,
 		particle.velocity.y + particle.acceleration.y
 	);
-	limitVector(particle.velocity, particle.MAX_SPEED);
+	limitVector(particle.velocity, particle.MAX_SPEED * speed);
 	particle.position.set(
 		particle.position.x + particle.velocity.x,
 		particle.position.y + particle.velocity.y
@@ -47,7 +47,7 @@ function applyForce(particle, force) {
 }
 
 // Particle Seek Behavior
-export function seek(particle, target) {
+export function seek(particle, target, speed) {
 	const desired = new PIXI.Point(target.x - particle.position.x, target.y - particle.position.y);
 
 	const d = Math.hypot(desired.x, desired.y);
@@ -56,14 +56,14 @@ export function seek(particle, target) {
 		particle.position.set(target.x, target.y);
 		return;
 	} else if (d < PROXIMITY_LIMIT) {
-		const m = map(d, 0, PROXIMITY_LIMIT, 0, particle.MAX_SPEED);
+		const m = map(d, 0, PROXIMITY_LIMIT, 0, particle.MAX_SPEED * speed);
 		setVectorMag(desired, m);
 	} else {
-		setVectorMag(desired, particle.MAX_SPEED);
+		setVectorMag(desired, particle.MAX_SPEED * speed);
 	}
 
 	const steer = new PIXI.Point(desired.x - particle.velocity.x, desired.y - particle.velocity.y);
-	limitVector(steer, MAX_FORCE);
+	limitVector(steer, MAX_FORCE * speed * speed);
 
 	applyForce(particle, steer);
 }

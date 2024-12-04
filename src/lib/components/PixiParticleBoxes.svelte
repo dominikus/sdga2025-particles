@@ -15,6 +15,8 @@
 	let RADIUS = 3;
 	const INDICATORS = 249;
 
+	const BASE_SPEED = 25; //ms => 40fps
+
 	const BOXDIMS = { w: 28, h: 28 };
 
 	let sortmode = 'goals';
@@ -40,6 +42,8 @@
 	let particleContainer;
 	let countryLevels;
 	let introlabel;
+
+	let ticker;
 
 	function colorFromLevel(level) {
 		const col = new PIXI.Color([0xf75781, 0xfda696, 0xfbe9aa, 0x60d1c3, 0x009ee9][level]);
@@ -312,6 +316,10 @@
 
 		const stats = new Stats(renderer);
 
+		ticker = PIXI.Ticker.shared;
+		ticker.autoStart = false;
+		ticker.stop();
+
 		const baseContainer = new PIXI.Container();
 
 		particleContainer = new PIXI.ParticleContainer({
@@ -505,12 +513,13 @@
 
 		function render() {
 			let isDirty = false;
+			let speed = ticker.deltaMS / BASE_SPEED;
 
 			nodes.forEach((node) => {
 				//if (node.type === 'indicator') {
-				seek(node, node.target);
+				seek(node, node.target, speed);
 
-				update(node);
+				update(node, speed);
 
 				//node.position.v.x += Math.random() * 5 - 2.5;
 				//node.position.v.y += Math.random() * 5 - 2.5;
@@ -520,7 +529,7 @@
 				if (node.type === 'indicator') {
 					if (node.scaleTarget.x !== node.view.scaleX || node.scaleTarget.y !== node.view.scaleY) {
 						let diffX = node.scaleTarget.x - node.view.scaleX;
-						diffX *= 0.05;
+						diffX *= 0.1 * speed;
 						if (Math.abs(diffX) < 0.001) {
 							diffX = node.scaleTarget.x - node.view.scaleX;
 						}
@@ -528,7 +537,7 @@
 						node.view.scaleX += diffX;
 
 						let diffY = node.scaleTarget.y - node.view.scaleY;
-						diffY *= 0.05;
+						diffY *= 0.1 * speed;
 						if (Math.abs(diffY) < 0.001) {
 							diffY = node.scaleTarget.y - node.view.scaleY;
 						}
@@ -554,54 +563,10 @@
 			}
 
 			renderer.render(baseContainer);
-
-			requestAnimationFrame(render);
-		}
-		requestAnimationFrame(render);
-
-		function _render() {
-			// Clear canvas
-			ctx.fillStyle = '#f6f5f3';
-			ctx.fillRect(0, 0, w, h);
-
-			grid.forEach((country) => {
-				ctx.fillStyle = '#999';
-				ctx.strokeStyle = '#333';
-
-				//ctx.fillRect(0, 0, BOXDIMS.w, BOXDIMS.h);
-				// ctx.strokeRect(0, 0, BOXDIMS.w, BOXDIMS.h);
-
-				nodes
-					.filter((d) => d.id === country.iso3c)
-					.forEach((node) => {
-						if (node.count < frame) {
-							seek(node, node.target);
-
-							update(node);
-						}
-
-						if (node.type === 'indicator') {
-							ctx.fillStyle = colorFromLevel(node.level);
-							ctx.fillRect(node.position.v.x, node.position.v.y, RADIUS - 0.5, RADIUS - 0.5);
-						} else if (node.type === 'label') {
-							ctx.font = 'bold 14px Open Sans, sans-serif';
-							ctx.textAlign = 'center';
-							ctx.fillStyle = '#000';
-
-							ctx.fillText(country.iso3c, node.position.v.x, node.position.v.y);
-						}
-						/*ctx.beginPath();
-						ctx.arc(node.x + RADIUS / 2, node.y + RADIUS / 2, RADIUS / 2 - 0.5, 0, 2 * Math.PI);
-						ctx.fill();*/
-					});
-			});
-
-			frame++;
-
-			//requestAnimationFrame(render);
 		}
 
-		//requestAnimationFrame(render);
+		ticker.add(render);
+		ticker.start();
 
 		isSetup = true;
 	}
