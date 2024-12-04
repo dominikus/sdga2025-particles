@@ -22,4 +22,10 @@ body {
 	--grey-lighter: #85878b;
 	--grey-lightest: #c8cace;
 	--white: #fcfbf9;
+
+	--level-0: #f75781;
+	--level-1: #fda696;
+	--level-2: #fbe9aa;
+	--level-3: #60d1c3;
+	--level-4: #009ee9;
 }
