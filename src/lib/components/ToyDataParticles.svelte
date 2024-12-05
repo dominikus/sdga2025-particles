@@ -7,6 +7,7 @@
 
 	import * as PIXI from 'pixi.js';
 	import { Stats } from 'pixi-stats';
+	import Intro from './Layouts/Intro.svelte';
 
 	export let allIndicators = [];
 
@@ -160,8 +161,8 @@
 					let p = createParticle(
 						w * 0.4 - 35,
 						h * 0.4 - 25,
-						w * 0.4 - 35,
-						h * 0.4 - 25,
+						RADIUS,
+						RADIUS,
 						PARTICLE_TYPES.INDICATOR
 					);
 
@@ -170,14 +171,6 @@
 					p.sdgIndicator = 1; //i;
 
 					p.country = d.iso3c;
-					/*p.valuePP = Math.random() * 0.8 + 0.2;
-					let scaledPP = (1 / 0.8) * (p.valuePP - 0.2);
-
-					p.valueAbs =
-						(Math.random() * (Math.cos(Math.PI + Math.PI * scaledPP) + 1)) / 2 +
-						Math.random() * Math.sin(scaledPP * Math.PI) * 0.5;
-					p.level = Math.max(0, Math.min(4, countryLevel + Math.floor(Math.random() * 4) - 2));
-					p.valuePP = Math.random() * 0.2 + p.level / 5;*/
 
 					p.level = indicator.level;
 					p.valueAbs = indicator.value ?? 0;
@@ -191,7 +184,8 @@
 						scaleY: RADIUS,
 						tint: colorFromLevel(p.level)
 					});
-					p.scaleTarget = new PIXI.Point(RADIUS, RADIUS);
+					p.scaleX = RADIUS;
+					p.scaleY = RADIUS;
 					particleContainer.addParticle(p.view);
 
 					nodes.push(p);
@@ -201,10 +195,10 @@
 
 			// create a country label:
 			let labelparticle = createParticle(
-				(w * countryIndex) / grid.length,
-				-50,
 				Math.floor(xScale(d.x)),
 				Math.floor(yScale(d.y)),
+				1,
+				1,
 				PARTICLE_TYPES.LABEL
 			);
 			labelparticle.country = d.iso3c;
@@ -227,7 +221,7 @@
 			});
 
 		for (let goal = 1; goal <= 17; goal++) {
-			let goalparticle = createParticle(-50, -50, -50, -50, PARTICLE_TYPES.GOALLABEL);
+			let goalparticle = createParticle(-50, -50, 1, 1, PARTICLE_TYPES.GOALLABEL);
 			goalparticle.homepoint = new PIXI.Point(-50, -50);
 			goalparticle.sdgGoal = goal;
 
@@ -292,9 +286,9 @@
 
 			nodes.forEach((node) => {
 				//if (node.type === PARTICLE_TYPES.INDICATOR) {
-				seek(node, node.target, speed);
+				seek(node, speed);
 
-				update(node, speed);
+				isDirty = update(node, speed) || isDirty;
 
 				//node.position.v.x += Math.random() * 5 - 2.5;
 				//node.position.v.y += Math.random() * 5 - 2.5;
@@ -302,29 +296,12 @@
 				// transfer position to pixi.js:
 
 				if (node.type === PARTICLE_TYPES.INDICATOR) {
-					if (node.scaleTarget.x !== node.view.scaleX || node.scaleTarget.y !== node.view.scaleY) {
-						let diffX = node.scaleTarget.x - node.view.scaleX;
-						diffX *= 0.1 * speed;
-						if (Math.abs(diffX) < 0.001) {
-							diffX = node.scaleTarget.x - node.view.scaleX;
-						}
-
-						node.view.scaleX += diffX;
-
-						let diffY = node.scaleTarget.y - node.view.scaleY;
-						diffY *= 0.1 * speed;
-						if (Math.abs(diffY) < 0.001) {
-							diffY = node.scaleTarget.y - node.view.scaleY;
-						}
-
-						node.view.scaleY += diffY;
-
-						isDirty = true;
-					}
-
 					// particle mode:
 					node.view.x = node.position.x;
 					node.view.y = node.position.y;
+
+					node.view.scaleX = node.scale.x;
+					node.view.scaleY = node.scale.y;
 				} else {
 					// sprite mode:
 					node.view.position.x = node.position.x;
@@ -352,19 +329,7 @@
 		let indicatorCount = nodes.filter((d) => d.country === grid[0].iso3c).length;
 		console.log(indicatorCount);
 
-		if (layout === 'intro') {
-			nodes.forEach((d) => {
-				if (d.type === PARTICLE_TYPES.INDICATOR) {
-					d.target.x = w * 0.4 - 35;
-					d.target.y = h * 0.4 - 25;
-
-					d.scaleTarget.x = 50;
-					d.scaleTarget.y = 50;
-				} else {
-					goHome(d);
-				}
-			});
-		} else if (layout === 'geo' && sortmode !== 'barchart') {
+		if (layout === 'geo' && sortmode !== 'barchart') {
 			let nodesPerLine = Math.ceil(Math.sqrt(indicatorCount));
 			RADIUS = Math.ceil(BOXDIMS.w / nodesPerLine);
 			console.log(RADIUS);
@@ -378,13 +343,13 @@
 						.sort(sortmode === 'goals' ? sortByNone : sortByLevel);
 					cnodes.forEach((d, i) => {
 						if (d.type === PARTICLE_TYPES.INDICATOR) {
-							d.target.x = Math.floor(i % nodesPerLine) * RADIUS + countryOffset.x;
-							d.target.y = Math.floor(i / nodesPerLine) * RADIUS + countryOffset.y;
+							d.x = Math.floor(i % nodesPerLine) * RADIUS + countryOffset.x;
+							d.y = Math.floor(i / nodesPerLine) * RADIUS + countryOffset.y;
 
-							d.scaleTarget.x = d.scaleTarget.y = RADIUS;
+							d.scaleX = d.scaleY = RADIUS;
 						} else {
-							d.target.x = countryOffset.x + nodesPerLine * RADIUS * 0.5;
-							d.target.y = countryOffset.y;
+							d.x = countryOffset.x + nodesPerLine * RADIUS * 0.5;
+							d.y = countryOffset.y;
 						}
 					});
 				} else if (sortmode === 'focus') {
@@ -401,10 +366,10 @@
 					cnodes
 						.filter((d) => d.sdgTargetCount === 0 && d.sdgGoal === FOCUS_GOAL)
 						.forEach((d, i) => {
-							d.target.x = countryOffset.x;
-							d.target.y = countryOffset.y;
+							d.x = countryOffset.x;
+							d.y = countryOffset.y;
 
-							d.scaleTarget.x = d.scaleTarget.y = BOXDIMS.w;
+							d.scaleX = d.scaleY = BOXDIMS.w;
 						});
 
 					// labels
@@ -428,20 +393,18 @@
 					cnodes
 						.filter((d) => d.sdgTargetCount === 0 && d.sdgGoal === FOCUS_GOAL)
 						.forEach((d, i) => {
-							d.target.x =
-								countryOffset.x + BOXDIMS.w / 2 - (BOXDIMS.w * valuePPScale(d.valuePP)) / 2;
-							d.target.y =
-								countryOffset.y + BOXDIMS.h / 2 - (BOXDIMS.w * valuePPScale(d.valuePP)) / 2;
+							d.x = countryOffset.x + BOXDIMS.w / 2 - (BOXDIMS.w * valuePPScale(d.valuePP)) / 2;
+							d.y = countryOffset.y + BOXDIMS.h / 2 - (BOXDIMS.w * valuePPScale(d.valuePP)) / 2;
 
-							d.scaleTarget.x = d.scaleTarget.y = BOXDIMS.w * (valuePPScale(d.valuePP) * 0.8 + 0.2);
+							d.scaleX = d.scaleY = BOXDIMS.w * (valuePPScale(d.valuePP) * 0.8 + 0.2);
 						});
 
 					// labels
 					cnodes
 						.filter((d) => d.type === PARTICLE_TYPES.LABEL)
 						.forEach((d, i) => {
-							d.target.x = countryOffset.x + nodesPerLine * RADIUS * 0.5;
-							d.target.y = countryOffset.y;
+							d.x = countryOffset.x + nodesPerLine * RADIUS * 0.5;
+							d.y = countryOffset.y;
 						});
 				} else if (sortmode === 'scatterplot') {
 					const cnodes = nodes.filter((d) => d.country === country.iso3c);
@@ -459,17 +422,17 @@
 						let cnode = cnodes.find((d) => d.sdgTargetCount === 0 && d.sdgGoal === FOCUS_GOAL);
 
 						if (cnode) {
-							cnode.target.x = scatterXScale(cnode.valueAbs);
-							cnode.target.y = scatterYScale(cnode.valuePP);
+							cnode.x = scatterXScale(cnode.valueAbs);
+							cnode.y = scatterYScale(cnode.valuePP);
 
-							cnode.scaleTarget.x = cnode.scaleTarget.y = RADIUS;
+							cnode.scaleX = cnode.scaleY = RADIUS;
 
 							// labels
 							cnodes
 								.filter((d) => d.type === PARTICLE_TYPES.LABEL)
 								.forEach((d, i) => {
-									d.target.x = cnode.target.x + 5;
-									d.target.y = cnode.target.y - 5;
+									d.x = cnode.x + 5;
+									d.y = cnode.y - 5;
 								});
 						}
 					}
@@ -517,10 +480,10 @@
 								})
 								.forEach((d, i) => {
 									if (d.type === PARTICLE_TYPES.INDICATOR) {
-										d.target.x = d.sdgGoal * (4 * RADIUS) + i * RADIUS + countryOffset.x;
-										d.target.y = countryOffset.y; // + d.sdgIndicator * RADIUS;
+										d.x = d.sdgGoal * (4 * RADIUS) + i * RADIUS + countryOffset.x;
+										d.y = countryOffset.y; // + d.sdgIndicator * RADIUS;
 
-										d.scaleTarget.x = d.scaleTarget.y = RADIUS;
+										d.scaleX = d.scaleY = RADIUS;
 									}
 								});
 						} else {
@@ -539,11 +502,11 @@
 								cnodes
 									.filter((d) => d.sdgTargetCount === 0 && d.sdgGoal === FOCUS_GOAL)
 									.forEach((d, i) => {
-										d.target.x = countryOffset.x;
-										d.target.y = countryOffset.y;
+										d.x = countryOffset.x;
+										d.y = countryOffset.y;
 
-										d.scaleTarget.x = barXScale(d.valueAbs);
-										d.scaleTarget.y = RADIUS;
+										d.scaleX = barXScale(d.valueAbs);
+										d.scaleY = RADIUS;
 									});
 							}
 						}
@@ -552,16 +515,16 @@
 					cnodes
 						.filter((d) => d.type === PARTICLE_TYPES.LABEL)
 						.forEach((d) => {
-							d.target.x = countryOffset.x;
-							d.target.y = countryOffset.y;
+							d.x = countryOffset.x;
+							d.y = countryOffset.y;
 						});
 				});
 
 			nodes
 				.filter((d) => d.type === PARTICLE_TYPES.GOALLABEL)
 				.forEach((d) => {
-					d.homepoint.x = d.target.x = 4 * RADIUS * d.sdgGoal + 50;
-					d.target.y = sortmode === 'barchart' ? -20 : MARGIN.y - 20;
+					d.homepoint.x = d.x = 4 * RADIUS * d.sdgGoal + 50;
+					d.y = sortmode === 'barchart' ? -20 : MARGIN.y - 20;
 				});
 		}
 
@@ -603,6 +566,8 @@
 </script>
 
 <canvas bind:this={canvas} />
+
+<Intro particles={nodes} inView={layout === 'intro'} {w} {h} />
 
 <div class="button-panel">
 	<button on:click={back}>&lt;</button>
