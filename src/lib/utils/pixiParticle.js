@@ -69,7 +69,7 @@ export function seek(particle, target, speed) {
 }
 
 // Particle Factory
-export function createParticle(x, y, tx, ty, talkative = false, type) {
+export function createParticle(x, y, tx, ty, type) {
 	return {
 		position: new PIXI.Point(x, y),
 		target: new PIXI.Point(tx, ty),

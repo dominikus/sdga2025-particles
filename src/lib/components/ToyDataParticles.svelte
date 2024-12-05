@@ -3,11 +3,26 @@
 	import { grid } from '$lib/data/worldtilegrid.js';
 
 	import { seek, update, createParticle } from '$lib/utils/pixiParticle.js';
+	import { goHome } from '$lib/utils/particleUtils.js';
 
 	import * as PIXI from 'pixi.js';
 	import { Stats } from 'pixi-stats';
 
 	export let goalTargets = [];
+
+	const PARTICLE_TYPES = {
+		INDICATOR: 'indicator',
+		LABEL: 'label',
+		GOALLABEL: 'goallabel'
+	};
+
+	const textStyle = new PIXI.TextStyle({
+		fontFamily: 'Open Sans',
+		fontSize: 12,
+		fontWeight: 'bold',
+		fill: 0xffffff,
+		stroke: { color: 0x384075, width: 3 }
+	});
 
 	$: console.log(grid);
 
@@ -68,15 +83,14 @@
 
 		if (layout === 'intro') {
 			nodes.forEach((d) => {
-				if (d.type === 'indicator') {
+				if (d.type === PARTICLE_TYPES.INDICATOR) {
 					d.target.x = w * 0.4 - 35;
 					d.target.y = h * 0.4 - 25;
 
 					d.scaleTarget.x = 50;
 					d.scaleTarget.y = 50;
 				} else {
-					d.target.x = d.homepoint.x;
-					d.target.y = d.homepoint.y;
+					goHome(d);
 				}
 			});
 		} else if (layout === 'geo' && sortmode !== 'barchart') {
@@ -92,7 +106,7 @@
 						.filter((d) => d.country === country.iso3c)
 						.sort(sortmode === 'goals' ? sortByNone : sortByLevel);
 					cnodes.forEach((d, i) => {
-						if (d.type === 'indicator') {
+						if (d.type === PARTICLE_TYPES.INDICATOR) {
 							d.target.x = Math.floor(i % nodesPerLine) * RADIUS + countryOffset.x;
 							d.target.y = Math.floor(i / nodesPerLine) * RADIUS + countryOffset.y;
 
@@ -107,9 +121,8 @@
 					const cnodes = nodes.filter((d) => d.country === country.iso3c);
 
 					cnodes.forEach((node) => {
-						if (node.type === 'indicator') {
-							node.target.x = node.homepoint.x;
-							node.target.y = node.homepoint.y;
+						if (node.type === PARTICLE_TYPES.INDICATOR) {
+							goHome(node);
 						}
 					});
 
@@ -125,7 +138,7 @@
 
 					// labels
 					cnodes
-						.filter((d) => d.type === 'label')
+						.filter((d) => d.type === PARTICLE_TYPES.LABEL)
 						.forEach((d, i) => {
 							d.target.x = countryOffset.x + nodesPerLine * RADIUS * 0.5;
 							d.target.y = countryOffset.y;
@@ -135,9 +148,8 @@
 					const cnodes = nodes.filter((d) => d.country === country.iso3c);
 
 					cnodes.forEach((node) => {
-						if (node.type === 'indicator') {
-							node.target.x = node.homepoint.x;
-							node.target.y = node.homepoint.y;
+						if (node.type === PARTICLE_TYPES.INDICATOR) {
+							goHome(node);
 						}
 					});
 
@@ -155,7 +167,7 @@
 
 					// labels
 					cnodes
-						.filter((d) => d.type === 'label')
+						.filter((d) => d.type === PARTICLE_TYPES.LABEL)
 						.forEach((d, i) => {
 							d.target.x = countryOffset.x + nodesPerLine * RADIUS * 0.5;
 							d.target.y = countryOffset.y;
@@ -165,9 +177,8 @@
 
 					if (cnodes.length > 0) {
 						cnodes.forEach((node) => {
-							if (node.type === 'indicator') {
-								node.target.x = node.homepoint.x;
-								node.target.y = node.homepoint.y;
+							if (node.type === PARTICLE_TYPES.INDICATOR) {
+								goHome(node);
 							}
 						});
 
@@ -184,7 +195,7 @@
 
 							// labels
 							cnodes
-								.filter((d) => d.type === 'label')
+								.filter((d) => d.type === PARTICLE_TYPES.LABEL)
 								.forEach((d, i) => {
 									d.target.x = cnode.target.x + 5;
 									d.target.y = cnode.target.y - 5;
@@ -194,12 +205,7 @@
 				}
 			});
 
-			nodes
-				.filter((d) => d.type === 'goallabel')
-				.forEach((d) => {
-					//d.target.x = 5 * RADIUS * d.sdgGoal + 50;
-					d.target.y = d.homepoint.y;
-				});
+			nodes.filter((d) => d.type === PARTICLE_TYPES.GOALLABEL).forEach(goHome);
 		} else if (layout === 'goals' || sortmode === 'barchart') {
 			countryLevels.sort((a, b) => b.value - a.value);
 
@@ -239,7 +245,7 @@
 									}
 								})
 								.forEach((d, i) => {
-									if (d.type === 'indicator') {
+									if (d.type === PARTICLE_TYPES.INDICATOR) {
 										d.target.x = d.sdgGoal * (4 * RADIUS) + i * RADIUS + countryOffset.x;
 										d.target.y = countryOffset.y; // + d.sdgIndicator * RADIUS;
 
@@ -251,9 +257,8 @@
 								const cnodes = nodes.filter((d) => d.country === country.iso3c);
 
 								cnodes.forEach((node) => {
-									if (node.type === 'indicator') {
-										node.target.x = node.homepoint.x;
-										node.target.y = node.homepoint.y;
+									if (node.type === PARTICLE_TYPES.INDICATOR) {
+										goHome(node);
 									}
 								});
 
@@ -274,7 +279,7 @@
 					}
 
 					cnodes
-						.filter((d) => d.type === 'label')
+						.filter((d) => d.type === PARTICLE_TYPES.LABEL)
 						.forEach((d) => {
 							d.target.x = countryOffset.x;
 							d.target.y = countryOffset.y;
@@ -282,7 +287,7 @@
 				});
 
 			nodes
-				.filter((d) => d.type === 'goallabel')
+				.filter((d) => d.type === PARTICLE_TYPES.GOALLABEL)
 				.forEach((d) => {
 					d.homepoint.x = d.target.x = 4 * RADIUS * d.sdgGoal + 50;
 					d.target.y = sortmode === 'barchart' ? -20 : MARGIN.y - 20;
@@ -388,7 +393,7 @@
 
 		let overallCount = 0;
 
-		grid.forEach((d) => {
+		grid.forEach((d, countryIndex) => {
 			for (let goal = 1; goal <= 17; goal++) {
 				/*const targets = goalTargets.filter((d) => +d.goal === goal);
 
@@ -403,8 +408,7 @@
 						h * 0.4 - 25,
 						w * 0.4 - 35,
 						h * 0.4 - 25,
-						false,
-						'indicator'
+						PARTICLE_TYPES.INDICATOR
 					);
 
 					p.sdgGoal = goal;
@@ -440,36 +444,17 @@
 					overallCount++;
 				});
 			}
-			//});
-			//}
-		});
 
-		nodes
-			.filter((d) => d.sdgTargetCount === 0 && d.sdgGoal === FOCUS_GOAL)
-			.sort((a, b) => a?.valueAbs - b?.valueAbs)
-			.forEach((d, i) => {
-				d.valueAbsIndex = i;
-			});
-
-		const textStyle = new PIXI.TextStyle({
-			fontFamily: 'Open Sans',
-			fontSize: 12,
-			fontWeight: 'bold',
-			fill: 0xffffff,
-			stroke: { color: 0x384075, width: 3 }
-		});
-
-		grid.forEach((d, i) => {
+			// create a country label:
 			let labelparticle = createParticle(
-				(w * i) / grid.length,
+				(w * countryIndex) / grid.length,
 				-50,
 				Math.floor(xScale(d.x)),
 				Math.floor(yScale(d.y)),
-				false,
-				'label'
+				PARTICLE_TYPES.LABEL
 			);
 			labelparticle.country = d.iso3c;
-			labelparticle.homepoint = new PIXI.Point((w * i) / grid.length, -50);
+			labelparticle.homepoint = new PIXI.Point((w * countryIndex) / grid.length, -50);
 
 			labelparticle.view = new PIXI.Text({
 				text: d.iso3c,
@@ -480,8 +465,15 @@
 			nodes.push(labelparticle);
 		});
 
+		nodes
+			.filter((d) => d.sdgTargetCount === 0 && d.sdgGoal === FOCUS_GOAL)
+			.sort((a, b) => a?.valueAbs - b?.valueAbs)
+			.forEach((d, i) => {
+				d.valueAbsIndex = i;
+			});
+
 		for (let goal = 1; goal <= 17; goal++) {
-			let goalparticle = createParticle(-50, -50, -50, -50, false, 'goallabel');
+			let goalparticle = createParticle(-50, -50, -50, -50, PARTICLE_TYPES.GOALLABEL);
 			goalparticle.homepoint = new PIXI.Point(-50, -50);
 			goalparticle.sdgGoal = goal;
 
@@ -530,7 +522,7 @@
 			let speed = ticker.deltaMS / BASE_SPEED;
 
 			nodes.forEach((node) => {
-				//if (node.type === 'indicator') {
+				//if (node.type === PARTICLE_TYPES.INDICATOR) {
 				seek(node, node.target, speed);
 
 				update(node, speed);
@@ -540,7 +532,7 @@
 
 				// transfer position to pixi.js:
 
-				if (node.type === 'indicator') {
+				if (node.type === PARTICLE_TYPES.INDICATOR) {
 					if (node.scaleTarget.x !== node.view.scaleX || node.scaleTarget.y !== node.view.scaleY) {
 						let diffX = node.scaleTarget.x - node.view.scaleX;
 						diffX *= 0.1 * speed;
