@@ -113,7 +113,7 @@
 			clearBeforeRender: true
 		});
 
-		const stats = new Stats(renderer);
+		new Stats(renderer);
 
 		ticker = PIXI.Ticker.shared;
 		ticker.autoStart = false;
@@ -136,43 +136,14 @@
 		baseContainer.addChild(particleContainer);
 		baseContainer.addChild(spriteContainer);
 
-		function createColoredTexture(color, width = 10, height = 10) {
-			const graphics = new PIXI.Graphics();
-
-			// Draw a filled rectangle with the desired color
-			//graphics.rect(0, 0, width, height);
-			//graphics.fill(color);
-			// Draw a filled circle with the desired color
-			graphics.ellipse(width / 2, height / 2, width, height);
-			graphics.fill(color);
-
-			// Generate a texture from the graphics
-			return renderer.generateTexture(graphics);
-		}
-
 		xScale.range([MARGIN.x, w - MARGIN.x * 2]);
 		yScale.range([MARGIN.y, h - MARGIN.y * 2]);
-
-		// extract FOCUS_GOAL data domain:
-		const focusAbsDomain = extent(
-			allIndicators.filter((d) => d.goal === FOCUS_GOAL).map((d) => d.value)
-		);
-		const focusPPDomain = extent(
-			allIndicators.filter((d) => d.goal === FOCUS_GOAL).map((d) => d.diff)
-		);
-
-		scatterXScale.domain(focusAbsDomain).range([MARGIN.x, w - MARGIN.x * 2]);
-		scatterYScale.domain(focusPPDomain).range([MARGIN.y, h - MARGIN.y * 2]);
-
-		barXScale.domain(focusAbsDomain).range([MARGIN.x, w * 0.6 - MARGIN.x * 2]);
-		valuePPScale.domain(focusPPDomain).range([0, 1]);
 
 		nodes = [];
 
 		const tex = PIXI.Texture.WHITE; //createColoredTexture(0xffffff, 1, 1);
 
 		let totalIndicatorNum = allIndicators.length;
-		console.log(totalIndicatorNum);
 
 		let overallCount = 0;
 
@@ -299,6 +270,21 @@
 
 		// layout nodes:
 		layoutNodes(nodes);
+
+		/** visualization specific setup stuff*/
+		// extract FOCUS_GOAL data domain:
+		const focusAbsDomain = extent(
+			allIndicators.filter((d) => d.goal === FOCUS_GOAL).map((d) => d.value)
+		);
+		const focusPPDomain = extent(
+			allIndicators.filter((d) => d.goal === FOCUS_GOAL).map((d) => d.diff)
+		);
+
+		scatterXScale.domain(focusAbsDomain).range([MARGIN.x, w - MARGIN.x * 2]);
+		scatterYScale.domain(focusPPDomain).range([MARGIN.y, h - MARGIN.y * 2]);
+
+		barXScale.domain(focusAbsDomain).range([MARGIN.x, w * 0.6 - MARGIN.x * 2]);
+		valuePPScale.domain(focusPPDomain).range([0, 1]);
 
 		function render() {
 			let isDirty = false;
