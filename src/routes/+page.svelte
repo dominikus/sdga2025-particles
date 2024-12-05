@@ -8,11 +8,11 @@
 	import ToyDataParticles from '$lib/components/ToyDataParticles.svelte';
 	import { onMount } from 'svelte';
 
-	let goalTargets = [];
+	let allIndicators = [];
 	onMount(() => {
 		csv('/data/toy_data_plus_values.csv', (d) => {
-			goalTargets = [
-				...goalTargets,
+			allIndicators = [
+				...allIndicators,
 				{
 					iso3c: d.code,
 					level: ['0-20', '20-40', '40-60', '60-80', '80-100'].indexOf(d.pctl),
@@ -23,17 +23,17 @@
 					goal: +d.goal
 				}
 			];
-			//goalTargets = [...goalTargets, { ...d, indicators: +d.indicators }];
+			//allIndicators = [...allIndicators, { ...d, indicators: +d.indicators }];
 		});
 	});
-	$: console.log(goalTargets);
+	$: console.log(allIndicators);
 </script>
 
 <img src="img/legend.png" />
 <!--<Particles />-->
 <!--<ParticleBoxes />-->
-<!--<PixiParticleBoxes {goalTargets} />-->
-<ToyDataParticles {goalTargets} />
+<!--<PixiParticleBoxes {allIndicators} />-->
+<ToyDataParticles {allIndicators} />
 
 <style>
 	img {
