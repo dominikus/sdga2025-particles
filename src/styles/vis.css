@@ -3,9 +3,10 @@
 .vis text,
 .vis tspan {
 	white-space: nowrap;
-	stroke-width: 4px;
+	stroke-width: 3px;
 	letter-spacing: 0.5px;
-	stroke: var(--background-ligt);
+	fill: white;
+	stroke: var(--background);
 	paint-order: stroke;
 	stroke-linejoin: round;
 	pointer-events: none;

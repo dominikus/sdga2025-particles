@@ -2,12 +2,14 @@
 	import { scaleLinear, extent } from 'd3';
 	import { grid } from '$lib/data/worldtilegrid.js';
 
-	import { seek, update, createParticle } from '$lib/utils/pixiParticle.js';
+	import { seek, update, createParticle } from '$lib/utils/pixiParticle.svelte.js';
 	import { goHome } from '$lib/utils/particleUtils.js';
 
 	import * as PIXI from 'pixi.js';
 	import { Stats } from 'pixi-stats';
 	import Intro from './Layouts/Intro.svelte';
+	import AllIndicatorMap from './Layouts/AllIndicatorMap.svelte';
+	import SVGContainer from './SVGContainer.svelte';
 
 	export let allIndicators = [];
 
@@ -204,12 +206,12 @@
 			labelparticle.country = d.iso3c;
 			labelparticle.homepoint = new PIXI.Point((w * countryIndex) / grid.length, -50);
 
-			labelparticle.view = new PIXI.Text({
+			/*labelparticle.view = new PIXI.Text({
 				text: d.iso3c,
 				style: textStyle
 			});
 			labelparticle.view.anchor = new PIXI.Point(0.5, 0.5);
-			spriteContainer.addChild(labelparticle.view);
+			spriteContainer.addChild(labelparticle.view);*/
 			nodes.push(labelparticle);
 		});
 
@@ -281,6 +283,8 @@
 		valuePPScale.domain(focusPPDomain).range([0, 1]);
 
 		function render() {
+			frame++;
+
 			let isDirty = false;
 			let speed = ticker.deltaMS / BASE_SPEED;
 
@@ -304,10 +308,9 @@
 					node.view.scaleY = node.scale.y;
 				} else {
 					// sprite mode:
-					node.view.position.x = node.position.x;
-					node.view.position.y = node.position.y;
+					//node.view.position.x = node.position.x;
+					//node.view.position.y = node.position.y;
 				}
-				//}
 			});
 
 			if (isDirty) {
@@ -324,8 +327,6 @@
 	}
 
 	function layoutNodes(nodes) {
-		frame = 0;
-
 		let indicatorCount = nodes.filter((d) => d.country === grid[0].iso3c).length;
 		console.log(indicatorCount);
 
@@ -337,22 +338,7 @@
 			grid.forEach((country) => {
 				const countryOffset = new PIXI.Point(xScale(country.x), yScale(country.y));
 
-				if (sortmode === 'goals' || sortmode === 'levels') {
-					const cnodes = nodes
-						.filter((d) => d.country === country.iso3c)
-						.sort(sortmode === 'goals' ? sortByNone : sortByLevel);
-					cnodes.forEach((d, i) => {
-						if (d.type === PARTICLE_TYPES.INDICATOR) {
-							d.x = Math.floor(i % nodesPerLine) * RADIUS + countryOffset.x;
-							d.y = Math.floor(i / nodesPerLine) * RADIUS + countryOffset.y;
-
-							d.scaleX = d.scaleY = RADIUS;
-						} else {
-							d.x = countryOffset.x + nodesPerLine * RADIUS * 0.5;
-							d.y = countryOffset.y;
-						}
-					});
-				} else if (sortmode === 'focus') {
+				if (sortmode === 'focus') {
 					// focus mode
 					const cnodes = nodes.filter((d) => d.country === country.iso3c);
 
@@ -567,7 +553,16 @@
 
 <canvas bind:this={canvas} />
 
-<Intro particles={nodes} inView={layout === 'intro'} {w} {h} />
+<SVGContainer {w} {h}>
+	<Intro particles={nodes} inView={layout === 'intro'} {w} {h} />
+	<AllIndicatorMap
+		particles={nodes}
+		inView={layout === 'geo'}
+		activeScene={sortmode === 'goals' ? 0 : 1}
+		{w}
+		{h}
+	/>
+</SVGContainer>
 
 <div class="button-panel">
 	<button on:click={back}>&lt;</button>

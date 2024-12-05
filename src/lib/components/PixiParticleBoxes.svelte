@@ -2,7 +2,7 @@
 	import { scaleLinear } from 'd3';
 	import { grid } from '$lib/data/worldtilegrid.js';
 
-	import { seek, update, createParticle } from '$lib/utils/pixiParticle.js';
+	import { seek, update, createParticle } from '$lib/utils/pixiParticle.svelte.js';
 
 	import * as PIXI from 'pixi.js';
 	import { Stats } from 'pixi-stats';

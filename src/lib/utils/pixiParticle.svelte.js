@@ -53,10 +53,13 @@ export function update(particle, speed) {
 		particle.velocity.y + particle.acceleration.y
 	);
 	limitVector(particle.velocity, particle.MAX_SPEED * speed);
+	particle.position.x = particle.position.x + particle.velocity.x;
+	particle.position.y = particle.position.y + particle.velocity.y;
+	/*
 	particle.position.set(
 		particle.position.x + particle.velocity.x,
 		particle.position.y + particle.velocity.y
-	);
+	);*/
 	particle.acceleration.set(0, 0);
 
 	// adjust scale:
@@ -78,7 +81,9 @@ export function seek(particle, speed) {
 	const d = Math.hypot(desired.x, desired.y);
 
 	if (d < 1) {
-		particle.position.set(particle.target.x, particle.target.y);
+		particle.position.x = particle.target.x;
+		particle.position.y = particle.target.y;
+		//particle.position.set(particle.target.x, particle.target.y);
 		return;
 	} else if (d < PROXIMITY_LIMIT) {
 		const m = map(d, 0, PROXIMITY_LIMIT, 0, particle.MAX_SPEED * speed);
@@ -95,8 +100,9 @@ export function seek(particle, speed) {
 
 // Particle Factory
 export function createParticle(x, y, sx, sy, type) {
+	let position = { x, y };
 	return {
-		position: new PIXI.Point(x, y),
+		position,
 		target: new PIXI.Point(x, y),
 		velocity: new PIXI.Point(0, 0),
 		acceleration: new PIXI.Point(0, 0),
