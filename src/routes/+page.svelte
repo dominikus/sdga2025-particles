@@ -1,5 +1,4 @@
 <script>
-	import { _ } from 'svelte-i18n';
 	import { tsv, csv } from 'd3';
 
 	import Particles from '$lib/components/Particles.svelte';

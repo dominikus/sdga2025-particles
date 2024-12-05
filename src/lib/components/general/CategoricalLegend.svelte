@@ -1,6 +1,4 @@
 <script>
-	import { _ } from 'svelte-i18n';
-
 	export let itemSymbol = 'square';
 	export let hidden;
 	export let top = false;

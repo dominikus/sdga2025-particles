@@ -1,6 +1,5 @@
 <script>
 	import ChartGrid from '$lib/components/general/ChartGrid.svelte';
-	import { _ } from 'svelte-i18n';
 	import { dsv, scaleLinear } from 'd3';
 	import Vis from '../general/Vis.svelte';
 	import Legend from '../general/Legend.svelte';
@@ -81,7 +80,7 @@
 						on:focus={() => (hoveredData = d.boys)}
 						on:blur={() => (hoveredData = 0)}
 					></circle>
-					<text x={xScale(d.boys)} y={yScale(d.boys)}>{$_('vis1_label_' + d.category)}</text>
+					<text x={xScale(d.boys)} y={yScale(d.boys)}>{'vis1_label_' + d.category}</text>
 				{/each}
 			</g>
 		</svg>
@@ -97,7 +96,7 @@
 			units="$"
 		/>
 
-		<Source slot="source">{$_('vis1_source')}</Source>
+		<Source slot="source">{'vis1_source'}</Source>
 
 		<CategoricalLegend
 			slot="legend-top"

@@ -1,11 +1,11 @@
 <script>
-	import { locale } from 'svelte-i18n';
-
 	export let value;
 	export let digits = null;
 	export let unit = '';
 	export let fallback = null;
 	export let signDisplay = 'auto';
+
+	let locale = 'en';
 
 	const currencyMap = {
 		$: 'USD',
@@ -54,7 +54,7 @@
 				formattingOptions.maximumFractionDigits = digits;
 			}
 
-			formattedValue = new Intl.NumberFormat($locale, formattingOptions).format(parsedValue);
+			formattedValue = new Intl.NumberFormat(locale, formattingOptions).format(parsedValue);
 		}
 	}
 </script>
