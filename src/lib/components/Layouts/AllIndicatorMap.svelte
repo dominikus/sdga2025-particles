@@ -1,6 +1,5 @@
 <script>
 	// import { particles } from 'engine.js';
-	import { goHome } from '$lib/utils/particleUtils.js';
 	import { grid as countries } from '$lib/data/worldtilegrid.js';
 	import { scaleLinear } from 'd3';
 	import * as PIXI from 'pixi.js';
@@ -14,8 +13,8 @@
 
 	const margins = {
 		top: 120,
-		right: 30,
-		bottom: 20,
+		right: 20,
+		bottom: 120,
 		left: 20
 	};
 
@@ -73,11 +72,13 @@
 </script>
 
 <g>
+	<!--
 	{#each particles.filter((d) => d.type === 'label') as label}
-		<text transform="translate({label.x}, {label.y})" style="opacity: {inView ? 1 : 0}"
+		<text transform="translate({label.x}, {label.y})" style="opacity: {inView ? 1 : 1}"
 			>{label.country}</text
 		>
 	{/each}
+	-->
 </g>
 
 <style>

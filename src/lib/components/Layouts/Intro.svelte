@@ -25,7 +25,20 @@
 	}
 </script>
 
+<g>
+	<text x={w * 0.4 + 50} y={h * 0.4 + 12} style="opacity: {inView ? 1 : 0}"
+		>1 country x 1 indicator</text
+	>
+</g>
+
 <!--
 <div slot="under">underneath</div>
 <g slot="svg">over</g>
 -->
+
+<style>
+	text {
+		transition: all 1s;
+		font-size: 30px;
+	}
+</style>

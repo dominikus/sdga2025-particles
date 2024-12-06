@@ -10,6 +10,7 @@
 	import Intro from './Layouts/Intro.svelte';
 	import AllIndicatorMap from './Layouts/AllIndicatorMap.svelte';
 	import SVGContainer from './SVGContainer.svelte';
+	import ISOCodeLabels from './Layouts/ISOCodeLabels.svelte';
 
 	export let allIndicators = [];
 
@@ -38,19 +39,20 @@
 
 	let sortmode = 'goals';
 	let layout = 'intro';
+	let showLabels = false;
 
 	let modeIndex = 0;
 	let modes = [
-		{ layout: 'intro', sortmode: 'goals' },
-		{ layout: 'geo', sortmode: 'goals' },
-		{ layout: 'geo', sortmode: 'levels' },
-		{ layout: 'goals', sortmode: 'goals' },
-		{ layout: 'goals', sortmode: 'levels' },
-		{ layout: 'geo', sortmode: 'levels' },
-		{ layout: 'geo', sortmode: 'focus' },
-		{ layout: 'geo', sortmode: 'absoluteprogress' },
-		{ layout: 'geo', sortmode: 'scatterplot' },
-		{ layout: 'geo', sortmode: 'barchart' }
+		{ layout: 'intro', sortmode: 'goals', showLabels: false },
+		{ layout: 'geo', sortmode: 'goals', showLabels: true },
+		{ layout: 'geo', sortmode: 'levels', showLabels: true },
+		{ layout: 'goals', sortmode: 'goals', showLabels: true },
+		{ layout: 'goals', sortmode: 'levels', showLabels: true },
+		{ layout: 'geo', sortmode: 'levels', showLabels: true },
+		{ layout: 'geo', sortmode: 'focus', showLabels: true },
+		{ layout: 'geo', sortmode: 'absoluteprogress', showLabels: true },
+		{ layout: 'geo', sortmode: 'scatterplot', showLabels: true },
+		{ layout: 'geo', sortmode: 'barchart', showLabels: true }
 	];
 
 	let canvas;
@@ -59,6 +61,7 @@
 	let frame = 0;
 
 	let w, h;
+	let screenW, screenH;
 
 	const MARGIN = { x: 20, y: 120 };
 	let xScale = scaleLinear().domain([0, 29]);
@@ -74,7 +77,6 @@
 
 	let particleContainer;
 	let countryLevels;
-	let introlabel;
 
 	let ticker;
 
@@ -93,21 +95,15 @@
 
 	async function setup() {
 		w = 1280; //window.innerWidth;
-		h = 1200; // window.innerHeight;
+		h = 2500; // window.innerHeight;
 
-		// init pixi.js:
-		/*const app = new Application();
-		await app.init({
-			canvas,
-			width: w,
-			height: h,
-			antialias: false,
-			backgroundColor: '#f6f5f3'
-		});*/
+		screenW = 1280;
+		screenH = 1200;
+
 		const renderer = await PIXI.autoDetectRenderer({
 			canvas,
 			width: w,
-			height: 2500,
+			height: h,
 			autoDensity: true,
 			resolution: window.devicePixelRatio,
 			backgroundAlpha: 0,
@@ -139,8 +135,8 @@
 		baseContainer.addChild(particleContainer);
 		baseContainer.addChild(spriteContainer);
 
-		xScale.range([MARGIN.x, w - MARGIN.x * 2]);
-		yScale.range([MARGIN.y, h - MARGIN.y * 2]);
+		xScale.range([MARGIN.x, screenW - MARGIN.x * 2]);
+		yScale.range([MARGIN.y, screenH - MARGIN.y * 2]);
 
 		nodes = [];
 
@@ -161,8 +157,8 @@
 				// console.log(`${d.iso3c} x ${goal} => ${filteredGTs.length}`);
 				filteredGTs.forEach((indicator, ii) => {
 					let p = createParticle(
-						w * 0.4 - 35,
-						h * 0.4 - 25,
+						screenW * 0.4 - 35,
+						screenH * 0.4 - 25,
 						RADIUS,
 						RADIUS,
 						PARTICLE_TYPES.INDICATOR
@@ -250,20 +246,6 @@
 		});
 		console.log(countryLevels);
 
-		introlabel = new PIXI.Text({
-			text: '1 indicator X 1 country',
-			style: {
-				fontFamily: 'Open Sans',
-				fontSize: 28,
-				fontWeight: '600',
-				fill: 0xffffff,
-				stroke: { color: 0x384075, width: 3 }
-			}
-		});
-		introlabel.position.x = w * 0.4 + 50;
-		introlabel.position.y = h * 0.4 - 15;
-		spriteContainer.addChild(introlabel);
-
 		// layout nodes:
 		layoutNodes(nodes);
 
@@ -276,8 +258,8 @@
 			allIndicators.filter((d) => d.goal === FOCUS_GOAL).map((d) => d.diff)
 		);
 
-		scatterXScale.domain(focusAbsDomain).range([MARGIN.x, w - MARGIN.x * 2]);
-		scatterYScale.domain(focusPPDomain).range([MARGIN.y, h - MARGIN.y * 2]);
+		scatterXScale.domain(focusAbsDomain).range([MARGIN.x, screenW - MARGIN.x * 2]);
+		scatterYScale.domain(focusPPDomain).range([MARGIN.y, screenH - MARGIN.y * 2]);
 
 		barXScale.domain(focusAbsDomain).range([MARGIN.x, w * 0.6 - MARGIN.x * 2]);
 		valuePPScale.domain(focusPPDomain).range([0, 1]);
@@ -516,12 +498,6 @@
 
 		particleContainer.update();
 
-		if (layout === 'intro') {
-			introlabel.alpha = 1;
-		} else {
-			introlabel.alpha = 0;
-		}
-
 		console.log(nodes);
 	}
 
@@ -543,6 +519,7 @@
 
 		layout = modes[modeIndex].layout;
 		sortmode = modes[modeIndex].sortmode;
+		showLabels = modes[modeIndex].showLabels;
 		layoutNodes(nodes);
 	}
 
@@ -554,14 +531,27 @@
 <canvas bind:this={canvas} />
 
 <SVGContainer {w} {h}>
-	<Intro particles={nodes} inView={layout === 'intro'} {w} {h} />
+	<Intro particles={nodes} inView={layout === 'intro'} {w} h={screenH} />
 	<AllIndicatorMap
 		particles={nodes}
 		inView={layout === 'geo'}
 		activeScene={sortmode === 'goals' ? 0 : 1}
 		{w}
-		{h}
+		h={screenH}
 	/>
+	<!--
+	<AllIndicatorGoals
+		particles={nodes}
+		inView={layout === 'goals'}
+		activeScene={sortmode === 'goals' ? 0 : 1}
+		{w}
+		{h}
+	></AllIndicatorGoals>
+	-->
+	<ISOCodeLabels
+		particles={nodes?.filter((d) => d.type === PARTICLE_TYPES.LABEL)}
+		inView={layout === 'geo'}
+	></ISOCodeLabels>
 </SVGContainer>
 
 <div class="button-panel">
