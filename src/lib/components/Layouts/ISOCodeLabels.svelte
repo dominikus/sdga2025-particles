@@ -3,19 +3,16 @@
 	import { grid as countries } from '$lib/data/worldtilegrid.js';
 	import { scaleLinear } from 'd3';
 	import * as PIXI from 'pixi.js';
+	import { nodeState, labelState } from '$lib/state/nodeState.svelte.js';
 
-	export let particles = [];
-	export let inView = false;
-
-	export let layoutStep = 0;
+	let particles = $derived(labelState.labels);
+	let { inView = false } = $props();
 </script>
 
 <g>
 	{#each particles as label}
-		<text
-			transform="translate({label.x}, {label.y})"
-			style="opacity: {inView ? 1 : 0}"
-			data-step={layoutStep}>{label.country}</text
+		<text transform="translate({label.x}, {label.y})" style="opacity: {inView ? 1 : 0}"
+			>{label.country}</text
 		>
 	{/each}
 </g>

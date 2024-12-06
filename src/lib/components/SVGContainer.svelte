@@ -3,7 +3,7 @@
 	export let h;
 </script>
 
-<svg class="vis" width={w} height={h}><slot /></svg>
+<svg class="vis" width={w} height={h}><slot name="svg" /><slot name="iso-code-labels" /></svg>
 
 <style>
 	svg {

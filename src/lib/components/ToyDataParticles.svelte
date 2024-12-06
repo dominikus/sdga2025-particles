@@ -12,7 +12,9 @@
 	import SVGContainer from './SVGContainer.svelte';
 	import ISOCodeLabels from './Layouts/ISOCodeLabels.svelte';
 
-	export let allIndicators = [];
+	import { nodeState, labelState } from '$lib/state/nodeState.svelte.js';
+
+	let { allIndicators = [] } = $props();
 
 	const PARTICLE_TYPES = {
 		INDICATOR: 'indicator',
@@ -28,7 +30,7 @@
 		stroke: { color: 0x384075, width: 3 }
 	});
 
-	$: console.log(grid);
+	// $inspect(grid);
 
 	let RADIUS = 3;
 
@@ -37,11 +39,10 @@
 
 	const BOXDIMS = { w: 28, h: 28 };
 
-	let sortmode = 'goals';
-	let layout = 'intro';
-	let showLabels = false;
+	let sortmode = $state('goals');
+	let showLabels = $state(false);
 
-	let modeIndex = 0;
+	let modeIndex = $state(0);
 	let modes = [
 		{ layout: 'intro', sortmode: 'goals', showLabels: false },
 		{ layout: 'geo', sortmode: 'goals', showLabels: true },
@@ -54,14 +55,16 @@
 		{ layout: 'geo', sortmode: 'scatterplot', showLabels: true },
 		{ layout: 'geo', sortmode: 'barchart', showLabels: true }
 	];
+	let layout = $derived(modes[modeIndex].layout);
 
 	let canvas;
 
-	let nodes;
-	let frame = 0;
+	let frame = $state(0);
 
-	let w, h;
-	let screenW, screenH;
+	let w = $state(),
+		h = $state();
+	let screenW = $state(),
+		screenH = $state();
 
 	const MARGIN = { x: 20, y: 120 };
 	let xScale = scaleLinear().domain([0, 29]);
@@ -73,7 +76,7 @@
 	let barXScale = scaleLinear().domain([0, 1]);
 	let valuePPScale = scaleLinear().domain([0, 1]);
 
-	let isSetup = false;
+	let isSetup = $state(false);
 
 	let particleContainer;
 	let countryLevels;
@@ -94,6 +97,9 @@
 	}
 
 	async function setup() {
+		isSetup = true;
+
+		console.log('setup', nodeState.nodes.length);
 		w = 1280; //window.innerWidth;
 		h = 2500; // window.innerHeight;
 
@@ -137,8 +143,6 @@
 
 		xScale.range([MARGIN.x, screenW - MARGIN.x * 2]);
 		yScale.range([MARGIN.y, screenH - MARGIN.y * 2]);
-
-		nodes = [];
 
 		const tex = PIXI.Texture.WHITE; //createColoredTexture(0xffffff, 1, 1);
 
@@ -186,12 +190,21 @@
 					p.scaleY = RADIUS;
 					particleContainer.addParticle(p.view);
 
-					nodes.push(p);
+					nodeState.nodes.push(p);
 					overallCount++;
 				});
 			}
 
 			// create a country label:
+			let label = {
+				x: (w * countryIndex) / grid.length,
+				y: -50,
+				country: d.iso3c,
+				homepoint: new PIXI.Point((w * countryIndex) / grid.length, -50)
+			};
+			labelState.labels.push(label);
+
+			/*
 			let labelparticle = createParticle(
 				Math.floor(xScale(d.x)),
 				Math.floor(yScale(d.y)),
@@ -201,17 +214,17 @@
 			);
 			labelparticle.country = d.iso3c;
 			labelparticle.homepoint = new PIXI.Point((w * countryIndex) / grid.length, -50);
-
+*/
 			/*labelparticle.view = new PIXI.Text({
 				text: d.iso3c,
 				style: textStyle
 			});
 			labelparticle.view.anchor = new PIXI.Point(0.5, 0.5);
 			spriteContainer.addChild(labelparticle.view);*/
-			nodes.push(labelparticle);
+			//nodeState.nodes.push(labelparticle);
 		});
 
-		nodes
+		nodeState.nodes
 			.filter((d) => d.sdgTargetCount === 0 && d.sdgGoal === FOCUS_GOAL)
 			.sort((a, b) => a?.valueAbs - b?.valueAbs)
 			.forEach((d, i) => {
@@ -229,12 +242,12 @@
 			});
 			//goalparticle.view.anchor = new PIXI.Point(0.5, 0.5);
 			spriteContainer.addChild(goalparticle.view);
-			nodes.push(goalparticle);
+			nodeState.nodes.push(goalparticle);
 		}
 
 		const countryNodes = {};
 		grid.forEach((d) => {
-			countryNodes[d.iso3c] = nodes.filter((dd) => dd.country === d.iso3c);
+			countryNodes[d.iso3c] = nodeState.nodes.filter((dd) => dd.country === d.iso3c);
 		});
 
 		countryLevels = [];
@@ -247,7 +260,7 @@
 		console.log(countryLevels);
 
 		// layout nodes:
-		layoutNodes(nodes);
+		layoutNodes(nodeState.nodes);
 
 		/** visualization specific setup stuff*/
 		// extract FOCUS_GOAL data domain:
@@ -270,7 +283,7 @@
 			let isDirty = false;
 			let speed = ticker.deltaMS / BASE_SPEED;
 
-			nodes.forEach((node) => {
+			nodeState.nodes.forEach((node) => {
 				//if (node.type === PARTICLE_TYPES.INDICATOR) {
 				seek(node, speed);
 
@@ -304,12 +317,10 @@
 
 		ticker.add(render);
 		ticker.start();
-
-		isSetup = true;
 	}
 
-	function layoutNodes(nodes) {
-		let indicatorCount = nodes.filter((d) => d.country === grid[0].iso3c).length;
+	function layoutNodes() {
+		let indicatorCount = nodeState.nodes.filter((d) => d.country === grid[0].iso3c).length;
 		console.log(indicatorCount);
 
 		if (layout === 'geo' && sortmode !== 'barchart') {
@@ -322,7 +333,7 @@
 
 				if (sortmode === 'focus') {
 					// focus mode
-					const cnodes = nodes.filter((d) => d.country === country.iso3c);
+					const cnodes = nodeState.nodes.filter((d) => d.country === country.iso3c);
 
 					cnodes.forEach((node) => {
 						if (node.type === PARTICLE_TYPES.INDICATOR) {
@@ -349,7 +360,7 @@
 						});
 				} else if (sortmode === 'absoluteprogress') {
 					// focus mode
-					const cnodes = nodes.filter((d) => d.country === country.iso3c);
+					const cnodes = nodeState.nodes.filter((d) => d.country === country.iso3c);
 
 					cnodes.forEach((node) => {
 						if (node.type === PARTICLE_TYPES.INDICATOR) {
@@ -375,7 +386,7 @@
 							d.y = countryOffset.y;
 						});
 				} else if (sortmode === 'scatterplot') {
-					const cnodes = nodes.filter((d) => d.country === country.iso3c);
+					const cnodes = nodeState.nodes.filter((d) => d.country === country.iso3c);
 
 					if (cnodes.length > 0) {
 						cnodes.forEach((node) => {
@@ -407,7 +418,7 @@
 				}
 			});
 
-			nodes.filter((d) => d.type === PARTICLE_TYPES.GOALLABEL).forEach(goHome);
+			nodeState.nodes.filter((d) => d.type === PARTICLE_TYPES.GOALLABEL).forEach(goHome);
 		} else if (layout === 'goals' || sortmode === 'barchart') {
 			countryLevels.sort((a, b) => b.value - a.value);
 
@@ -415,10 +426,10 @@
 				.sort((a, b) =>
 					sortmode !== 'barchart'
 						? a.iso3c.localeCompare(b.iso3c)
-						: (nodes.find(
+						: (nodeState.nodes.find(
 								(d) => d.country === b.iso3c && d.sdgTargetCount === 0 && d.sdgGoal === FOCUS_GOAL
 							)?.valueAbsIndex ?? -1) -
-							(nodes.find(
+							(nodeState.nodes.find(
 								(d) => d.country === a.iso3c && d.sdgTargetCount === 0 && d.sdgGoal === FOCUS_GOAL
 							)?.valueAbsIndex ?? -1)
 				)
@@ -433,7 +444,9 @@
 
 					const countryOffset = new PIXI.Point(50, MARGIN.y + yVal * 12);
 
-					const cnodes = nodes.filter((d) => d.country === country.iso3c).sort(sortByNone);
+					const cnodes = nodeState.nodes
+						.filter((d) => d.country === country.iso3c)
+						.sort(sortByNone);
 
 					for (let goal = 1; goal <= 17; goal++) {
 						if (sortmode !== 'barchart') {
@@ -456,7 +469,7 @@
 								});
 						} else {
 							if (sortmode === 'barchart') {
-								const cnodes = nodes.filter((d) => d.country === country.iso3c);
+								const cnodes = nodeState.nodes.filter((d) => d.country === country.iso3c);
 
 								cnodes.forEach((node) => {
 									if (node.type === PARTICLE_TYPES.INDICATOR) {
@@ -488,7 +501,7 @@
 						});
 				});
 
-			nodes
+			nodeState.nodes
 				.filter((d) => d.type === PARTICLE_TYPES.GOALLABEL)
 				.forEach((d) => {
 					d.homepoint.x = d.x = 4 * RADIUS * d.sdgGoal + 50;
@@ -497,8 +510,6 @@
 		}
 
 		particleContainer.update();
-
-		console.log(nodes);
 	}
 
 	function back() {
@@ -517,28 +528,32 @@
 			modeIndex = modes.length - 1;
 		}
 
-		layout = modes[modeIndex].layout;
 		sortmode = modes[modeIndex].sortmode;
 		showLabels = modes[modeIndex].showLabels;
-		layoutNodes(nodes);
+		layoutNodes(nodeState.nodes);
 	}
 
-	$: if (canvas && allIndicators.length > 0 && !isSetup) {
-		setup();
-	}
+	$effect(() => {
+		if (canvas && allIndicators.length > 0 && !isSetup) {
+			setup();
+		}
+	});
+
+	let LayoutComponent = $derived(layout === 'intro' ? Intro : AllIndicatorMap);
 </script>
 
-<canvas bind:this={canvas} />
+<canvas bind:this={canvas}></canvas>
 
 <SVGContainer {w} {h}>
-	<Intro particles={nodes} inView={layout === 'intro'} {w} h={screenH} />
-	<AllIndicatorMap
-		particles={nodes}
-		inView={layout === 'geo'}
+	<LayoutComponent
+		{frame}
+		inView={isSetup}
 		activeScene={sortmode === 'goals' ? 0 : 1}
 		{w}
 		h={screenH}
+		slot="svg"
 	/>
+
 	<!--
 	<AllIndicatorGoals
 		particles={nodes}
@@ -548,16 +563,12 @@
 		{h}
 	></AllIndicatorGoals>
 	-->
-	<ISOCodeLabels
-		particles={nodes?.filter((d) => d.type === PARTICLE_TYPES.LABEL)}
-		inView={showLabels}
-		layoutStep={modeIndex}
-	></ISOCodeLabels>
+	<ISOCodeLabels inView={showLabels} slot="iso-code-labels"></ISOCodeLabels>
 </SVGContainer>
 
 <div class="button-panel">
-	<button on:click={back}>&lt;</button>
-	<button on:click={forward}>&gt;</button>
+	<button onclick={back}>&lt;</button>
+	<button onclick={forward}>&gt;</button>
 </div>
 
 <style>

@@ -1,16 +1,22 @@
 <script>
 	// import { particles } from 'engine.js';
 	import { goHome } from '$lib/utils/particleUtils.js';
+	import { nodeState } from '$lib/state/nodeState.svelte.js';
 
-	export let particles = [];
-	export let inView = false;
-	export let w, h;
+	let particles = nodeState.nodes;
+	let { inView = false, w, h, frame } = $props();
 
-	$: if (inView === true && particles?.length > 0) {
-		layout();
-	}
+	let isLayouted = $state(false);
+
+	$effect(() => {
+		if (inView === true && frame && !isLayouted && particles.length > 0) {
+			layout();
+			isLayouted = true;
+		}
+	});
 
 	function layout() {
+		console.log(particles.length);
 		particles.forEach((d) => {
 			if (d.type === 'indicator') {
 				d.x = w * 0.4 - 35;

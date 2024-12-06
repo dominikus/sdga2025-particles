@@ -3,13 +3,13 @@
 	import { grid as countries } from '$lib/data/worldtilegrid.js';
 	import { scaleLinear } from 'd3';
 	import * as PIXI from 'pixi.js';
+	import { nodeState, labelState } from '$lib/state/nodeState.svelte.js';
 
-	export let particles = [];
-	export let inView = false;
-	export let activeScene = 0;
-	export let w, h;
+	let particles = nodeState.nodes;
 
-	$: console.log(`activescene: ${activeScene}`);
+	let { inView = false, activeScene = 0, w, h } = $props();
+
+	$inspect(`activescene: ${activeScene}`);
 
 	const margins = {
 		top: 120,
@@ -18,12 +18,16 @@
 		left: 20
 	};
 
-	$: xScale = scaleLinear()
-		.domain([0, 29])
-		.range([margins.left, w - margins.left - margins.right]);
-	$: yScale = scaleLinear()
-		.domain([0, 22])
-		.range([margins.top, h - margins.top - margins.bottom]);
+	let xScale = $derived(
+		scaleLinear()
+			.domain([0, 29])
+			.range([margins.left, w - margins.left - margins.right])
+	);
+	let yScale = $derived(
+		scaleLinear()
+			.domain([0, 22])
+			.range([margins.top, h - margins.top - margins.bottom])
+	);
 
 	const BOXDIMS = { w: 28, h: 28 };
 
@@ -41,6 +45,7 @@
 	}
 
 	function layout() {
+		console.log(particles);
 		let indicatorCount = particles.filter((d) => d.country === countries[0].iso3c).length;
 		let nodesPerLine = Math.ceil(Math.sqrt(indicatorCount));
 		let RADIUS = Math.ceil(BOXDIMS.w / nodesPerLine);
@@ -52,23 +57,25 @@
 				.filter((d) => d.country === country.iso3c)
 				.sort(sceneConfig[activeScene].sortmode === 'goals' ? sortByNone : sortByLevel);
 			cnodes.forEach((d, i) => {
-				if (d.type === 'indicator') {
-					d.x = Math.floor(i % nodesPerLine) * RADIUS + countryOffset.x;
-					d.y = Math.floor(i / nodesPerLine) * RADIUS + countryOffset.y;
+				d.x = Math.floor(i % nodesPerLine) * RADIUS + countryOffset.x;
+				d.y = Math.floor(i / nodesPerLine) * RADIUS + countryOffset.y;
 
-					d.scaleX = d.scaleY = RADIUS;
-				} else {
-					d.x = countryOffset.x + nodesPerLine * RADIUS * 0.5;
-					d.y = countryOffset.y;
-				}
+				d.scaleX = d.scaleY = RADIUS;
 			});
+
+			// place labels:
+			const countryLabel = labelState.labels.find((d) => d.country === country.iso3c);
+			countryLabel.x = countryOffset.x + nodesPerLine * RADIUS * 0.5;
+			countryLabel.y = countryOffset.y;
 		});
 	}
 
-	$: if (inView === true && particles?.length > 0) {
-		activeScene;
-		layout();
-	}
+	$effect(() => {
+		if (inView === true && particles?.length > 0) {
+			activeScene;
+			layout();
+		}
+	});
 </script>
 
 <g>
