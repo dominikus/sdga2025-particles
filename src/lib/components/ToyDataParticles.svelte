@@ -9,6 +9,7 @@
 	import { Stats } from 'pixi-stats';
 	import Intro from './Layouts/Intro.svelte';
 	import AllIndicatorMap from './Layouts/AllIndicatorMap.svelte';
+	import AllIndicatorMatrix from './Layouts/AllIndicatorMatrix.svelte';
 	import SVGContainer from './SVGContainer.svelte';
 	import ISOCodeLabels from './Layouts/ISOCodeLabels.svelte';
 
@@ -246,22 +247,8 @@
 			nodeState.nodes.push(goalparticle);
 		}*/
 
-		const countryNodes = {};
-		grid.forEach((d) => {
-			countryNodes[d.iso3c] = nodeState.nodes.filter((dd) => dd.country === d.iso3c);
-		});
-
-		countryLevels = [];
-		grid.forEach((country) => {
-			countryLevels.push({
-				country: country.iso3c,
-				value: countryNodes[country.iso3c].reduce((acc, val) => (val.level ?? 0) + acc, 0)
-			});
-		});
-		console.log(countryLevels);
-
 		// layout nodes:
-		layoutNodes(nodeState.nodes);
+		// layoutNodes(nodeState.nodes);
 
 		/** visualization specific setup stuff*/
 		// extract FOCUS_GOAL data domain:
@@ -420,7 +407,7 @@
 			});
 
 			nodeState.nodes.filter((d) => d.type === PARTICLE_TYPES.GOALLABEL).forEach(goHome);
-		} else if (layout === 'goals' || sortmode === 'barchart') {
+		} else if (layout !== 'goals' && sortmode === 'barchart') {
 			countryLevels.sort((a, b) => b.value - a.value);
 
 			grid
@@ -531,7 +518,7 @@
 
 		sortmode = modes[modeIndex].sortmode;
 		showLabels = modes[modeIndex].showLabels;
-		layoutNodes(nodeState.nodes);
+		//layoutNodes(nodeState.nodes);
 	}
 
 	$effect(() => {
@@ -540,7 +527,16 @@
 		}
 	});
 
-	let LayoutComponent = $derived(layout === 'intro' ? Intro : AllIndicatorMap);
+	let LayoutComponent = $derived.by(() => {
+		switch (layout) {
+			case 'intro':
+				return Intro;
+			case 'geo':
+				return AllIndicatorMap;
+			case 'goals':
+				return AllIndicatorMatrix;
+		}
+	});
 </script>
 
 <canvas bind:this={canvas}></canvas>

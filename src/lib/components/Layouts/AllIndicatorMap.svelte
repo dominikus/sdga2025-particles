@@ -63,7 +63,7 @@
 				d.scaleX = d.scaleY = RADIUS;
 			});
 
-			// place labels:
+			// place label:
 			const countryLabel = labelState.labels[country.iso3c];
 			countryLabel.x = countryOffset.x + nodesPerLine * RADIUS * 0.5;
 			countryLabel.y = countryOffset.y;
