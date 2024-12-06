@@ -1,32 +1,23 @@
 <script>
 	// import { particles } from 'engine.js';
-	import { goHome } from '$lib/utils/particleUtils.js';
 	import { nodeState } from '$lib/state/nodeState.svelte.js';
 
 	let particles = nodeState.nodes;
 	let { inView = false, w, h, frame } = $props();
 
-	let isLayouted = $state(false);
-
 	$effect(() => {
-		if (inView === true && frame && !isLayouted && particles.length > 0) {
+		if (inView === true && frame) {
 			layout();
-			isLayouted = true;
 		}
 	});
 
 	function layout() {
-		console.log(particles.length);
 		particles.forEach((d) => {
-			if (d.type === 'indicator') {
-				d.x = w * 0.4 - 35;
-				d.y = h * 0.4 - 25;
+			d.x = w * 0.4 - 35;
+			d.y = h * 0.4 - 25;
 
-				d.scaleX = 50;
-				d.scaleY = 50;
-			} else {
-				goHome(d);
-			}
+			d.scaleX = 50;
+			d.scaleY = 50;
 		});
 	}
 </script>
@@ -36,11 +27,6 @@
 		>1 country x 1 indicator</text
 	>
 </g>
-
-<!--
-<div slot="under">underneath</div>
-<g slot="svg">over</g>
--->
 
 <style>
 	text {

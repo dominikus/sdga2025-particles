@@ -14,6 +14,7 @@
 	import ISOCodeLabels from './Layouts/ISOCodeLabels.svelte';
 
 	import { nodeState, labelState } from '$lib/state/nodeState.svelte.js';
+	import InternetAccessMap from './Layouts/InternetAccessMap.svelte';
 
 	let { allIndicators = [] } = $props();
 
@@ -22,14 +23,6 @@
 		LABEL: 'label',
 		GOALLABEL: 'goallabel'
 	};
-
-	const textStyle = new PIXI.TextStyle({
-		fontFamily: 'Open Sans',
-		fontSize: 12,
-		fontWeight: 'bold',
-		fill: 0xffffff,
-		stroke: { color: 0x384075, width: 3 }
-	});
 
 	// $inspect(grid);
 
@@ -41,9 +34,10 @@
 	const BOXDIMS = { w: 28, h: 28 };
 
 	let sortmode = $state('goals');
+
 	let showLabels = $state(false);
 
-	let modeIndex = $state(0);
+	let activeScene = $state(0);
 	let modes = [
 		{ layout: 'intro', sortmode: 'goals', showLabels: false },
 		{ layout: 'geo', sortmode: 'goals', showLabels: true },
@@ -51,12 +45,12 @@
 		{ layout: 'goals', sortmode: 'goals', showLabels: true },
 		{ layout: 'goals', sortmode: 'levels', showLabels: true },
 		{ layout: 'geo', sortmode: 'levels', showLabels: true },
-		{ layout: 'geo', sortmode: 'focus', showLabels: true },
-		{ layout: 'geo', sortmode: 'absoluteprogress', showLabels: true },
-		{ layout: 'geo', sortmode: 'scatterplot', showLabels: true },
-		{ layout: 'geo', sortmode: 'barchart', showLabels: true }
+		{ layout: 'focus', sortmode: 'focus', showLabels: true },
+		{ layout: 'focus', sortmode: 'absoluteprogress', showLabels: true },
+		{ layout: 'focus', sortmode: 'scatterplot', showLabels: true },
+		{ layout: 'focus', sortmode: 'barchart', showLabels: true }
 	];
-	let layout = $derived(modes[modeIndex].layout);
+	let layout = $derived(modes[activeScene].layout);
 
 	let canvas;
 
@@ -508,16 +502,16 @@
 	}
 
 	function step(dir) {
-		modeIndex += dir;
-		if (modeIndex >= modes.length) {
-			modeIndex = 0;
+		activeScene += dir;
+		if (activeScene >= modes.length) {
+			activeScene = 0;
 		}
-		if (modeIndex < 0) {
-			modeIndex = modes.length - 1;
+		if (activeScene < 0) {
+			activeScene = modes.length - 1;
 		}
 
-		sortmode = modes[modeIndex].sortmode;
-		showLabels = modes[modeIndex].showLabels;
+		sortmode = modes[activeScene].sortmode;
+		showLabels = modes[activeScene].showLabels;
 		//layoutNodes(nodeState.nodes);
 	}
 
@@ -527,7 +521,7 @@
 		}
 	});
 
-	let LayoutComponent = $derived.by(() => {
+	let Vis = $derived.by(() => {
 		switch (layout) {
 			case 'intro':
 				return Intro;
@@ -535,6 +529,8 @@
 				return AllIndicatorMap;
 			case 'goals':
 				return AllIndicatorMatrix;
+			case 'focus':
+				return InternetAccessMap;
 		}
 	});
 </script>
@@ -542,7 +538,7 @@
 <canvas bind:this={canvas}></canvas>
 
 <SVGContainer {w} {h}>
-	<LayoutComponent
+	<Vis
 		{frame}
 		inView={isSetup}
 		activeScene={sortmode === 'goals' ? 0 : 1}
@@ -550,16 +546,6 @@
 		h={screenH}
 		slot="svg"
 	/>
-
-	<!--
-	<AllIndicatorGoals
-		particles={nodes}
-		inView={layout === 'goals'}
-		activeScene={sortmode === 'goals' ? 0 : 1}
-		{w}
-		{h}
-	></AllIndicatorGoals>
-	-->
 	<ISOCodeLabels inView={showLabels} slot="iso-code-labels"></ISOCodeLabels>
 </SVGContainer>
 

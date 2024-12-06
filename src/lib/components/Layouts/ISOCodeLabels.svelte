@@ -1,9 +1,6 @@
 <script>
 	// import { particles } from 'engine.js';
-	import { grid as countries } from '$lib/data/worldtilegrid.js';
-	import { scaleLinear } from 'd3';
-	import * as PIXI from 'pixi.js';
-	import { nodeState, labelState } from '$lib/state/nodeState.svelte.js';
+	import { labelState } from '$lib/state/nodeState.svelte.js';
 
 	let particles = $derived(labelState.labels);
 	let { inView = false } = $props();

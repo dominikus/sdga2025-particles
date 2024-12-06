@@ -9,8 +9,6 @@
 
 	let { inView = false, activeScene = 0, w, h } = $props();
 
-	$inspect(`activescene: ${activeScene}`);
-
 	const margins = {
 		top: 120,
 		right: 20,
@@ -45,7 +43,6 @@
 	}
 
 	function layout() {
-		console.log(particles);
 		let indicatorCount = particles.filter((d) => d.country === countries[0].iso3c).length;
 		let nodesPerLine = Math.ceil(Math.sqrt(indicatorCount));
 		let RADIUS = Math.ceil(BOXDIMS.w / nodesPerLine);
@@ -77,21 +74,3 @@
 		}
 	});
 </script>
-
-<g>
-	<!--
-	{#each particles.filter((d) => d.type === 'label') as label}
-		<text transform="translate({label.x}, {label.y})" style="opacity: {inView ? 1 : 1}"
-			>{label.country}</text
-		>
-	{/each}
-	-->
-</g>
-
-<style>
-	text {
-		transition: all 1s;
-
-		text-anchor: middle;
-	}
-</style>

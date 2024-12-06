@@ -9,25 +9,14 @@
 
 	let { inView = false, activeScene = 0, w, h } = $props();
 
-	$inspect(`activescene: ${activeScene}`);
-
 	const margins = {
-		top: 120,
+		top: 140,
 		right: 20,
 		bottom: 120,
 		left: 20
 	};
 
-	let xScale = $derived(
-		scaleLinear()
-			.domain([0, 29])
-			.range([margins.left, w - margins.left - margins.right])
-	);
-	let yScale = $derived(
-		scaleLinear()
-			.domain([0, 22])
-			.range([margins.top, h - margins.top - margins.bottom])
-	);
+	const RADIUS = 10;
 
 	const countryNodes = {};
 	countries.forEach((d) => {
@@ -41,9 +30,6 @@
 			value: countryNodes[country.iso3c].reduce((acc, val) => (val.level ?? 0) + acc, 0)
 		});
 	});
-	console.log(countryLevels);
-
-	const BOXDIMS = { w: 28, h: 28 };
 
 	const sceneConfig = {
 		0: { sortmode: 'goals' },
@@ -51,7 +37,6 @@
 	};
 
 	let sortmode = $derived(sceneConfig[activeScene].sortmode);
-	$inspect(sortmode);
 
 	function sortByLevel(a, b) {
 		return b.level - a.level;
@@ -75,7 +60,6 @@
 						countryLevels.findIndex((d) => d.country === b.iso3c)
 			)
 			.forEach((country, i) => {
-				let RADIUS = 10;
 				// const countryOffset = new PIXI.Point(0, 10 + (i * ih) / grid.length);
 
 				const countryOffset = new PIXI.Point(50, margins.top + i * 12);
@@ -93,7 +77,7 @@
 							}
 						})
 						.forEach((d, i) => {
-							d.x = d.sdgGoal * (4 * RADIUS) + i * RADIUS + countryOffset.x;
+							d.x = d.sdgGoal * (4 * RADIUS) + countryOffset.x;
 							d.y = countryOffset.y; // + d.sdgIndicator * RADIUS;
 
 							d.scaleX = d.scaleY = RADIUS;
@@ -103,7 +87,7 @@
 				// place label:
 				const countryLabel = labelState.labels[country.iso3c];
 				countryLabel.x = countryOffset.x;
-				countryLabel.y = countryOffset.y;
+				countryLabel.y = countryOffset.y + RADIUS;
 			});
 		/*
 nodeState.nodes
@@ -123,19 +107,17 @@ nodeState.nodes
 </script>
 
 <g>
-	<!--
-	{#each particles.filter((d) => d.type === 'label') as label}
-		<text transform="translate({label.x}, {label.y})" style="opacity: {inView ? 1 : 1}"
-			>{label.country}</text
+	{#each new Array(17) as goal, i}
+		<text
+			transform="translate({(i + 1) * (4 * RADIUS) + RADIUS / 2 + 50}, {margins.top - 10})"
+			style="opacity: {inView ? 1 : 0}">{i + 1}</text
 		>
 	{/each}
-	-->
 </g>
 
 <style>
 	text {
 		transition: all 1s;
-
 		text-anchor: middle;
 	}
 </style>
