@@ -197,12 +197,12 @@
 
 			// create a country label:
 			let label = {
-				x: (w * countryIndex) / grid.length,
-				y: -50,
+				x: screenW * 0.4 - 35,
+				y: screenH * 0.4 - 25,
 				country: d.iso3c,
 				homepoint: new PIXI.Point((w * countryIndex) / grid.length, -50)
 			};
-			labelState.labels.push(label);
+			labelState.labels[d.iso3c] = label;
 
 			/*
 			let labelparticle = createParticle(
@@ -231,6 +231,7 @@
 				d.valueAbsIndex = i;
 			});
 
+		/*
 		for (let goal = 1; goal <= 17; goal++) {
 			let goalparticle = createParticle(-50, -50, 1, 1, PARTICLE_TYPES.GOALLABEL);
 			goalparticle.homepoint = new PIXI.Point(-50, -50);
@@ -243,7 +244,7 @@
 			//goalparticle.view.anchor = new PIXI.Point(0.5, 0.5);
 			spriteContainer.addChild(goalparticle.view);
 			nodeState.nodes.push(goalparticle);
-		}
+		}*/
 
 		const countryNodes = {};
 		grid.forEach((d) => {

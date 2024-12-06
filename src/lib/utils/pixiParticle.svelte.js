@@ -108,7 +108,7 @@ export function createParticle(x, y, sx, sy, type) {
 		acceleration: new PIXI.Point(0, 0),
 		scale: new PIXI.Point(sx, sy),
 		scaleTarget: new PIXI.Point(sx, sy),
-		MAX_SPEED: MIN_SPEED, // + Math.random() * (MAX_SPEED - MIN_SPEED),
+		MAX_SPEED: MIN_SPEED + Math.random() * (MAX_SPEED - MIN_SPEED),
 		type,
 		get x() {
 			return this.target.x;

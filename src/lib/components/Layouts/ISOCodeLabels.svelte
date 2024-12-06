@@ -10,7 +10,8 @@
 </script>
 
 <g>
-	{#each particles as label}
+	{#each Object.keys(particles) as labelId}
+		{@const label = particles[labelId]}
 		<text transform="translate({label.x}, {label.y})" style="opacity: {inView ? 1 : 0}"
 			>{label.country}</text
 		>

@@ -64,7 +64,7 @@
 			});
 
 			// place labels:
-			const countryLabel = labelState.labels.find((d) => d.country === country.iso3c);
+			const countryLabel = labelState.labels[country.iso3c];
 			countryLabel.x = countryOffset.x + nodesPerLine * RADIUS * 0.5;
 			countryLabel.y = countryOffset.y;
 		});
