@@ -550,7 +550,8 @@
 	-->
 	<ISOCodeLabels
 		particles={nodes?.filter((d) => d.type === PARTICLE_TYPES.LABEL)}
-		inView={layout === 'geo'}
+		inView={showLabels}
+		layoutStep={modeIndex}
 	></ISOCodeLabels>
 </SVGContainer>
 

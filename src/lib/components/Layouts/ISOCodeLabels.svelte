@@ -6,12 +6,16 @@
 
 	export let particles = [];
 	export let inView = false;
+
+	export let layoutStep = 0;
 </script>
 
 <g>
 	{#each particles as label}
-		<text transform="translate({label.x}, {label.y})" style="opacity: {inView ? 1 : 0}"
-			>{label.country}</text
+		<text
+			transform="translate({label.x}, {label.y})"
+			style="opacity: {inView ? 1 : 0}"
+			data-step={layoutStep}>{label.country}</text
 		>
 	{/each}
 </g>
