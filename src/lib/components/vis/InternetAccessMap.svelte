@@ -1,11 +1,11 @@
 <script>
 	// import { particles } from 'engine.js';
 	import { grid as countries } from '$lib/data/worldtilegrid.js';
-	import { scaleLinear, extent } from 'd3';
+	import { scaleLinear, extent, scaleDiverging } from 'd3';
 	import * as PIXI from 'pixi.js';
 	import { nodeState, labelState } from '$lib/state/nodeState.svelte.js';
 	import { goHome } from '$lib/utils/particleUtils.js';
-	import ISOCodeLabels from '$lib/components/layouts/ISOCodeLabels.svelte';
+	import ISOCodeLabels from '$lib/components/vis/ISOCodeLabels.svelte';
 
 	let particles = nodeState.nodes;
 
@@ -48,14 +48,6 @@
 
 	let sortmode = $derived(sceneConfig[activeScene].sortmode);
 
-	function sortByLevel(a, b) {
-		return b.level - a.level;
-	}
-
-	function sortByNone(a, b) {
-		return 0;
-	}
-
 	let xScale = $derived(
 		scaleLinear()
 			.domain([0, 29])
@@ -92,6 +84,8 @@
 			.domain(focusAbsDomain)
 			.range([margins.left, w * 0.6 - margins.left - margins.right])
 	);
+
+	let colorScale = scaleDiverging(['blue', 'white', 'red']);
 
 	function layout() {
 		let indicatorCount = particles.filter((d) => d.country === countries[0].iso3c).length;

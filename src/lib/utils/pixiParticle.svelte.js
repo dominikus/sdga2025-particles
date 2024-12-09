@@ -99,7 +99,7 @@ export function seek(particle, speed) {
 }
 
 // Particle Factory
-export function createParticle(x, y, sx, sy, type) {
+export function createParticle(x, y, sx, sy, color) {
 	let position = { x, y };
 	return {
 		position,
@@ -108,8 +108,9 @@ export function createParticle(x, y, sx, sy, type) {
 		acceleration: new PIXI.Point(0, 0),
 		scale: new PIXI.Point(sx, sy),
 		scaleTarget: new PIXI.Point(sx, sy),
+		levelColor: color,
+		currentColor: color,
 		MAX_SPEED: MIN_SPEED + Math.random() * (MAX_SPEED - MIN_SPEED),
-		type,
 		get x() {
 			return this.target.x;
 		},
@@ -133,6 +134,12 @@ export function createParticle(x, y, sx, sy, type) {
 		},
 		set scaleY(_sy) {
 			this.scaleTarget.y = _sy;
+		},
+		get color() {
+			return this.color;
+		},
+		set color(_c) {
+			this.color = _c;
 		}
 	};
 }

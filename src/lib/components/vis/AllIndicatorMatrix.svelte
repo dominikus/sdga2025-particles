@@ -4,7 +4,7 @@
 	import { scaleLinear } from 'd3';
 	import * as PIXI from 'pixi.js';
 	import { nodeState, labelState } from '$lib/state/nodeState.svelte.js';
-	import ISOCodeLabels from '$lib/components/layouts/ISOCodeLabels.svelte';
+	import ISOCodeLabels from '$lib/components/vis/ISOCodeLabels.svelte';
 
 	let particles = nodeState.nodes;
 

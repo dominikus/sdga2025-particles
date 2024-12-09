@@ -5,13 +5,13 @@
 
 	import * as PIXI from 'pixi.js';
 	import { Stats } from 'pixi-stats';
-	import Intro from './layouts/Intro.svelte';
-	import AllIndicatorMap from './layouts/AllIndicatorMap.svelte';
-	import AllIndicatorMatrix from './layouts/AllIndicatorMatrix.svelte';
+	import Intro from './vis/Intro.svelte';
+	import AllIndicatorMap from './vis/AllIndicatorMap.svelte';
+	import AllIndicatorMatrix from './vis/AllIndicatorMatrix.svelte';
 	import SVGContainer from './SVGContainer.svelte';
 
 	import { nodeState } from '$lib/state/nodeState.svelte.js';
-	import InternetAccessMap from './layouts/InternetAccessMap.svelte';
+	import InternetAccessMap from './vis/InternetAccessMap.svelte';
 
 	let { allIndicators = [] } = $props();
 
@@ -92,7 +92,7 @@
 				position: true, // Allow dynamic position changes (default)
 				scale: true, // Static scale for extra performance
 				rotation: false, // Static rotation
-				color: false
+				color: true
 			}
 		});
 
@@ -112,7 +112,15 @@
 				let filteredGTs = allIndicators.filter((dd) => dd.iso3c === d.iso3c && dd.goal === goal);
 
 				filteredGTs.forEach((indicator, ii) => {
-					let p = createParticle(screenW * 0.4 - 35, screenH * 0.4 - 25, RADIUS, RADIUS);
+					let particleColor = colorFromLevel(indicator.level);
+
+					let p = createParticle(
+						screenW * 0.4 - 35,
+						screenH * 0.4 - 25,
+						RADIUS,
+						RADIUS,
+						particleColor
+					);
 
 					p.sdgGoal = goal;
 					p.sdgTargetCount = ii; //targetCount;
@@ -130,10 +138,11 @@
 						texture: tex,
 						scaleX: RADIUS,
 						scaleY: RADIUS,
-						tint: colorFromLevel(p.level)
+						tint: particleColor
 					});
 					p.scaleX = RADIUS;
 					p.scaleY = RADIUS;
+
 					particleContainer.addParticle(p.view);
 
 					nodeState.nodes.push(p);
