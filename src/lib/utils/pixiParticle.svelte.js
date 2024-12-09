@@ -1,4 +1,4 @@
-import { interpolateRgb } from 'd3';
+import { interpolateLab, color } from 'd3';
 import * as PIXI from 'pixi.js';
 
 const MIN_SPEED = 25;
@@ -51,17 +51,21 @@ function recolorParticle(particle, speed) {
 	let isDirty = false;
 
 	if (particle.colorTarget !== particle.currentColor) {
-		if (particle.colorGradient.length > 0) {
+		if (particle.colorGradient.length === 0) {
+			// set up color gradient:
+			const NUMBER_OF_FRAMES = 25 / speed;
+			const gradient = interpolateLab(particle.currentColor, particle.colorTarget);
+			for (let i = 0; i < NUMBER_OF_FRAMES; i++) {
+				const gradientRgb = gradient(i / NUMBER_OF_FRAMES);
+				const gradientHex = color(gradientRgb).formatHex();
+
+				particle.colorGradient.push(gradientHex);
+			}
+		} else {
+			// work through color gradient:
 			const nextColor = particle.colorGradient.shift();
 			particle.currentColor = nextColor;
-		} else {
-			const gradient = interpolateRgb(particle.currentColor, particle.colorTarget);
-			for (let i = 0; i < 20; i++) {
-				particle.colorGradient.push(gradient(i / 20));
-			}
 		}
-
-		particle.currentColor = particle.colorTarget;
 
 		isDirty = true;
 	}
@@ -85,8 +89,11 @@ export function update(particle, speed) {
 	);*/
 	particle.acceleration.set(0, 0);
 
+	// adjust color:
+	let isDirtyColor = recolorParticle(particle, speed);
 	// adjust scale:
-	return recolorParticle(particle, speed) || scaleParticle(particle, speed);
+	let isDirtyScale = scaleParticle(particle, speed);
+	return isDirtyColor || isDirtyScale;
 }
 
 // Apply Force to Particle

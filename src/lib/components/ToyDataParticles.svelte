@@ -52,8 +52,7 @@
 	let ticker;
 
 	function colorFromLevel(level) {
-		const col = new PIXI.Color([0xf75781, 0xfda696, 0xfbe9aa, 0x60d1c3, 0x009ee9][level]);
-		return col.toBgrNumber();
+		return ['#f75781', '#fda696', '#fbe9aa', '#60d1c3', '#009ee9'][level];
 	}
 
 	async function setup() {
