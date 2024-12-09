@@ -4,6 +4,7 @@
 	import { scaleLinear } from 'd3';
 	import * as PIXI from 'pixi.js';
 	import { nodeState, labelState } from '$lib/state/nodeState.svelte.js';
+	import ISOCodeLabels from '$lib/components/layouts/ISOCodeLabels.svelte';
 
 	let particles = nodeState.nodes;
 
@@ -114,6 +115,7 @@ nodeState.nodes
 		>
 	{/each}
 </g>
+<ISOCodeLabels {w} {h} slot="iso-code-labels"></ISOCodeLabels>
 
 <style>
 	text {
