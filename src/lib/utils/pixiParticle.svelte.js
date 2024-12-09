@@ -1,3 +1,4 @@
+import { interpolateRgb } from 'd3';
 import * as PIXI from 'pixi.js';
 
 const MIN_SPEED = 25;
@@ -46,6 +47,28 @@ function scaleParticle(particle, speed) {
 	return isDirty;
 }
 
+function recolorParticle(particle, speed) {
+	let isDirty = false;
+
+	if (particle.colorTarget !== particle.currentColor) {
+		if (particle.colorGradient.length > 0) {
+			const nextColor = particle.colorGradient.shift();
+			particle.currentColor = nextColor;
+		} else {
+			const gradient = interpolateRgb(particle.currentColor, particle.colorTarget);
+			for (let i = 0; i < 20; i++) {
+				particle.colorGradient.push(gradient(i / 20));
+			}
+		}
+
+		particle.currentColor = particle.colorTarget;
+
+		isDirty = true;
+	}
+
+	return isDirty;
+}
+
 // Particle Update Function
 export function update(particle, speed) {
 	particle.velocity.set(
@@ -63,7 +86,7 @@ export function update(particle, speed) {
 	particle.acceleration.set(0, 0);
 
 	// adjust scale:
-	return scaleParticle(particle, speed);
+	return recolorParticle(particle, speed) || scaleParticle(particle, speed);
 }
 
 // Apply Force to Particle
@@ -108,8 +131,9 @@ export function createParticle(x, y, sx, sy, color) {
 		acceleration: new PIXI.Point(0, 0),
 		scale: new PIXI.Point(sx, sy),
 		scaleTarget: new PIXI.Point(sx, sy),
-		levelColor: color,
 		currentColor: color,
+		colorGradient: [],
+		colorTarget: color,
 		MAX_SPEED: MIN_SPEED + Math.random() * (MAX_SPEED - MIN_SPEED),
 		get x() {
 			return this.target.x;
@@ -136,10 +160,10 @@ export function createParticle(x, y, sx, sy, color) {
 			this.scaleTarget.y = _sy;
 		},
 		get color() {
-			return this.color;
+			return this.colorTarget;
 		},
 		set color(_c) {
-			this.color = _c;
+			this.colorTarget = _c;
 		}
 	};
 }

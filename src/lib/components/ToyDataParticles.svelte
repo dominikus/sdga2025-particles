@@ -133,6 +133,7 @@
 					p.valuePP = indicator.diff ?? 0;
 
 					p.homepoint = new PIXI.Point((w * overallCount) / totalIndicatorNum, -50);
+					p.levelColor = particleColor;
 
 					p.view = new PIXI.Particle({
 						texture: tex,
@@ -175,6 +176,8 @@
 
 				node.view.scaleX = node.scale.x;
 				node.view.scaleY = node.scale.y;
+
+				node.view.tint = node.currentColor;
 			});
 
 			if (isDirty) {

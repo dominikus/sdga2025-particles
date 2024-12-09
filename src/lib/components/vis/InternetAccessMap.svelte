@@ -4,7 +4,7 @@
 	import { scaleLinear, extent, scaleDiverging } from 'd3';
 	import * as PIXI from 'pixi.js';
 	import { nodeState, labelState } from '$lib/state/nodeState.svelte.js';
-	import { goHome } from '$lib/utils/particleUtils.js';
+	import { goHome, resetColor } from '$lib/utils/particleUtils.js';
 	import ISOCodeLabels from '$lib/components/vis/ISOCodeLabels.svelte';
 
 	let particles = nodeState.nodes;
@@ -114,6 +114,7 @@
 
 						cnodes.forEach((node) => {
 							goHome(node);
+							resetColor(node);
 						});
 
 						// keep the focus nodes:
@@ -136,6 +137,7 @@
 
 						cnodes.forEach((node) => {
 							goHome(node);
+							resetColor(node);
 						});
 
 						// keep the focus nodes:
@@ -146,6 +148,8 @@
 								d.y = countryOffset.y + BOXDIMS.h / 2 - (BOXDIMS.w * valuePPScale(d.valuePP)) / 2;
 
 								d.scaleX = d.scaleY = BOXDIMS.w * (valuePPScale(d.valuePP) * 0.8 + 0.2);
+
+								d.color = '#ff0000';
 							});
 
 						// place label:
@@ -158,6 +162,7 @@
 						if (cnodes.length > 0) {
 							cnodes.forEach((node) => {
 								goHome(node);
+								resetColor(node);
 							});
 
 							RADIUS = BOXDIMS.w / 3;
@@ -188,6 +193,7 @@
 
 						cnodes.forEach((node) => {
 							goHome(node);
+							resetColor(node);
 						});
 
 						RADIUS = BOXDIMS.w / 6;
