@@ -8,10 +8,11 @@
 	import Intro from './vis/Intro.svelte';
 	import AllIndicatorMap from './vis/AllIndicatorMap.svelte';
 	import AllIndicatorMatrix from './vis/AllIndicatorMatrix.svelte';
-	import SVGContainer from './SVGContainer.svelte';
+	import SVGContainer from './VisContainer.svelte';
 
 	import { nodeState } from '$lib/state/nodeState.svelte.js';
 	import InternetAccessMap from './vis/InternetAccessMap.svelte';
+	import VisContainer from './VisContainer.svelte';
 
 	let { allIndicators = [] } = $props();
 
@@ -124,6 +125,8 @@
 					p.sdgGoal = goal;
 					p.sdgTargetCount = ii; //targetCount;
 					p.sdgIndicator = 1; //i;
+
+					p.indicatorName = d.indicatorName;
 
 					p.country = d.iso3c;
 
@@ -245,9 +248,9 @@
 
 <canvas bind:this={canvas}></canvas>
 
-<SVGContainer {w} {h}>
+<VisContainer {w} {h}>
 	<Vis {frame} inView={isSetup} {activeScene} {w} h={screenH} slot="svg" />
-</SVGContainer>
+</VisContainer>
 
 <div class="button-panel">
 	<button onclick={back}>&lt;</button>

@@ -1,11 +1,12 @@
 <script>
 	// import { particles } from 'engine.js';
 	import { grid as countries } from '$lib/data/worldtilegrid.js';
-	import { scaleLinear, extent, scaleDiverging } from 'd3';
+	import { scaleLinear, extent, scaleDiverging, interpolateRdBu, piecewise, max } from 'd3';
 	import * as PIXI from 'pixi.js';
 	import { nodeState, labelState } from '$lib/state/nodeState.svelte.js';
 	import { goHome, resetColor } from '$lib/utils/particleUtils.js';
 	import ISOCodeLabels from '$lib/components/vis/ISOCodeLabels.svelte';
+	import Legend from '../general/Legend.svelte';
 
 	let particles = nodeState.nodes;
 
@@ -77,7 +78,11 @@
 			.range([margins.top, h - margins.top - margins.bottom])
 	);
 
-	let valuePPScale = $derived(scaleLinear().domain(focusPPDomain).range([0, 1]));
+	let valuePPScale = $derived(
+		scaleLinear()
+			.domain([0, max(focusPPDomain, (d) => Math.abs(d))])
+			.range([0, 1])
+	);
 
 	let barXScale = $derived(
 		scaleLinear()
@@ -85,7 +90,16 @@
 			.range([margins.left, w * 0.6 - margins.left - margins.right])
 	);
 
-	let colorScale = scaleDiverging(['blue', 'white', 'red']);
+	let colorScale = $derived(
+		scaleDiverging(
+			[focusPPDomain[0], 0, focusPPDomain[1]],
+			piecewise(
+				['#6cdcf6', '#7abdd2', '#809eaf', '#80808e', '#cf7a59', '#e98747', '#ff9534'].reverse()
+			)
+		)
+	);
+
+	let focusParticles = $derived(particles.filter((d) => d.sdgGoal === FOCUS_GOAL));
 
 	function layout() {
 		let indicatorCount = particles.filter((d) => d.country === countries[0].iso3c).length;
@@ -118,19 +132,21 @@
 						});
 
 						// keep the focus nodes:
-						cnodes
-							.filter((d) => d.sdgTargetCount === 0 && d.sdgGoal === FOCUS_GOAL)
-							.forEach((d, i) => {
-								d.x = countryOffset.x;
-								d.y = countryOffset.y;
+						const fNodes = cnodes.filter((d) => d.sdgTargetCount === 0 && d.sdgGoal === FOCUS_GOAL);
 
-								d.scaleX = d.scaleY = BOXDIMS.w;
-							});
+						fNodes.forEach((d, i) => {
+							d.x = countryOffset.x;
+							d.y = countryOffset.y;
+
+							d.scaleX = d.scaleY = BOXDIMS.w;
+						});
 
 						// place label:
 						const countryLabel = labelState.labels[country.iso3c];
-						countryLabel.x = countryOffset.x + nodesPerLine * RADIUS * 0.5;
+
 						countryLabel.y = countryOffset.y;
+
+						countryLabel.x = countryOffset.x + nodesPerLine * RADIUS * 0.5;
 					} else if (sortmode === 'absoluteprogress') {
 						// focus mode
 						const cnodes = nodeState.nodes.filter((d) => d.country === country.iso3c);
@@ -144,12 +160,15 @@
 						cnodes
 							.filter((d) => d.sdgTargetCount === 0 && d.sdgGoal === FOCUS_GOAL)
 							.forEach((d, i) => {
-								d.x = countryOffset.x + BOXDIMS.w / 2 - (BOXDIMS.w * valuePPScale(d.valuePP)) / 2;
-								d.y = countryOffset.y + BOXDIMS.h / 2 - (BOXDIMS.w * valuePPScale(d.valuePP)) / 2;
+								const val = valuePPScale(Math.abs(d.valuePP));
+								d.x = countryOffset.x + BOXDIMS.w / 2 - (BOXDIMS.w * val) / 2;
+								d.y = countryOffset.y + BOXDIMS.h / 2 - (BOXDIMS.w * val) / 2;
 
-								d.scaleX = d.scaleY = BOXDIMS.w * (valuePPScale(d.valuePP) * 0.8 + 0.2);
+								d.scaleX = d.scaleY = BOXDIMS.w * (val * 0.8 + 0.2);
 
-								d.color = '#ffffff';
+								d.color = colorScale(d.valuePP);
+
+								//d.color = '#ffffff';
 							});
 
 						// place label:
@@ -170,6 +189,8 @@
 							// keep the focus nodes:
 							let cnode = cnodes.find((d) => d.sdgTargetCount === 0 && d.sdgGoal === FOCUS_GOAL);
 
+							const countryLabel = labelState.labels[country.iso3c];
+
 							if (cnode) {
 								cnode.x = scatterXScale(cnode.valueAbs);
 								cnode.y = scatterYScale(cnode.valuePP);
@@ -177,9 +198,12 @@
 								cnode.scaleX = cnode.scaleY = RADIUS;
 
 								// labels
-								const countryLabel = labelState.labels[country.iso3c];
 								countryLabel.x = cnode.x + 5;
 								countryLabel.y = cnode.y;
+							} else {
+								// labels
+								countryLabel.x = countryLabel.homepoint.x;
+								countryLabel.y = countryLabel.homepoint.y;
 							}
 						}
 					}
@@ -226,3 +250,7 @@
 </script>
 
 <ISOCodeLabels {w} {h} slot="iso-code-labels"></ISOCodeLabels>
+
+<!--
+<Legend unitlabel={focusParticles[0].indicatorName} color={colorScale}></Legend>
+-->

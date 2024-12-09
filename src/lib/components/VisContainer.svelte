@@ -3,6 +3,7 @@
 	export let h;
 </script>
 
+<slot name="top"></slot>
 <svg class="vis" width={w} height={h}><slot name="svg" /><slot name="iso-code-labels" /></svg>
 
 <style>

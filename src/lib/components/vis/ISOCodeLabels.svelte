@@ -17,7 +17,7 @@
 				x: w * 0.4 - 35,
 				y: h * 0.4 - 25,
 				country: country.iso3c,
-				homepoint: new PIXI.Point(i / grid.length, -50)
+				homepoint: new PIXI.Point((i * w) / grid.length, -50)
 			};
 			particles[country.iso3c] = label;
 		});
