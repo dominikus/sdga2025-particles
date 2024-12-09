@@ -149,7 +149,7 @@
 
 								d.scaleX = d.scaleY = BOXDIMS.w * (valuePPScale(d.valuePP) * 0.8 + 0.2);
 
-								d.color = '#ffffff';
+								//d.color = '#ffffff';
 							});
 
 						// place label:
