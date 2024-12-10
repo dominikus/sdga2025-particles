@@ -8,8 +8,8 @@
 	import ISOCodeLabels from '$lib/components/vis/ISOCodeLabels.svelte';
 	import Legend from '../general/Legend.svelte';
 	import VisContainer from '../VisContainer.svelte';
-	import CategoricalLegend from '../general/CategoricalLegend.svelte';
 	import LevelLegend from '../general/LevelLegend.svelte';
+	import ChartGrid from '../general/ChartGrid.svelte';
 
 	let particles = nodeState.nodes;
 
@@ -58,6 +58,10 @@
 		extent(particles.filter((d) => d.sdgGoal === FOCUS_GOAL).map((d) => d.valuePP))
 	);
 
+	$inspect(focusAbsDomain);
+
+	$inspect(focusPPDomain);
+
 	let scatterXScale = $derived(
 		scaleLinear()
 			.domain(focusAbsDomain)
@@ -66,7 +70,7 @@
 	let scatterYScale = $derived(
 		scaleLinear()
 			.domain(focusPPDomain)
-			.range([margins.top, h - margins.top - margins.bottom])
+			.range([h - margins.top - margins.bottom, margins.top])
 	);
 
 	let valuePPScale = $derived(
@@ -247,6 +251,32 @@
 
 <VisContainer {w} h={2500}>
 	<ISOCodeLabels {w} h={2500} slot="iso-code-labels"></ISOCodeLabels>
+
+	<g slot="svg">
+		{#if activeScene == 2}
+			<g transform="translate(0,{margins.top})">
+				<ChartGrid
+					gridType="xGrid"
+					innerHeight={h - margins.top * 2 - margins.bottom}
+					innerWidth={w - margins.left - margins.right}
+					scale={scatterXScale}
+					ticks={[Math.floor(focusAbsDomain[0]), Math.floor(focusAbsDomain[1])]}
+					axisTitle={focusParticles[0].indicatorName}
+				></ChartGrid>
+			</g>
+			<g transform="translate({margins.left}, 0)">
+				<ChartGrid
+					gridType="yGrid"
+					innerHeight={h - margins.top - margins.bottom}
+					innerWidth={w - margins.left * 2 - margins.right}
+					scale={scatterYScale}
+					ticks={[Math.floor(focusPPDomain[0]), 0, Math.floor(focusPPDomain[1])]}
+					axisTitle={'Absolute change (pp)'}
+				></ChartGrid>
+			</g>
+		{/if}
+	</g>
+
 	<div slot="top">
 		{#if activeScene == 1}
 			<Legend

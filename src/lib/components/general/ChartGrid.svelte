@@ -29,6 +29,8 @@
 
 		return formattedTick;
 	});
+
+	$: console.log(formattedTicks);
 </script>
 
 {#if gridType == 'xGrid'}
@@ -39,16 +41,16 @@
 			y1={hideLines ? innerHeight + 5 : 0}
 			y2={innerHeight}
 			class="gridline"
-			transition:fade|local
+			transition:fade
 		/>
 		{#if !hideTickLabels}
-			<text x={scale(tick.value)} y={innerHeight + 16} class="ticklabel x" transition:fade|local
+			<text x={scale(tick.value)} y={innerHeight + 16} class="ticklabel x" transition:fade
 				>{tick.label}</text
 			>
 		{/if}
 	{/each}
 	{#if axisTitle}
-		<text x={innerWidth - 3} y={innerHeight - 6} class="x-title" transition:fade|local
+		<text x={innerWidth / 2} y={innerHeight + 40} class="x-title" transition:fade
 			>{axisTitle} {axisUnits ? ' (' + axisUnits + ')' : ''}</text
 		>
 	{/if}
@@ -62,16 +64,18 @@
 			y1={scale(tick.value)}
 			y2={scale(tick.value)}
 			class="gridline"
-			transition:fade|local
+			transition:fade
 		/>
 		{#if !hideTickLabels}
-			<text x={-8} y={scale(tick.value) + 4} class="ticklabel y" transition:fade|local
-				>{tick.label}</text
-			>
+			<text x={-8} y={scale(tick.value) + 4} class="ticklabel y" transition:fade>{tick.label}</text>
 		{/if}
 		{#if i === ticks.length - 1 && axisTitle}
-			<text x={5} y={-8} class="y-title" transition:fade|local
-				>{axisTitle} {axisUnits ? ' (' + axisUnits + ')' : ''}</text
+			<text
+				transform="rotate(270) translate({-innerHeight / 2},-40)"
+				x={0}
+				y={0}
+				class="y-title"
+				transition:fade>{axisTitle} {axisUnits ? ' (' + axisUnits + ')' : ''}</text
 			>
 		{/if}
 	{/each}
@@ -79,7 +83,7 @@
 
 <style>
 	text.ticklabel {
-		fill: var(--text-lighter);
+		fill: white;
 		font-size: 12px;
 		stroke: none;
 	}
@@ -94,13 +98,14 @@
 		font-weight: 400;
 		stroke: none;
 		font-size: var(--font-size-s);
+		text-anchor: middle;
 	}
 	text.x-title {
-		text-anchor: end;
+		text-anchor: middle;
 	}
 	line.gridline {
 		stroke-width: 1px;
-		stroke: var(--grey-lighter);
+		stroke: white;
 		opacity: 0.3;
 		stroke-dasharray: 4 4;
 	}
