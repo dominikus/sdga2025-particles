@@ -20,7 +20,7 @@
 	//export let tickFormat;
 	//export let tickValues = [];
 
-	let width = 280;
+	let width = 620;
 	let tickSize = 12;
 	let height = 16 + tickSize;
 	const margin = {
@@ -117,7 +117,7 @@
 					class:first={i === 0}
 					class:last={i === tickLabels.length - 1}
 					x={x(tick.value)}
-					y={margin.top + 22}>{tick.label}</text
+					y={margin.top + 28}>{tick.label}</text
 				>
 			{/each}
 			{#if tickLabels.length === 0}
@@ -126,7 +126,7 @@
 						class:first={i === 0}
 						class:last={i === domain.length - 1}
 						x={x(tick)}
-						y={margin.top + 28}><Number value={tick} unit={units} {digits} /></text
+						y={margin.top + 32}><Number value={tick} unit={units} {digits} /></text
 					>
 				{/each}
 			{/if}
@@ -175,6 +175,7 @@
 
 		/*demo version*/
 		width: 100%;
-		padding: var(--space-m) var(--space-s);
+		padding: var(--space-s);
+		row-gap: var(--space-2xs);
 	}
 </style>
