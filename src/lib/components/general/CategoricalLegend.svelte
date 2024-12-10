@@ -31,13 +31,14 @@
 		column-gap: var(--space-m);
 		row-gap: var(--space-2xs);
 		color: white;
-		padding: var(--space-m) var(--space-s);
+		padding: var(--space-s);
 	}
 
 	.title {
 		font-size: var(--font-size-l);
 		width: 100%;
 		font-weight: 300;
+		line-height: 160%;
 	}
 
 	.legend-label {
