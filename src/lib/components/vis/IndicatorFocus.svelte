@@ -13,7 +13,7 @@
 
 	let { inView = false, activeScene = 0, w, h } = $props();
 
-	const FOCUS_GOAL = 9;
+	let FOCUS_GOAL = $state(3);
 
 	const margins = {
 		top: 140,
@@ -259,3 +259,19 @@
 		hidden={activeScene !== 1}
 	></Legend>
 </VisContainer>
+
+<select bind:value={FOCUS_GOAL}>
+	<option value={1}> GOAL 1 </option> <option value={3}> GOAL 3 </option><option value={4}>
+		GOAL 4
+	</option><option value={5}> 5 </option><option value={7}> GOAL 7 </option><option value={9}>
+		GOAL 9
+	</option></select
+>
+
+<style>
+	select {
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+</style>
