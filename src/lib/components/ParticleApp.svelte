@@ -11,7 +11,7 @@
 	import SVGContainer from './VisContainer.svelte';
 
 	import { nodeState } from '$lib/state/nodeState.svelte.js';
-	import InternetAccessMap from './vis/InternetAccessMap.svelte';
+	import IndicatorFocus from './vis/IndicatorFocus.svelte';
 	import VisContainer from './VisContainer.svelte';
 
 	let { allIndicators = [] } = $props();
@@ -27,14 +27,14 @@
 	let activeScene = $state(0);
 
 	let modes = [
-		{ vis: 'intro', sceneCount: 1 },
-		{ vis: 'geo', sceneCount: 2 },
-		{ vis: 'goals', sceneCount: 2 },
-		{ vis: 'geo', sceneCount: 1 },
-		{ vis: 'focus', sceneCount: 4 }
+		{ vis: Intro, sceneCount: 1 },
+		{ vis: AllIndicatorMap, sceneCount: 2 },
+		{ vis: AllIndicatorMatrix, sceneCount: 2 },
+		{ vis: AllIndicatorMap, sceneCount: 1 },
+		{ vis: IndicatorFocus, sceneCount: 4 }
 	];
 
-	let visIndex = $derived(modes[activeVis].vis);
+	let Vis = $derived(modes[activeVis].vis);
 	let currentSceneCount = $derived(modes[activeVis].sceneCount);
 
 	let canvas;
@@ -229,19 +229,6 @@
 	$effect(() => {
 		if (canvas && allIndicators.length > 0 && !isSetup) {
 			setup();
-		}
-	});
-
-	let Vis = $derived.by(() => {
-		switch (visIndex) {
-			case 'intro':
-				return Intro;
-			case 'geo':
-				return AllIndicatorMap;
-			case 'goals':
-				return AllIndicatorMatrix;
-			case 'focus':
-				return InternetAccessMap;
 		}
 	});
 </script>

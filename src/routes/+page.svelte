@@ -1,10 +1,7 @@
 <script>
-	import { tsv, csv } from 'd3';
+	import { csv } from 'd3';
 
-	import Particles from '$lib/components/Particles.svelte';
-	import ParticleBoxes from '$lib/components/ParticleBoxes.svelte';
-	import PixiParticleBoxes from '$lib/components/PixiParticleBoxes.svelte';
-	import ToyDataParticles from '$lib/components/ToyDataParticles.svelte';
+	import ParticleApp from '$lib/components/ParticleApp.svelte';
 	import { onMount } from 'svelte';
 
 	let allIndicators = [];
@@ -33,7 +30,7 @@
 <!--<Particles />-->
 <!--<ParticleBoxes />-->
 <!--<PixiParticleBoxes {allIndicators} />-->
-<ToyDataParticles {allIndicators} />
+<ParticleApp {allIndicators} />
 
 <style>
 	img {
