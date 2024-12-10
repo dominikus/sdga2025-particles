@@ -21,7 +21,7 @@
 		top: 140,
 		right: 20,
 		bottom: 120,
-		left: 20
+		left: 120
 	};
 
 	const BOXDIMS = { w: 28, h: 28 };
@@ -248,9 +248,12 @@
 	<ISOCodeLabels {w} h={2500} slot="iso-code-labels"></ISOCodeLabels>
 	<div slot="top">
 		{#if activeScene == 1}
-			<Legend title={'Change in ' + focusParticles[0].indicatorName} color={colorScale}></Legend>
+			<Legend
+				title={'How much did ' + focusParticles[0].indicatorName + ' change since 2015?'}
+				color={colorScale}
+			></Legend>
 		{:else}
-			<LevelLegend></LevelLegend>
+			<LevelLegend indicator=" in {focusParticles[0].indicatorName}"></LevelLegend>
 		{/if}
 		<select bind:value={FOCUS_GOAL}>
 			<option value={1}> GOAL 1 </option> <option value={3}> GOAL 3 </option><option value={4}>

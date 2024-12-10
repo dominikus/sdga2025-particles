@@ -1,9 +1,11 @@
 <script>
 	import CategoricalLegend from './CategoricalLegend.svelte';
+
+	export let indicator = '';
 </script>
 
 <CategoricalLegend
-	title="How does a country progress, compared to countries with a similar starting point?"
+	title="How did countries progress, compared to countries with a similar starting point{indicator}?"
 	items={[
 		{ color: '#f75781', label: 'among the worst' },
 		{ color: '#fda696', label: 'worse than expected' },

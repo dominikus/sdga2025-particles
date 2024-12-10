@@ -16,7 +16,7 @@
 		top: 140,
 		right: 20,
 		bottom: 120,
-		left: 20
+		left: 120
 	};
 
 	const RADIUS = 10;

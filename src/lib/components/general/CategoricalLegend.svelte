@@ -35,7 +35,7 @@
 	}
 
 	.title {
-		font-size: var(--font-size-l);
+		font-size: var(--font-size-m);
 		width: 100%;
 		font-weight: 300;
 		line-height: 160%;

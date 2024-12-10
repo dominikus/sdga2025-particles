@@ -16,7 +16,7 @@
 		top: 120,
 		right: 20,
 		bottom: 120,
-		left: 20
+		left: 120
 	};
 
 	let xScale = $derived(

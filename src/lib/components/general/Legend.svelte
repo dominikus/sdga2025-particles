@@ -126,7 +126,7 @@
 						class:first={i === 0}
 						class:last={i === domain.length - 1}
 						x={x(tick)}
-						y={margin.top + 32}><Number value={tick} unit={units} {digits} /></text
+						y={margin.top + 28}><Number value={tick} unit={units} {digits} /></text
 					>
 				{/each}
 			{/if}
@@ -141,7 +141,7 @@
 	}
 	text {
 		text-anchor: middle;
-		font-size: var(--font-size-m);
+		font-size: var(--font-size-s);
 		fill: var(--text-lightest);
 		font-weight: 600;
 
@@ -158,7 +158,7 @@
 		padding: 0;
 		margin: 0;
 		white-space: nowrap;
-		font-size: var(--font-size-l);
+		font-size: var(--font-size-m);
 		font-weight: 300;
 		line-height: 160%;
 
