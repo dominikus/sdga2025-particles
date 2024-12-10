@@ -95,12 +95,16 @@
 		scaleDiverging(
 			[focusPPDomain[0], 0, focusPPDomain[1]],
 			piecewise(
-				['#6cdcf6', '#7abdd2', '#809eaf', '#80808e', '#cf7a59', '#e98747', '#ff9534'].reverse()
+				moreIsBetter
+					? ['#6cdcf6', '#7abdd2', '#809eaf', '#80808e', '#cf7a59', '#e98747', '#ff9534'].reverse()
+					: ['#6cdcf6', '#7abdd2', '#809eaf', '#80808e', '#cf7a59', '#e98747', '#ff9534']
 			)
 		)
 	);
 
 	let focusParticles = $derived(particles.filter((d) => d.sdgGoal === FOCUS_GOAL));
+
+	let moreIsBetter = $derived(focusParticles[0].moreIsBetter);
 
 	$inspect(focusParticles);
 
@@ -263,7 +267,7 @@
 <select bind:value={FOCUS_GOAL}>
 	<option value={1}> GOAL 1 </option> <option value={3}> GOAL 3 </option><option value={4}>
 		GOAL 4
-	</option><option value={5}> 5 </option><option value={7}> GOAL 7 </option><option value={9}>
+	</option><option value={5}> GOAL 5 </option><option value={7}> GOAL 7 </option><option value={9}>
 		GOAL 9
 	</option></select
 >

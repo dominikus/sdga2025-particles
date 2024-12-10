@@ -127,6 +127,7 @@
 					p.sdgIndicator = 1; //i;
 
 					p.indicatorName = indicator.indicatorName;
+					p.moreIsBetter = indicator.moreIsBetter;
 
 					p.country = d.iso3c;
 

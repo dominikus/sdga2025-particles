@@ -17,7 +17,8 @@
 					origValue: +d.orig_value,
 					diff: +d.diff,
 					goal: +d.goal,
-					indicatorName: d.indicatorname
+					indicatorName: d.indicatorname,
+					moreIsBetter: d.more_is_better === '1'
 				}
 			];
 			//allIndicators = [...allIndicators, { ...d, indicators: +d.indicators }];
