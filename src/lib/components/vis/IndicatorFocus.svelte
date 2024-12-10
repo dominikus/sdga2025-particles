@@ -31,14 +31,6 @@
 		countryNodes[d.iso3c] = nodeState.nodes.filter((dd) => dd.country === d.iso3c);
 	});
 
-	let countryLevels = [];
-	countries.forEach((country) => {
-		countryLevels.push({
-			country: country.iso3c,
-			value: countryNodes[country.iso3c].reduce((acc, val) => (val.level ?? 0) + acc, 0)
-		});
-	});
-
 	const sceneConfig = {
 		0: { sortmode: 'focus' },
 		1: { sortmode: 'absoluteprogress' },
@@ -111,17 +103,15 @@
 		let nodesPerLine = Math.ceil(Math.sqrt(indicatorCount));
 		let RADIUS = Math.ceil(BOXDIMS.w / nodesPerLine);
 
-		countryLevels.sort((a, b) => b.value - a.value);
-
 		countries
 			.sort(
 				(a, b) =>
 					(nodeState.nodes.find(
 						(d) => d.country === b.iso3c && d.sdgTargetCount === 0 && d.sdgGoal === FOCUS_GOAL
-					)?.valueAbsIndex ?? -1) -
+					)?.valueAbs ?? -1) -
 					(nodeState.nodes.find(
 						(d) => d.country === a.iso3c && d.sdgTargetCount === 0 && d.sdgGoal === FOCUS_GOAL
-					)?.valueAbsIndex ?? -1)
+					)?.valueAbs ?? -1)
 			)
 			.forEach((country, i) => {
 				const countryOffset = new PIXI.Point(xScale(country.x), yScale(country.y));
@@ -220,6 +210,8 @@
 
 						cnodes.forEach((node) => {
 							goHome(node);
+							node.scaleX = RADIUS;
+							node.scaleY = RADIUS;
 							resetColor(node);
 						});
 

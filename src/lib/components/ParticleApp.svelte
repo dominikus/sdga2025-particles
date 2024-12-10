@@ -21,7 +21,6 @@
 	let RADIUS = 3;
 
 	const BASE_SPEED = 25; //ms => 40fps
-	const FOCUS_GOAL = 9;
 
 	let activeVis = $state(0);
 	let activeScene = $state(0);
@@ -154,13 +153,6 @@
 				});
 			}
 		});
-
-		nodeState.nodes
-			.filter((d) => d.sdgTargetCount === 0 && d.sdgGoal === FOCUS_GOAL)
-			.sort((a, b) => a?.valueAbs - b?.valueAbs)
-			.forEach((d, i) => {
-				d.valueAbsIndex = i;
-			});
 
 		function render() {
 			frame++;
