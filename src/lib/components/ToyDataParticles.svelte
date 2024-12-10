@@ -126,7 +126,7 @@
 					p.sdgTargetCount = ii; //targetCount;
 					p.sdgIndicator = 1; //i;
 
-					p.indicatorName = d.indicatorName;
+					p.indicatorName = indicator.indicatorName;
 
 					p.country = d.iso3c;
 
@@ -248,9 +248,7 @@
 
 <canvas bind:this={canvas}></canvas>
 
-<VisContainer {w} {h}>
-	<Vis {frame} inView={isSetup} {activeScene} {w} h={screenH} slot="svg" />
-</VisContainer>
+<Vis {frame} inView={isSetup} {activeScene} {w} h={screenH} />
 
 <div class="button-panel">
 	<button onclick={back}>&lt;</button>

@@ -1,6 +1,7 @@
 <script>
 	// import { particles } from 'engine.js';
 	import { nodeState } from '$lib/state/nodeState.svelte.js';
+	import VisContainer from '../VisContainer.svelte';
 
 	let particles = nodeState.nodes;
 	let { inView = false, w, h, frame } = $props();
@@ -22,11 +23,13 @@
 	}
 </script>
 
-<g>
-	<text x={w * 0.4 + 50} y={h * 0.4 + 12} style="opacity: {inView ? 1 : 0}"
-		>1 country x 1 indicator</text
-	>
-</g>
+<VisContainer {w} {h}>
+	<g slot="svg">
+		<text x={w * 0.4 + 50} y={h * 0.4 + 12} style="opacity: {inView ? 1 : 0}"
+			>1 country x 1 indicator</text
+		>
+	</g>
+</VisContainer>
 
 <style>
 	text {

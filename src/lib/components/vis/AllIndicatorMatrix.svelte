@@ -5,6 +5,7 @@
 	import * as PIXI from 'pixi.js';
 	import { nodeState, labelState } from '$lib/state/nodeState.svelte.js';
 	import ISOCodeLabels from '$lib/components/vis/ISOCodeLabels.svelte';
+	import VisContainer from '../VisContainer.svelte';
 
 	let particles = nodeState.nodes;
 
@@ -107,15 +108,17 @@ nodeState.nodes
 	});
 </script>
 
-<g>
-	{#each new Array(17) as goal, i}
-		<text
-			transform="translate({(i + 1) * (4 * RADIUS) + RADIUS / 2 + 50}, {margins.top - 10})"
-			style="opacity: {inView ? 1 : 0}">{i + 1}</text
-		>
-	{/each}
-</g>
-<ISOCodeLabels {w} {h} slot="iso-code-labels"></ISOCodeLabels>
+<VisContainer {w} {h}>
+	<g slot="svg">
+		{#each new Array(17) as goal, i}
+			<text
+				transform="translate({(i + 1) * (4 * RADIUS) + RADIUS / 2 + 50}, {margins.top - 10})"
+				style="opacity: {inView ? 1 : 0}">{i + 1}</text
+			>
+		{/each}
+		<ISOCodeLabels {w} {h}></ISOCodeLabels>
+	</g>
+</VisContainer>
 
 <style>
 	text {

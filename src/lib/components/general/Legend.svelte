@@ -143,6 +143,9 @@
 		text-anchor: middle;
 		font-size: var(--font-size-s);
 		fill: var(--text-lightest);
+
+		/*demo version*/
+		fill: white;
 	}
 	text.first {
 		text-anchor: start;
@@ -157,6 +160,9 @@
 		font-size: var(--font-size-s);
 		font-weight: 500;
 		line-height: 160%;
+
+		/*demo version*/
+		color: white;
 	}
 	.legend.not-visible {
 		opacity: 0;
@@ -165,5 +171,13 @@
 		display: flex;
 		flex-direction: column;
 		width: fit-content;
+
+		/*demo version*/
+		position: absolute;
+		background-color: var(--background);
+		width: 100%;
+		height: 120px;
+		align-items: center;
+		padding-top: var(--space-l);
 	}
 </style>

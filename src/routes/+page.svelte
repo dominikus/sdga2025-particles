@@ -20,7 +20,7 @@
 					origValue: +d.orig_value,
 					diff: +d.diff,
 					goal: +d.goal,
-					indicatorName: +d.indicatorname
+					indicatorName: d.indicatorname
 				}
 			];
 			//allIndicators = [...allIndicators, { ...d, indicators: +d.indicators }];

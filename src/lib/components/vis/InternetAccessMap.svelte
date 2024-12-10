@@ -7,12 +7,13 @@
 	import { goHome, resetColor } from '$lib/utils/particleUtils.js';
 	import ISOCodeLabels from '$lib/components/vis/ISOCodeLabels.svelte';
 	import Legend from '../general/Legend.svelte';
+	import VisContainer from '../VisContainer.svelte';
 
 	let particles = nodeState.nodes;
 
 	let { inView = false, activeScene = 0, w, h } = $props();
 
-	const FOCUS_GOAL = 9;
+	const FOCUS_GOAL = 3;
 
 	const margins = {
 		top: 140,
@@ -100,6 +101,8 @@
 	);
 
 	let focusParticles = $derived(particles.filter((d) => d.sdgGoal === FOCUS_GOAL));
+
+	$inspect(focusParticles);
 
 	function layout() {
 		let indicatorCount = particles.filter((d) => d.country === countries[0].iso3c).length;
@@ -249,8 +252,12 @@
 	});
 </script>
 
-<ISOCodeLabels {w} {h} slot="iso-code-labels"></ISOCodeLabels>
-
-<!--
-<Legend unitlabel={focusParticles[0].indicatorName} color={colorScale}></Legend>
--->
+<VisContainer {w} {h}>
+	<ISOCodeLabels {w} {h} slot="svg"></ISOCodeLabels>
+	<Legend
+		title={focusParticles[0].indicatorName}
+		color={colorScale}
+		slot="top"
+		hidden={activeScene !== 1}
+	></Legend>
+</VisContainer>

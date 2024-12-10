@@ -5,6 +5,7 @@
 	import * as PIXI from 'pixi.js';
 	import { nodeState, labelState } from '$lib/state/nodeState.svelte.js';
 	import ISOCodeLabels from '$lib/components/vis/ISOCodeLabels.svelte';
+	import VisContainer from '../VisContainer.svelte';
 
 	let particles = nodeState.nodes;
 
@@ -76,4 +77,6 @@
 	});
 </script>
 
-<ISOCodeLabels {w} {h} slot="iso-code-labels"></ISOCodeLabels>
+<VisContainer {w} {h}>
+	<ISOCodeLabels {w} {h} slot="svg"></ISOCodeLabels>
+</VisContainer>
