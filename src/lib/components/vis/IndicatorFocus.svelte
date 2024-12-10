@@ -40,6 +40,8 @@
 
 	let sortmode = $derived(sceneConfig[activeScene].sortmode);
 
+	let focusParticles = $derived(particles.filter((d) => d.sdgGoal === FOCUS_GOAL));
+
 	let xScale = $derived(
 		scaleLinear()
 			.domain([0, 29])
@@ -51,12 +53,11 @@
 			.range([margins.top, h - margins.top - margins.bottom])
 	);
 
-	let focusAbsDomain = $derived(
-		extent(particles.filter((d) => d.sdgGoal === FOCUS_GOAL).map((d) => d.valueAbs))
-	);
-	let focusPPDomain = $derived(
-		extent(particles.filter((d) => d.sdgGoal === FOCUS_GOAL).map((d) => d.valuePP))
-	);
+	let focusAbsDomain = $derived([
+		0,
+		Math.max(extent(focusParticles.map((d) => d.valueAbs))[1], focusParticles[0].targetValue)
+	]);
+	let focusPPDomain = $derived(extent(focusParticles.map((d) => d.valuePP)));
 
 	$inspect(focusAbsDomain);
 
@@ -95,8 +96,6 @@
 			)
 		)
 	);
-
-	let focusParticles = $derived(particles.filter((d) => d.sdgGoal === FOCUS_GOAL));
 
 	let moreIsBetter = $derived(focusParticles[0].moreIsBetter);
 
@@ -257,18 +256,22 @@
 			<g transform="translate(0,{margins.top})">
 				<ChartGrid
 					gridType="xGrid"
-					innerHeight={h - margins.top * 2 - margins.bottom}
+					innerHeight={h + 20 - margins.top * 2 - margins.bottom}
 					innerWidth={w - margins.left - margins.right}
 					scale={scatterXScale}
-					ticks={[Math.floor(focusAbsDomain[0]), Math.floor(focusAbsDomain[1])]}
+					ticks={[
+						Math.floor(focusAbsDomain[0]),
+						Math.floor(focusAbsDomain[1]),
+						Math.floor(focusAbsDomain[1]) / 2
+					]}
 					axisTitle={focusParticles[0].indicatorName}
 				></ChartGrid>
 			</g>
-			<g transform="translate({margins.left}, 0)">
+			<g transform="translate({margins.left - 20}, 0)">
 				<ChartGrid
 					gridType="yGrid"
 					innerHeight={h - margins.top - margins.bottom}
-					innerWidth={w - margins.left * 2 - margins.right}
+					innerWidth={w + 20 - margins.left * 2 - margins.right}
 					scale={scatterYScale}
 					ticks={[Math.floor(focusPPDomain[0]), 0, Math.floor(focusPPDomain[1])]}
 					axisTitle={'Absolute change (pp)'}
