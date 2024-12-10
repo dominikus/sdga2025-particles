@@ -106,12 +106,13 @@
 		countries
 			.sort(
 				(a, b) =>
-					(nodeState.nodes.find(
+					((nodeState.nodes.find(
 						(d) => d.country === b.iso3c && d.sdgTargetCount === 0 && d.sdgGoal === FOCUS_GOAL
 					)?.valueAbs ?? -1) -
-					(nodeState.nodes.find(
-						(d) => d.country === a.iso3c && d.sdgTargetCount === 0 && d.sdgGoal === FOCUS_GOAL
-					)?.valueAbs ?? -1)
+						(nodeState.nodes.find(
+							(d) => d.country === a.iso3c && d.sdgTargetCount === 0 && d.sdgGoal === FOCUS_GOAL
+						)?.valueAbs ?? -1)) *
+					(moreIsBetter ? 1 : -1)
 			)
 			.forEach((country, i) => {
 				const countryOffset = new PIXI.Point(xScale(country.x), yScale(country.y));
