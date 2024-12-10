@@ -2,20 +2,18 @@
 	export let itemSymbol = 'square';
 	export let hidden;
 	export let top = false;
-	export let title = '';
 
 	export let items = [];
 </script>
 
 <div class:top class:hidden class="categorical-legend" aria-hidden="true">
-	<p class="title">{title}</p>
 	{#each items as item}
 		<div class="pill-container">
 			<div
 				class={`pill ${itemSymbol}`}
 				style:background-color={item.color}
 				style:border-color={item.border}
-			></div>
+			/>
 			<div class={'legend-label'}>
 				{item.label}
 			</div>
@@ -27,22 +25,15 @@
 	.categorical-legend {
 		display: flex;
 		flex-flow: row wrap;
+		justify-content: center;
 		margin: 0;
 		column-gap: var(--space-m);
 		row-gap: var(--space-2xs);
-		color: white;
-		padding: var(--space-m) var(--space-s);
-	}
-
-	.title {
-		font-size: var(--font-size-l);
-		width: 100%;
-		font-weight: 300;
 	}
 
 	.legend-label {
-		font-size: var(--font-size-m);
-		font-weight: 400;
+		font-size: var(--font-size-s);
+		font-weight: 300;
 		line-height: 160%;
 	}
 

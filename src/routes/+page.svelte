@@ -26,7 +26,6 @@
 	$: console.log(allIndicators);
 </script>
 
-<img src="img/legend.png" />
 <!--<Particles />-->
 <!--<ParticleBoxes />-->
 <!--<PixiParticleBoxes {allIndicators} />-->

@@ -141,9 +141,8 @@
 	}
 	text {
 		text-anchor: middle;
-		font-size: var(--font-size-m);
+		font-size: var(--font-size-s);
 		fill: var(--text-lightest);
-		font-weight: 600;
 
 		/*demo version*/
 		fill: white;
@@ -158,8 +157,8 @@
 		padding: 0;
 		margin: 0;
 		white-space: nowrap;
-		font-size: var(--font-size-l);
-		font-weight: 300;
+		font-size: var(--font-size-s);
+		font-weight: 500;
 		line-height: 160%;
 
 		/*demo version*/
@@ -174,7 +173,11 @@
 		width: fit-content;
 
 		/*demo version*/
+		position: absolute;
+		background-color: var(--background);
 		width: 100%;
-		padding: var(--space-m) var(--space-s);
+		height: 120px;
+		align-items: center;
+		padding-top: var(--space-l);
 	}
 </style>

@@ -3,7 +3,7 @@
 	export let h;
 </script>
 
-<slot name="top"></slot>
+<div><slot name="top"></slot></div>
 <svg class="vis" width={w} height={h}>
 	<slot name="svg" />
 	<slot name="iso-code-labels" />
@@ -17,5 +17,14 @@
 		z-index: 9999;
 
 		pointer-events: none;
+	}
+
+	div {
+		position: absolute;
+		flex: 1;
+		width: 1280px;
+		height: 120px;
+		display: flex;
+		flex-direction: column;
 	}
 </style>

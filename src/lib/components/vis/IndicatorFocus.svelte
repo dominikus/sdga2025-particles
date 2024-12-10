@@ -8,6 +8,8 @@
 	import ISOCodeLabels from '$lib/components/vis/ISOCodeLabels.svelte';
 	import Legend from '../general/Legend.svelte';
 	import VisContainer from '../VisContainer.svelte';
+	import CategoricalLegend from '../general/CategoricalLegend.svelte';
+	import LevelLegend from '../general/LevelLegend.svelte';
 
 	let particles = nodeState.nodes;
 
@@ -22,11 +24,7 @@
 		left: 20
 	};
 
-	const RADIUS = 10;
-
 	const BOXDIMS = { w: 28, h: 28 };
-
-	let fullH = 2500;
 
 	const countryNodes = {};
 	countries.forEach((d) => {
@@ -252,26 +250,29 @@
 
 <VisContainer {w} h={2500}>
 	<ISOCodeLabels {w} h={2500} slot="iso-code-labels"></ISOCodeLabels>
-	<Legend
-		title={focusParticles[0].indicatorName}
-		color={colorScale}
-		slot="top"
-		hidden={activeScene !== 1}
-	></Legend>
+	<div slot="top">
+		{#if activeScene == 1}
+			<Legend title={'Change in ' + focusParticles[0].indicatorName} color={colorScale}></Legend>
+		{:else}
+			<LevelLegend></LevelLegend>
+		{/if}
+		<select bind:value={FOCUS_GOAL}>
+			<option value={1}> GOAL 1 </option> <option value={3}> GOAL 3 </option><option value={4}>
+				GOAL 4
+			</option><option value={5}>GOAL 5 </option><option value={7}> GOAL 7 </option><option
+				value={9}
+			>
+				GOAL 9
+			</option></select
+		>
+	</div>
 </VisContainer>
 
-<select bind:value={FOCUS_GOAL}>
-	<option value={1}> GOAL 1 </option> <option value={3}> GOAL 3 </option><option value={4}>
-		GOAL 4
-	</option><option value={5}> 5 </option><option value={7}> GOAL 7 </option><option value={9}>
-		GOAL 9
-	</option></select
->
-
 <style>
-	select {
-		position: absolute;
-		top: 0;
-		left: 0;
+	div {
+		width: 100%;
+		display: flex;
+		align-items: center;
+		flex-direction: column;
 	}
 </style>

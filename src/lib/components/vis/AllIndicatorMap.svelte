@@ -6,6 +6,7 @@
 	import { nodeState, labelState } from '$lib/state/nodeState.svelte.js';
 	import ISOCodeLabels from '$lib/components/vis/ISOCodeLabels.svelte';
 	import VisContainer from '../VisContainer.svelte';
+	import LevelLegend from '../general/LevelLegend.svelte';
 
 	let particles = nodeState.nodes;
 
@@ -78,5 +79,8 @@
 </script>
 
 <VisContainer {w} h={2500}>
+	<div slot="top">
+		<LevelLegend></LevelLegend>
+	</div>
 	<ISOCodeLabels {w} h={2500} slot="iso-code-labels"></ISOCodeLabels>
 </VisContainer>
