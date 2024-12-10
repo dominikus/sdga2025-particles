@@ -13,7 +13,7 @@
 
 	let { inView = false, activeScene = 0, w, h } = $props();
 
-	const FOCUS_GOAL = 3;
+	const FOCUS_GOAL = 9;
 
 	const margins = {
 		top: 140,
@@ -250,8 +250,8 @@
 	});
 </script>
 
-<VisContainer {w} {h}>
-	<ISOCodeLabels {w} {h} slot="svg"></ISOCodeLabels>
+<VisContainer {w} h={2500}>
+	<ISOCodeLabels {w} h={2500} slot="iso-code-labels"></ISOCodeLabels>
 	<Legend
 		title={focusParticles[0].indicatorName}
 		color={colorScale}

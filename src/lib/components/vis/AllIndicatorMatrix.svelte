@@ -108,7 +108,7 @@ nodeState.nodes
 	});
 </script>
 
-<VisContainer {w} {h}>
+<VisContainer {w} h={2500}>
 	<g slot="svg">
 		{#each new Array(17) as goal, i}
 			<text
@@ -116,8 +116,8 @@ nodeState.nodes
 				style="opacity: {inView ? 1 : 0}">{i + 1}</text
 			>
 		{/each}
-		<ISOCodeLabels {w} {h}></ISOCodeLabels>
 	</g>
+	<ISOCodeLabels {w} h={2500} slot="iso-code-labels"></ISOCodeLabels>
 </VisContainer>
 
 <style>

@@ -77,6 +77,6 @@
 	});
 </script>
 
-<VisContainer {w} {h}>
-	<ISOCodeLabels {w} {h} slot="svg"></ISOCodeLabels>
+<VisContainer {w} h={2500}>
+	<ISOCodeLabels {w} h={2500} slot="iso-code-labels"></ISOCodeLabels>
 </VisContainer>
