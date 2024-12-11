@@ -311,12 +311,15 @@
 			<LevelLegend indicator=" in {focusParticles[0].indicatorName}"></LevelLegend>
 		{/if}
 		<select bind:value={FOCUS_GOAL}>
-			<option value={1}> GOAL 1 </option> <option value={3}> GOAL 3 </option><option value={4}>
-				GOAL 4
-			</option><option value={5}>GOAL 5 </option><option value={7}> GOAL 7 </option><option
-				value={9}
+			<option value={1}>{particles.filter((d) => d.sdgGoal === 1)[0].indicatorName}</option>
+			<option value={3}>{particles.filter((d) => d.sdgGoal === 3)[0].indicatorName}</option><option
+				value={4}
 			>
-				GOAL 9
+				{particles.filter((d) => d.sdgGoal === 4)[0].indicatorName}
+			</option><option value={5}>{particles.filter((d) => d.sdgGoal === 5)[0].indicatorName}</option
+			><option value={7}>{particles.filter((d) => d.sdgGoal === 7)[0].indicatorName}</option><option
+				value={9}
+				>{particles.filter((d) => d.sdgGoal === 9)[0].indicatorName}
 			</option></select
 		>
 	</div>
@@ -330,7 +333,7 @@
 	}
 
 	select {
-		width: 100px;
+		width: 600px;
 		margin-left: var(--space-s);
 	}
 
