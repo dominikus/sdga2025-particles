@@ -120,91 +120,89 @@
 			.forEach((country, i) => {
 				const countryOffset = new PIXI.Point(xScale(country.x), yScale(country.y));
 
-				if (sortmode !== 'barchart') {
-					if (sortmode === 'focus') {
-						// focus mode
-						const cnodes = nodeState.nodes.filter((d) => d.country === country.iso3c);
+				if (sortmode === 'focus') {
+					// focus mode
+					const cnodes = nodeState.nodes.filter((d) => d.country === country.iso3c);
 
+					cnodes.forEach((node) => {
+						goHome(node);
+						resetColor(node);
+					});
+
+					// keep the focus nodes:
+					const fNodes = cnodes.filter((d) => d.sdgTargetCount === 0 && d.sdgGoal === FOCUS_GOAL);
+
+					fNodes.forEach((d, i) => {
+						d.x = countryOffset.x;
+						d.y = countryOffset.y;
+
+						d.scaleX = d.scaleY = BOXDIMS.w;
+					});
+
+					// place label:
+					const countryLabel = labelState.labels[country.iso3c];
+
+					countryLabel.y = countryOffset.y;
+
+					countryLabel.x = countryOffset.x + nodesPerLine * RADIUS * 0.5;
+				} else if (sortmode === 'absoluteprogress') {
+					// focus mode
+					const cnodes = nodeState.nodes.filter((d) => d.country === country.iso3c);
+
+					cnodes.forEach((node) => {
+						goHome(node);
+						resetColor(node);
+					});
+
+					// keep the focus nodes:
+					cnodes
+						.filter((d) => d.sdgTargetCount === 0 && d.sdgGoal === FOCUS_GOAL)
+						.forEach((d, i) => {
+							const val = valuePPScale(Math.abs(d.valuePP));
+							d.x = countryOffset.x + BOXDIMS.w / 2 - (BOXDIMS.w * val) / 2;
+							d.y = countryOffset.y + BOXDIMS.h / 2 - (BOXDIMS.w * val) / 2;
+
+							d.scaleX = d.scaleY = BOXDIMS.w * (val * 0.8 + 0.2);
+
+							d.color = colorScale(d.valuePP);
+						});
+
+					// place label:
+					const countryLabel = labelState.labels[country.iso3c];
+					countryLabel.x = countryOffset.x + nodesPerLine * RADIUS * 0.5;
+					countryLabel.y = countryOffset.y;
+				} else if (sortmode === 'scatterplot') {
+					const cnodes = nodeState.nodes.filter((d) => d.country === country.iso3c);
+
+					if (cnodes.length > 0) {
 						cnodes.forEach((node) => {
 							goHome(node);
 							resetColor(node);
 						});
 
-						// keep the focus nodes:
-						const fNodes = cnodes.filter((d) => d.sdgTargetCount === 0 && d.sdgGoal === FOCUS_GOAL);
-
-						fNodes.forEach((d, i) => {
-							d.x = countryOffset.x;
-							d.y = countryOffset.y;
-
-							d.scaleX = d.scaleY = BOXDIMS.w;
-						});
-
-						// place label:
-						const countryLabel = labelState.labels[country.iso3c];
-
-						countryLabel.y = countryOffset.y;
-
-						countryLabel.x = countryOffset.x + nodesPerLine * RADIUS * 0.5;
-					} else if (sortmode === 'absoluteprogress') {
-						// focus mode
-						const cnodes = nodeState.nodes.filter((d) => d.country === country.iso3c);
-
-						cnodes.forEach((node) => {
-							goHome(node);
-							resetColor(node);
-						});
+						RADIUS = BOXDIMS.w / 3;
 
 						// keep the focus nodes:
-						cnodes
-							.filter((d) => d.sdgTargetCount === 0 && d.sdgGoal === FOCUS_GOAL)
-							.forEach((d, i) => {
-								const val = valuePPScale(Math.abs(d.valuePP));
-								d.x = countryOffset.x + BOXDIMS.w / 2 - (BOXDIMS.w * val) / 2;
-								d.y = countryOffset.y + BOXDIMS.h / 2 - (BOXDIMS.w * val) / 2;
+						let cnode = cnodes.find((d) => d.sdgTargetCount === 0 && d.sdgGoal === FOCUS_GOAL);
 
-								d.scaleX = d.scaleY = BOXDIMS.w * (val * 0.8 + 0.2);
-
-								d.color = colorScale(d.valuePP);
-							});
-
-						// place label:
 						const countryLabel = labelState.labels[country.iso3c];
-						countryLabel.x = countryOffset.x + nodesPerLine * RADIUS * 0.5;
-						countryLabel.y = countryOffset.y;
-					} else if (sortmode === 'scatterplot') {
-						const cnodes = nodeState.nodes.filter((d) => d.country === country.iso3c);
 
-						if (cnodes.length > 0) {
-							cnodes.forEach((node) => {
-								goHome(node);
-								resetColor(node);
-							});
+						if (cnode) {
+							cnode.x = scatterXScale(cnode.valueAbs);
+							cnode.y = scatterYScale(cnode.valuePP);
 
-							RADIUS = BOXDIMS.w / 3;
+							cnode.scaleX = cnode.scaleY = RADIUS;
 
-							// keep the focus nodes:
-							let cnode = cnodes.find((d) => d.sdgTargetCount === 0 && d.sdgGoal === FOCUS_GOAL);
-
-							const countryLabel = labelState.labels[country.iso3c];
-
-							if (cnode) {
-								cnode.x = scatterXScale(cnode.valueAbs);
-								cnode.y = scatterYScale(cnode.valuePP);
-
-								cnode.scaleX = cnode.scaleY = RADIUS;
-
-								// labels
-								countryLabel.x = cnode.x + 5;
-								countryLabel.y = cnode.y;
-							} else {
-								// labels
-								countryLabel.x = countryLabel.homepoint.x;
-								countryLabel.y = countryLabel.homepoint.y;
-							}
+							// labels
+							countryLabel.x = cnode.x + 5;
+							countryLabel.y = cnode.y;
+						} else {
+							// labels
+							countryLabel.x = countryLabel.homepoint.x;
+							countryLabel.y = countryLabel.homepoint.y;
 						}
 					}
-				} else {
+				} else if (sortmode === 'barchart') {
 					RADIUS = 10;
 
 					const countryOffset = new PIXI.Point(50, margins.top + i * 12);

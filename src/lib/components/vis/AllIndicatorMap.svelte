@@ -1,7 +1,7 @@
 <script>
 	// import { particles } from 'engine.js';
 	import { grid as countries } from '$lib/data/worldtilegrid.js';
-	import { scaleLinear } from 'd3';
+	import { scaleLinear, max } from 'd3';
 	import * as PIXI from 'pixi.js';
 	import { nodeState, labelState } from '$lib/state/nodeState.svelte.js';
 	import ISOCodeLabels from '$lib/components/vis/ISOCodeLabels.svelte';
@@ -46,9 +46,14 @@
 	}
 
 	function layout() {
-		let indicatorCount = particles.filter((d) => d.country === countries[0].iso3c).length;
+		let indicatorCount = max(
+			countries,
+			(country) => particles.filter((d) => d.country === country.iso3c).length
+		);
 		let nodesPerLine = Math.ceil(Math.sqrt(indicatorCount));
 		let RADIUS = Math.ceil(BOXDIMS.w / nodesPerLine);
+
+		console.log(indicatorCount, BOXDIMS.w, nodesPerLine, RADIUS);
 
 		countries.forEach((country) => {
 			const countryOffset = new PIXI.Point(xScale(country.x), yScale(country.y));
