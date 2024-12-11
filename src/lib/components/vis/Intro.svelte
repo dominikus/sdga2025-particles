@@ -2,6 +2,7 @@
 	// import { particles } from 'engine.js';
 	import { nodeState } from '$lib/state/nodeState.svelte.js';
 	import VisContainer from '../VisContainer.svelte';
+	import { goHome, resetColor } from '$lib/utils/particleUtils.js';
 
 	let particles = nodeState.nodes;
 	let { inView = false, w, h, frame } = $props();
@@ -13,12 +14,19 @@
 	});
 
 	function layout() {
-		particles.forEach((d) => {
-			d.x = w * 0.4 - 35;
-			d.y = h * 0.4 - 25;
+		particles[0].x = w * 0.4 - 35;
+		particles[0].y = h * 0.4 - 25;
 
-			d.scaleX = 50;
-			d.scaleY = 50;
+		particles[0].scaleX = 50;
+		particles[0].scaleY = 50;
+
+		particles.forEach((node, i) => {
+			if (i > 0) {
+				goHome(node);
+				node.scaleX = 10;
+				node.scaleY = 10;
+				resetColor(node);
+			}
 		});
 	}
 </script>

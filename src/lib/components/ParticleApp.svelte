@@ -104,7 +104,7 @@
 
 		let totalIndicatorNum = allIndicators.length;
 
-		let overallCount = 0;
+		let indicatorIndex = 0;
 
 		grid.forEach((d, countryIndex) => {
 			for (let goal = 1; goal <= 17; goal++) {
@@ -113,13 +113,25 @@
 				filteredGTs.forEach((indicator, ii) => {
 					let particleColor = colorFromLevel(indicator.level);
 
-					let p = createParticle(
-						screenW * 0.4 - 35,
-						screenH * 0.4 - 25,
-						RADIUS,
-						RADIUS,
-						particleColor
-					);
+					let p;
+
+					if (indicatorIndex === 0) {
+						p = createParticle(
+							screenW * 0.4 - 35,
+							screenH * 0.4 - 25,
+							RADIUS,
+							RADIUS,
+							particleColor
+						);
+					} else {
+						p = createParticle(
+							(w * indicatorIndex) / totalIndicatorNum,
+							-50,
+							RADIUS,
+							RADIUS,
+							particleColor
+						);
+					}
 
 					p.sdgGoal = goal;
 					p.sdgTargetCount = ii; //targetCount;
@@ -135,7 +147,7 @@
 					p.valueAbs = indicator.value ?? 0;
 					p.valuePP = indicator.diff ?? 0;
 
-					p.homepoint = new PIXI.Point((w * overallCount) / totalIndicatorNum, -50);
+					p.homepoint = new PIXI.Point((w * indicatorIndex) / totalIndicatorNum, -50);
 					p.levelColor = particleColor;
 
 					p.view = new PIXI.Particle({
@@ -150,7 +162,7 @@
 					particleContainer.addParticle(p.view);
 
 					nodeState.nodes.push(p);
-					overallCount++;
+					indicatorIndex++;
 				});
 			}
 		});
@@ -185,6 +197,8 @@
 
 		ticker.add(render);
 		ticker.start();
+		//render();
+		//console.log(nodeState.nodes);
 	}
 
 	function back() {

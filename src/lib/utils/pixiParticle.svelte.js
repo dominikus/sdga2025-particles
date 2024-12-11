@@ -130,9 +130,8 @@ export function seek(particle, speed) {
 
 // Particle Factory
 export function createParticle(x, y, sx, sy, color) {
-	let position = { x, y };
 	return {
-		position,
+		position: new PIXI.Point(x, y),
 		target: new PIXI.Point(x, y),
 		velocity: new PIXI.Point(0, 0),
 		acceleration: new PIXI.Point(0, 0),
