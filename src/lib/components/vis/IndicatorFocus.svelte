@@ -18,7 +18,7 @@
 	let FOCUS_GOAL = $state(3);
 
 	const margins = {
-		top: 140,
+		top: 160,
 		right: 20,
 		bottom: 120,
 		left: 120
@@ -91,10 +91,7 @@
 
 	let valuePPScale = $derived(
 		scaleLinear()
-			.domain([
-				ticks[FOCUS_GOAL].change[0],
-				ticks[FOCUS_GOAL].change[ticks[FOCUS_GOAL].change.length - 1]
-			])
+			.domain([0, max(focusPPDomain, (d) => Math.abs(d))])
 			.range([0, 1])
 	);
 
@@ -180,7 +177,7 @@
 							d.x = countryOffset.x + BOXDIMS.w / 2 - (BOXDIMS.w * val) / 2;
 							d.y = countryOffset.y + BOXDIMS.h / 2 - (BOXDIMS.w * val) / 2;
 
-							d.scaleX = d.scaleY = BOXDIMS.w * (val * 0.8 + 0.2);
+							d.scaleX = d.scaleY = BOXDIMS.w * (val * 0.85 + 0.15);
 
 							d.color = colorScale(d.valuePP);
 						});
@@ -289,6 +286,18 @@
 					axisTitle={'Absolute change (pp)'}
 				></ChartGrid>
 			</g>
+			<line
+				class="target move"
+				transform="translate({scatterXScale(focusParticles[0].targetValue)},{margins.top})"
+				x0="0"
+				y0={margins.top}
+				x1="0"
+				y1={h - margins.top * 2 - margins.bottom}
+			></line>
+			<text
+				transform="translate({scatterXScale(focusParticles[0].targetValue)},{margins.top - 8})"
+				class="middle move">Target</text
+			>
 		{/if}
 	</g>
 
@@ -323,5 +332,14 @@
 	select {
 		width: 100px;
 		margin-left: var(--space-s);
+	}
+
+	.target {
+		stroke: white;
+		stroke-width: 2px;
+	}
+
+	.move {
+		transition: all 1s;
 	}
 </style>

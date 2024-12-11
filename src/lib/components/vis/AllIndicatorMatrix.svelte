@@ -13,7 +13,7 @@
 	let { inView = false, activeScene = 0, w, h } = $props();
 
 	const margins = {
-		top: 140,
+		top: 160,
 		right: 20,
 		bottom: 120,
 		left: 120
