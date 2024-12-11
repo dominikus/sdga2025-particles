@@ -38,6 +38,18 @@
 		3: { sortmode: 'barchart' }
 	};
 
+	const ticks = {
+		1: {
+			change: [-15000, 0, 15000, 30000, 45000],
+			val: [0, 20000, 40000, 60000, 80000, 100000]
+		},
+		3: { change: [-40, -30, -20, -10, 0, 10], val: [0, 25, 50, 75, 100, 125] },
+		4: { change: [-20, 0, 20, 40], val: [0, 25, 50, 75, 100] },
+		5: { change: [-30, -15, 0, 15, 30], val: [0, 10, 20, 30, 40, 50] },
+		7: { change: [-10, 0, 10, 20, 30, 40], val: [0, 25, 50, 75, 100] },
+		9: { change: [-20, 0, 20, 40, 60, 80], val: [0, 25, 50, 75, 100] }
+	};
+
 	let sortmode = $derived(sceneConfig[activeScene].sortmode);
 
 	let focusParticles = $derived(particles.filter((d) => d.sdgGoal === FOCUS_GOAL));
@@ -65,24 +77,30 @@
 
 	let scatterXScale = $derived(
 		scaleLinear()
-			.domain(focusAbsDomain)
+			.domain([ticks[FOCUS_GOAL].val[0], ticks[FOCUS_GOAL].val[ticks[FOCUS_GOAL].val.length - 1]])
 			.range([margins.left, w - margins.left - margins.right])
 	);
 	let scatterYScale = $derived(
 		scaleLinear()
-			.domain(focusPPDomain)
+			.domain([
+				ticks[FOCUS_GOAL].change[0],
+				ticks[FOCUS_GOAL].change[ticks[FOCUS_GOAL].change.length - 1]
+			])
 			.range([h - margins.top - margins.bottom, margins.top])
 	);
 
 	let valuePPScale = $derived(
 		scaleLinear()
-			.domain([0, max(focusPPDomain, (d) => Math.abs(d))])
+			.domain([
+				ticks[FOCUS_GOAL].change[0],
+				ticks[FOCUS_GOAL].change[ticks[FOCUS_GOAL].change.length - 1]
+			])
 			.range([0, 1])
 	);
 
 	let barXScale = $derived(
 		scaleLinear()
-			.domain(focusAbsDomain)
+			.domain([ticks[FOCUS_GOAL].val[0], ticks[FOCUS_GOAL].val[ticks[FOCUS_GOAL].val.length - 1]])
 			.range([margins.left, w * 0.6 - margins.left - margins.right])
 	);
 
@@ -254,24 +272,20 @@
 			<g transform="translate(0,{margins.top})">
 				<ChartGrid
 					gridType="xGrid"
-					innerHeight={h + 20 - margins.top * 2 - margins.bottom}
+					innerHeight={h - margins.top * 2 - margins.bottom}
 					innerWidth={w - margins.left - margins.right}
 					scale={scatterXScale}
-					ticks={[
-						Math.floor(focusAbsDomain[0]),
-						Math.floor(focusAbsDomain[1]),
-						Math.floor(focusAbsDomain[1]) / 2
-					]}
+					ticks={ticks[FOCUS_GOAL].val}
 					axisTitle={focusParticles[0].indicatorName}
 				></ChartGrid>
 			</g>
-			<g transform="translate({margins.left - 20}, 0)">
+			<g transform="translate({margins.left}, 0)">
 				<ChartGrid
 					gridType="yGrid"
 					innerHeight={h - margins.top - margins.bottom}
-					innerWidth={w + 20 - margins.left * 2 - margins.right}
+					innerWidth={w - margins.left * 2 - margins.right}
 					scale={scatterYScale}
-					ticks={[Math.floor(focusPPDomain[0]), 0, Math.floor(focusPPDomain[1])]}
+					ticks={ticks[FOCUS_GOAL].change}
 					axisTitle={'Absolute change (pp)'}
 				></ChartGrid>
 			</g>

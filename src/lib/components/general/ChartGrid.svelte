@@ -40,7 +40,7 @@
 			x2={isNaN(scale(tick.value)) ? 0 : scale(tick.value)}
 			y1={hideLines ? innerHeight + 5 : 0}
 			y2={innerHeight}
-			class="gridline"
+			class={tick.value == 0 ? 'gridline zero' : 'gridline'}
 			transition:fade
 		/>
 		{#if !hideTickLabels}
@@ -63,7 +63,7 @@
 			x2={hideLines ? 0 : innerWidth}
 			y1={scale(tick.value)}
 			y2={scale(tick.value)}
-			class="gridline"
+			class={tick.value == 0 ? 'gridline zero' : 'gridline'}
 			transition:fade
 		/>
 		{#if !hideTickLabels}
@@ -71,7 +71,7 @@
 		{/if}
 		{#if i === ticks.length - 1 && axisTitle}
 			<text
-				transform="rotate(270) translate({-innerHeight / 2},-40)"
+				transform="rotate(270) translate({-innerHeight / 2},-50)"
 				x={0}
 				y={0}
 				class="y-title"
@@ -95,7 +95,7 @@
 
 	text.x-title,
 	text.y-title {
-		font-weight: 400;
+		font-weight: 500;
 		stroke: none;
 		font-size: var(--font-size-s);
 		text-anchor: middle;
@@ -110,8 +110,14 @@
 		stroke-dasharray: 4 4;
 	}
 
+	line.zero {
+		opacity: 0.5;
+		stroke-dasharray: none;
+	}
+
 	text.ticklabel.x {
 		text-anchor: middle;
+		font-weight: 300;
 	}
 
 	text.ticklabel.y {
