@@ -91,8 +91,8 @@
 			[focusPPDomain[0], 0, focusPPDomain[1]],
 			piecewise(
 				moreIsBetter
-					? ['#6cdcf6', '#7abdd2', '#809eaf', '#80808e', '#cf7a59', '#e98747', '#ff9534'].reverse()
-					: ['#6cdcf6', '#7abdd2', '#809eaf', '#80808e', '#cf7a59', '#e98747', '#ff9534']
+					? ['#8efcff', '#8ed2d8', '#89a8b2', '#80808e', '#c9997a', '#e7c17f', '#ffec88'].reverse()
+					: ['#8efcff', '#8ed2d8', '#89a8b2', '#80808e', '#c9997a', '#e7c17f', '#ffec88']
 			)
 		)
 	);
