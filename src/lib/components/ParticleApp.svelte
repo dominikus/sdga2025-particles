@@ -6,6 +6,7 @@
 	import * as PIXI from 'pixi.js';
 	import { Stats } from 'pixi-stats';
 	import Intro from './vis/Intro.svelte';
+	import BarChart from './vis/BarChart.svelte';
 	import AllIndicatorMap from './vis/AllIndicatorMap.svelte';
 	import AllIndicatorMatrix from './vis/AllIndicatorMatrix.svelte';
 	import SVGContainer from './VisContainer.svelte';
@@ -27,6 +28,7 @@
 
 	let modes = [
 		{ vis: Intro, sceneCount: 1 },
+		{vis: BarChart, sceneCount: 1},
 		{ vis: AllIndicatorMap, sceneCount: 2 },
 		{ vis: AllIndicatorMatrix, sceneCount: 2 },
 		{ vis: AllIndicatorMap, sceneCount: 1 },
