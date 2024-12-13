@@ -32,7 +32,7 @@
 		}
 	});
 
-    const RADIUS = 10
+    const RADIUS = (w - margins.left - margins.right - indicatorParticles.length*2)/indicatorParticles.length
 	function layout() {
         otherParticles.forEach(node => {
             goHome(node);
@@ -48,12 +48,12 @@
             d.x = margins.left + (i) * RADIUS + i*2;
 			d.y = scalemode == 'value' ? h * 0.4 - d.valuePP/100 : h * 0.4;
             d.scaleX = RADIUS;
-            d.scaleY = scalemode == 'value' ? d.valuePP/100 : RADIUS;
+            d.scaleY = scalemode == 'value' ? d.valuePP/100 : RADIUS*4;
 
             const countryLabel = labelState.labels[d.country]
-            if(scalemode == 'value' && (d.valuePP > 5000 || d.valuePP < 0)){
-                countryLabel.x = margins.left + (i) * RADIUS + i*2;
-                countryLabel.y = h * 0.4 - d.valuePP/100
+            if(scalemode == 'value' && (d.valuePP > 12000 || d.valuePP < -4000)){
+                countryLabel.x = margins.left + (i) * RADIUS + i*2 + 4;
+                countryLabel.y = d.valuePP < 0 ? h * 0.4 - d.valuePP/100 + 12 : h * 0.4 - d.valuePP/100 - 4
             }
             else {
                 countryLabel.x = countryLabel.homepoint.x;
@@ -66,15 +66,8 @@
 <VisContainer {w} {h}>
     <ISOCodeLabels {w} h={2500} slot="iso-code-labels"></ISOCodeLabels>
 	<g slot="svg">
-		<!--text x={w * 0.4 + 50} y={h * 0.4 + 12} style="opacity: {inView ? 1 : 0}"
-			>1 country x 1 indicator</text
-		-->
 	</g>
 </VisContainer>
 
 <style>
-	text {
-		transition: all 1s;
-		font-size: 30px;
-	}
 </style>
