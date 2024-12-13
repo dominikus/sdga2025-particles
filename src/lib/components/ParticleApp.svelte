@@ -28,7 +28,7 @@
 
 	let modes = [
 		{ vis: Intro, sceneCount: 1 },
-		{vis: BarChart, sceneCount: 1},
+		{ vis: BarChart, sceneCount: 3},
 		{ vis: AllIndicatorMap, sceneCount: 2 },
 		{ vis: AllIndicatorMatrix, sceneCount: 2 },
 		{ vis: AllIndicatorMap, sceneCount: 1 },
