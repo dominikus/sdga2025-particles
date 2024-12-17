@@ -1,5 +1,8 @@
 body {
+	--background: #f2f1f0;
 	--background: #384075;
+	--background: #0f0737;
+
 	--background-light: #fcfbf9;
 	--background-dark: #f4e5df;
 	--highlight: #268862;
@@ -28,4 +31,12 @@ body {
 	--level-2: #fbe9aa;
 	--level-3: #60d1c3;
 	--level-4: #009ee9;
+
+	/*
+	--level-0: #f8a8df;
+	--level-1: #b38fd8;
+	--level-2: #462f98;
+	--level-3: #6d88d1;
+	--level-4: #a1c6ff;
+	*/
 }

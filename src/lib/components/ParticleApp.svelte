@@ -10,6 +10,7 @@
 	import TreeMap from './vis/TreeMap.svelte';
 	import AllIndicatorMap from './vis/AllIndicatorMap.svelte';
 	import AllIndicatorMatrix from './vis/AllIndicatorMatrix.svelte';
+	import Colors from '$lib/variables.js';
 	import SVGContainer from './VisContainer.svelte';
 
 	import { nodeState } from '$lib/state/nodeState.svelte.js';
@@ -56,8 +57,10 @@
 	let ticker;
 
 	function colorFromLevel(level) {
-		return ['#f75781', '#fda696', '#fbe9aa', '#60d1c3', '#009ee9'][level];
+		return [Colors.level0, Colors.level1, Colors.level2, Colors.level3, Colors.level4][level];
 	}
+
+	console.log(Colors);
 
 	async function setup() {
 		isSetup = true;
