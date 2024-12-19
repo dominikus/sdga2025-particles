@@ -113,6 +113,9 @@ export function seek(particle, speed) {
 	if (d < 1) {
 		particle.position.x = particle.target.x;
 		particle.position.y = particle.target.y;
+
+		particle.velocity.set(0, 0);
+		particle.acceleration.set(0, 0);
 		//particle.position.set(particle.target.x, particle.target.y);
 		return;
 	} else if (d < PROXIMITY_LIMIT) {
