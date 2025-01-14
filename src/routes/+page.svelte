@@ -5,7 +5,18 @@
 	import { onMount } from 'svelte';
 
 	let allIndicators = [];
+	let fullIndicators = [];
 	onMount(() => {
+		csv('/data/targets-indicators.csv', (dd) => {
+			fullIndicators = [
+				...fullIndicators,
+				{
+					goal: +dd.goal,
+					target: dd.target,
+					indicators: +dd.indicators
+				}
+			];
+		});
 		csv('/data/toy_data_plus_values.csv', (d) => {
 			allIndicators = [
 				...allIndicators,
@@ -25,13 +36,13 @@
 			//allIndicators = [...allIndicators, { ...d, indicators: +d.indicators }];
 		});
 	});
-	$: console.log(allIndicators);
+	$: console.log(allIndicators, fullIndicators);
 </script>
 
 <!--<Particles />-->
 <!--<ParticleBoxes />-->
 <!--<PixiParticleBoxes {allIndicators} />-->
-<ParticleApp {allIndicators} />
+<ParticleApp {allIndicators} {fullIndicators} />
 
 <style>
 	img {

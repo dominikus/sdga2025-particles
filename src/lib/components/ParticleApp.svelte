@@ -17,7 +17,7 @@
 	import IndicatorFocus from './vis/IndicatorFocus.svelte';
 	import VisContainer from './VisContainer.svelte';
 
-	let { allIndicators = [] } = $props();
+	let { allIndicators = [], fullIndicators = [] } = $props();
 
 	// $inspect(grid);
 
@@ -116,9 +116,18 @@
 		grid.forEach((d, countryIndex) => {
 			for (let goal = 1; goal <= 17; goal++) {
 				let filteredGTs = allIndicators.filter((dd) => dd.iso3c === d.iso3c && dd.goal === goal);
+				/*fullIndicators
+					.filter((dd) => dd.goal === goal)
+					.forEach((d) => {
+						for (let i = 0; i < d.indicators; i++) {
+							filteredGTs.push({});
+						}
+					});*/
+				// filteredGTs = [...filteredGTs, ...fullIndicators.filter((dd) => dd.goal === goal)];
 
 				filteredGTs.forEach((indicator, ii) => {
-					let particleColor = colorFromLevel(indicator.level);
+					let particleColor =
+						indicator.level !== undefined ? colorFromLevel(indicator.level) : Colors.white;
 
 					let p;
 
@@ -145,7 +154,7 @@
 					p.sdgIndicator = 1; //i;
 
 					p.indicatorName = indicator.indicatorName;
-					p.moreIsBetter = indicator.moreIsBetter;
+					p.moreIsBetter = indicator.moreIsBetter ?? true;
 					p.targetValue = indicator.targetValue;
 
 					p.country = d.iso3c;
